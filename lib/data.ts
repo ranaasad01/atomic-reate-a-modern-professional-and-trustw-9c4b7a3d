@@ -120,51 +120,68 @@ export const attorneys: Attorney[] = [
     title: "Senior Partner",
     specializations: ["Corporate & Commercial Law", "Public International Law"],
     image: "https://www.myschoolacademy.org/_ipx/_/images/tech-entrepreneur.png",
-    bio: "Dr. Osei brings over 20 years of experience advising multinational corporations and government bodies on complex cross-border transactions and international legal frameworks.",
-    linkedin: "#",
+    bio: "Dr. Osei brings over 20 years of experience advising multinational corporations, governments, and international institutions on complex cross-border transactions and public international law matters.",
+    linkedin: "https://linkedin.com",
   },
   {
     id: "attorney-2",
-    name: "Adv. Priya Naidoo",
+    name: "Ms. Fatima Al-Rashid",
     title: "Partner",
-    specializations: ["Civil & Criminal Litigation", "Employment Law"],
-    image: "/images/attorney-priya-naidoo.jpg",
-    bio: "Adv. Naidoo is a seasoned litigator with a track record of success in high-stakes civil and criminal matters, and a deep commitment to employment rights.",
-    linkedin: "#",
+    specializations: ["Mediation & Arbitration", "Civil & Criminal Litigation"],
+    image: "https://saam.academy/wp-content/uploads/2022/11/Dr.-Fatima-Alrasheed-scaled.jpeg",
+    bio: "Ms. Al-Rashid is a seasoned litigator and certified mediator with 15 years of courtroom experience resolving high-stakes commercial disputes.",
+    linkedin: "https://linkedin.com",
   },
   {
     id: "attorney-3",
-    name: "Mr. James Kariuki",
+    name: "Mr. Kwame Mensah",
     title: "Partner",
-    specializations: ["Mediation & Arbitration", "Family Law"],
-    image: "/images/attorney-james-kariuki.jpg",
-    bio: "Mr. Kariuki is a certified mediator and arbitrator who has resolved hundreds of commercial and family disputes with sensitivity and precision.",
-    linkedin: "#",
+    specializations: ["Employment Law", "Corporate & Commercial Law"],
+    image: "https://penniur.upenn.edu/sites/default/files/styles/people_medium/public/2024-08/R_8MufNxUttISYRFf_dr._james_mensah_0.jpg?h=87da0d5e&itok=ULX9ZXw3",
+    bio: "Mr. Mensah advises leading corporations and financial institutions on employment law compliance, executive compensation, and workplace dispute resolution.",
+    linkedin: "https://linkedin.com",
   },
   {
     id: "attorney-4",
-    name: "Ms. Fatima Al-Hassan",
-    title: "Associate",
+    name: "Dr. Adaeze Nwosu",
+    title: "Senior Associate",
+    specializations: ["Family Law", "Civil Litigation"],
+    image: "https://faculty.mdanderson.org/content/dam/mdanderson/images/fis/adaeze_nwosuiheme.jpg.resize.jpg",
+    bio: "Dr. Nwosu is a compassionate advocate for families navigating complex legal challenges, with a doctorate in family law and a decade of practice.",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    id: "attorney-5",
+    name: "Mr. Ibrahim Diallo",
+    title: "Senior Associate",
     specializations: ["Legislative Drafting & Policy", "Public International Law"],
-    image: "/images/attorney-fatima-al-hassan.jpg",
-    bio: "Ms. Al-Hassan specializes in legislative drafting and has contributed to landmark policy reforms across multiple jurisdictions.",
-    linkedin: "#",
+    image: "/images/attorney-ibrahim-diallo.jpg",
+    bio: "Mr. Diallo has advised governments and regional bodies on legislative reform, constitutional law, and public policy across West Africa.",
+    linkedin: "https://linkedin.com",
   },
 ];
 
-export const contactInfo = {
-  phone: "+1 (555) 234-5678",
-  email: "info@mitlegalconsultants.com",
-  address: "14 Justice Avenue, Suite 800, Nairobi, Kenya",
-  hours: {
-    weekdays: "Monday to Friday: 8:00 AM – 6:00 PM",
-    saturday: "Saturday: 9:00 AM – 1:00 PM",
-    sunday: "Sunday: Closed",
-  },
+export interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+  hours: string;
+}
+
+export const contactInfo: ContactInfo = {
+  phone: "+1 (555) 000-0000",
+  email: "info@mitlegal.com",
+  address: "14 Legal Avenue, Suite 300, Accra, Ghana",
+  hours: "Monday – Friday: 8:00 AM – 6:00 PM",
 };
 
-export const socialLinks = {
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-  facebook: "https://facebook.com",
-};
+export interface SocialLink {
+  label: string;
+  href: string;
+}
+
+export const socialLinks: SocialLink[] = [
+  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Twitter", href: "https://twitter.com" },
+  { label: "Facebook", href: "https://facebook.com" },
+];
