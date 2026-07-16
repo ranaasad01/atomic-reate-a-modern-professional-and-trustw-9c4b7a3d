@@ -60,205 +60,130 @@ const teamMembers: TeamMember[] = [
   {
     id: "adaeze-nwosu",
     name: "Dr. Adaeze Nwosu",
-    title: "Senior Associate",
-    specializations: ["Family Law", "Civil Litigation"],
-    image: "https://faculty.mdanderson.org/content/dam/mdanderson/images/fis/adaeze_nwosuiheme.jpg.resize.jpg",
-    bio: "Dr. Nwosu is a compassionate and tenacious advocate for families navigating complex legal challenges. With a doctorate in family law and a decade of practice, she has guided hundreds of clients through divorce, custody, and adoption proceedings with sensitivity and expertise.",
-    education: ["PhD (Family Law), University of Lagos", "LLM, University of Edinburgh", "LLB, University of Ibadan"],
+    title: "Partner",
+    specializations: ["Family Law", "Civil & Criminal Litigation"],
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+    bio: "Dr. Nwosu is a distinguished family law practitioner and civil litigator with over 14 years of experience. She has handled complex divorce proceedings, child custody disputes, and inheritance matters with sensitivity and legal precision. Her litigation practice covers both civil and criminal matters at all court levels.",
+    education: ["PhD (Family Law), University of Lagos", "LLM (Litigation), University of Ibadan", "LLB (Hons), University of Benin"],
     linkedin: "https://linkedin.com",
     email: "a.nwosu@mitlegal.com",
+    yearsExp: 14,
+  },
+  {
+    id: "samuel-boateng",
+    name: "Mr. Samuel Boateng",
+    title: "Senior Associate",
+    specializations: ["Legislative Drafting & Public Policy", "Public International Law"],
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    bio: "Mr. Boateng specialises in legislative drafting, regulatory frameworks, and public policy advisory. He has worked with government ministries, parliamentary committees, and international organisations to develop comprehensive legal frameworks and governance structures across multiple jurisdictions.",
+    education: ["LLM (Public International Law), University of Edinburgh", "LLB, University of Ghana School of Law", "Diploma in Legislative Drafting, Commonwealth Secretariat"],
+    linkedin: "https://linkedin.com",
+    email: "s.boateng@mitlegal.com",
     yearsExp: 10,
   },
   {
-    id: "ibrahim-diallo",
-    name: "Mr. Ibrahim Diallo",
-    title: "Senior Associate",
-    specializations: ["Legislative Drafting & Policy", "Public International Law"],
-    image: "/images/attorney-ibrahim-diallo.jpg",
-    bio: "Mr. Diallo has advised governments and regional bodies on legislative reform, constitutional drafting, and public policy development. His work spans francophone and anglophone Africa, bringing a unique multilingual and multicultural perspective to complex policy challenges.",
-    education: ["LLM (Public Law), Sciences Po Paris", "Maîtrise en Droit, Université Cheikh Anta Diop"],
-    linkedin: "https://linkedin.com",
-    email: "i.diallo@mitlegal.com",
-    yearsExp: 9,
-  },
-  {
-    id: "priya-sharma",
-    name: "Ms. Priya Sharma",
+    id: "priya-nair",
+    name: "Ms. Priya Nair",
     title: "Associate",
-    specializations: ["Corporate & Commercial Law", "Employment Law"],
-    image: "/images/attorney-priya-sharma.jpg",
-    bio: "Ms. Sharma focuses on corporate governance, commercial contracts, and employment compliance for technology and financial services clients. She brings a meticulous approach to transactional work and a deep understanding of regulatory frameworks across multiple jurisdictions.",
-    education: ["LLM (Corporate Law), London School of Economics", "LLB (Hons), National Law School of India University"],
+    specializations: ["Employment Law", "Mediation & Arbitration"],
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    bio: "Ms. Nair is a dedicated employment law attorney and certified mediator with 8 years of experience advising both employers and employees on workplace rights, disciplinary procedures, wrongful termination claims, and labour compliance. She brings a pragmatic, solution-focused approach to every matter.",
+    education: ["LLM (Employment & Labour Law), London School of Economics", "LLB (Hons), University of Mumbai"],
     linkedin: "https://linkedin.com",
-    email: "p.sharma@mitlegal.com",
-    yearsExp: 6,
-  },
-  {
-    id: "chidi-okafor",
-    name: "Mr. Chidi Okafor",
-    title: "Associate",
-    specializations: ["Civil & Criminal Litigation", "Mediation & Arbitration"],
-    image: "/images/attorney-chidi-okafor.jpg",
-    bio: "Mr. Okafor is a dynamic litigator with a strong track record in commercial and criminal matters. He has appeared before courts at all levels and brings energy, rigour, and creative legal thinking to every case he handles.",
-    education: ["BL, Nigerian Law School", "LLB, University of Benin"],
-    linkedin: "https://linkedin.com",
-    email: "c.okafor@mitlegal.com",
-    yearsExp: 5,
-  },
-  {
-    id: "amina-hassan",
-    name: "Ms. Amina Hassan",
-    title: "Associate",
-    specializations: ["Family Law", "Employment Law"],
-    image: "/images/attorney-amina-hassan.jpg",
-    bio: "Ms. Hassan is a dedicated advocate for individuals and families, with particular expertise in matrimonial finance, child welfare, and workplace discrimination claims. She is known for her empathetic client approach and her ability to achieve practical, lasting outcomes.",
-    education: ["LLM (Family and Child Law), University of Exeter", "LLB, Makerere University"],
-    linkedin: "https://linkedin.com",
-    email: "a.hassan@mitlegal.com",
-    yearsExp: 4,
+    email: "p.nair@mitlegal.com",
+    yearsExp: 8,
   },
 ];
 
 const stats = [
-  { value: "50+", label: "Years Combined Experience" },
-  { value: "8", label: "Specialist Attorneys" },
-  { value: "12+", label: "Jurisdictions Served" },
-  { value: "500+", label: "Cases Successfully Resolved" },
-];
-
-const values = [
-  {
-    icon: Award,
-    title: "Excellence",
-    description: "We hold ourselves to the highest standards of legal practice, delivering work that is thorough, precise, and strategically sound.",
-  },
-  {
-    icon: Users,
-    title: "Client-Centred",
-    description: "Every client receives personalised attention. We listen, understand, and tailor our counsel to your specific circumstances and goals.",
-  },
-  {
-    icon: Globe,
-    title: "Global Perspective",
-    description: "Our team brings international training and cross-border experience, giving you an edge in complex multi-jurisdictional matters.",
-  },
-  {
-    icon: BookOpen,
-    title: "Integrity",
-    description: "We operate with unwavering ethical standards, ensuring transparency, confidentiality, and honest advice at every stage.",
-  },
+  { icon: Users, value: "6+", label: "Expert Attorneys" },
+  { icon: Award, value: "20+", label: "Years Combined Experience" },
+  { icon: Globe, value: "7", label: "Practice Areas" },
+  { icon: BookOpen, value: "15+", label: "Jurisdictions Served" },
 ];
 
 export default function TeamPage() {
   const t = useTranslations();
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="relative bg-[var(--brand-primary)] overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[var(--brand-accent)] blur-[120px] translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[var(--brand-accent)] blur-[100px] -translate-x-1/3 translate-y-1/3" />
+    <main className="overflow-x-hidden">
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[var(--brand-primary)] py-24 md:py-32 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(45deg, var(--brand-accent) 0, var(--brand-accent) 1px, transparent 0, transparent 50%)",
+              backgroundSize: "30px 30px",
+            }}
+          />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24">
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-accent)]/40 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="max-w-3xl"
+            variants={staggerContainer}
+            className="max-w-3xl mx-auto"
           >
-            <motion.p
-              variants={fadeInUp}
-              className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4"
-            >
-              {t("team.eyebrow")}
-            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--brand-accent)]/15 border border-[var(--brand-accent)]/30 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-6">
+                <Users size={12} />
+                Our Legal Team
+              </span>
+            </motion.div>
             <motion.h1
               variants={fadeInUp}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance mb-6"
+              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
-              {t("team.heroTitle")}
+              Meet Our{" "}
+              <span className="text-[var(--brand-accent)]">Expert Attorneys</span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="font-body text-white/70 text-lg leading-relaxed max-w-2xl text-pretty"
+              className="text-white/70 text-lg font-body leading-relaxed"
             >
-              {t("team.heroSubtitle")}
+              Our team of distinguished legal professionals brings decades of combined experience,
+              academic excellence, and a shared commitment to delivering exceptional results for every client.
             </motion.p>
           </motion.div>
         </div>
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/5 to-transparent" />
       </section>
 
-      {/* Stats bar */}
-      <Reveal>
-        <section className="bg-[var(--brand-primary)]/5 border-b border-[var(--brand-primary)]/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="text-center"
-                >
-                  <p className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-none mb-1">
+      {/* ─── STATS BAR ────────────────────────────────────────────────────── */}
+      <section className="bg-[var(--brand-accent)] py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3 justify-center">
+                <stat.icon size={24} className="text-[var(--brand-primary)] flex-shrink-0" />
+                <div>
+                  <p className="font-heading text-2xl font-bold text-[var(--brand-primary)] leading-none">
                     {stat.value}
                   </p>
-                  <p className="font-body text-sm text-[var(--brand-primary)]/60 leading-snug">
-                    {t(`team.stat${i}`)}
+                  <p className="text-[var(--brand-primary)]/70 text-xs font-body font-semibold uppercase tracking-wide mt-0.5">
+                    {stat.label}
                   </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </Reveal>
-
-      {/* Partners & Senior Partners */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <Reveal>
-          <div className="mb-14">
-            <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-              {t("team.partnersEyebrow")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] tracking-tight text-balance">
-              {t("team.partnersTitle")}
-            </h2>
-          </div>
-        </Reveal>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {teamMembers
-            .filter((m) => m.title === "Senior Partner" || m.title === "Partner")
-            .map((member) => (
-              <AttorneyCard key={member.id} member={member} t={t} featured />
+                </div>
+              </div>
             ))}
-        </motion.div>
+          </div>
+        </div>
       </section>
 
-      {/* Associates */}
-      <section className="bg-[var(--brand-primary)]/3 py-24">
+      {/* ─── TEAM GRID ────────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="mb-14">
-              <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-                {t("team.associatesEyebrow")}
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] tracking-tight text-balance">
-                {t("team.associatesTitle")}
-              </h2>
-            </div>
+          <Reveal className="text-center mb-14">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-4">
+              Our Legal Professionals
+            </h2>
+            <p className="text-[var(--brand-muted-foreground)] font-body max-w-2xl mx-auto">
+              Each member of our team is selected for their expertise, integrity, and dedication to client success.
+            </p>
           </Reveal>
 
           <motion.div
@@ -266,196 +191,160 @@ export default function TeamPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {teamMembers
-              .filter((m) => m.title === "Associate" || m.title === "Senior Associate")
-              .map((member) => (
-                <AttorneyCard key={member.id} member={member} t={t} featured={false} />
-              ))}
+            {teamMembers.map((member) => (
+              <motion.div
+                key={member.id}
+                variants={scaleIn}
+                className="bg-[var(--brand-card)] rounded-2xl overflow-hidden shadow-sm border border-[var(--brand-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              >
+                {/* Photo */}
+                <div className="relative h-64 bg-[var(--brand-muted)] overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-[var(--brand-muted)]"><span class="font-heading text-5xl font-bold text-[var(--brand-primary)]/30">${member.name.split(" ").map((n: string) => n[0]).join("")}</span></div>`;
+                      }
+                    }}
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/60 via-transparent to-transparent" />
+                  {/* Years badge */}
+                  <div className="absolute top-4 right-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] text-xs font-body font-bold px-3 py-1 rounded-full">
+                    {member.yearsExp}+ yrs
+                  </div>
+                  {/* Name overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-heading text-xl font-bold text-white leading-tight">
+                      {member.name}
+                    </h3>
+                    <p className="text-[var(--brand-accent)] text-sm font-body font-semibold mt-0.5">
+                      {member.title}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Specializations */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {member.specializations.map((spec) => (
+                      <span
+                        key={spec}
+                        className="px-2.5 py-1 bg-[var(--brand-muted)] text-[var(--brand-primary)] text-xs font-body font-semibold rounded-full border border-[var(--brand-border)]"
+                      >
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Bio */}
+                  <p className="text-[var(--brand-muted-foreground)] text-sm font-body leading-relaxed mb-5 flex-1">
+                    {member.bio}
+                  </p>
+
+                  {/* Education */}
+                  <div className="mb-5">
+                    <p className="text-[var(--brand-primary)] text-xs font-body font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                      <BookOpen size={12} />
+                      Education
+                    </p>
+                    <ul className="space-y-1">
+                      {member.education.map((edu) => (
+                        <li
+                          key={edu}
+                          className="text-[var(--brand-muted-foreground)] text-xs font-body flex items-start gap-1.5"
+                        >
+                          <ChevronRight size={12} className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5" />
+                          {edu}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Contact links */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-[var(--brand-border)]">
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} LinkedIn`}
+                        className="flex items-center gap-1.5 text-xs font-body font-semibold text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors duration-200"
+                      >
+                        <Linkedin size={14} />
+                        LinkedIn
+                      </a>
+                    )}
+                    {member.email && (
+                      <a
+                        href={`mailto:${member.email}`}
+                        aria-label={`Email ${member.name}`}
+                        className="flex items-center gap-1.5 text-xs font-body font-semibold text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors duration-200 ml-auto"
+                      >
+                        <Mail size={14} />
+                        {member.email}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <Reveal>
-          <div className="text-center mb-14">
-            <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-              {t("team.valuesEyebrow")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] tracking-tight text-balance">
-              {t("team.valuesTitle")}
+      {/* ─── JOIN THE TEAM CTA ────────────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-primary)] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(-45deg, var(--brand-accent) 0, var(--brand-accent) 1px, transparent 0, transparent 50%)",
+              backgroundSize: "30px 30px",
+            }}
+          />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--brand-accent)]/15 border border-[var(--brand-accent)]/30 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-6">
+              <Award size={12} />
+              Join Our Team
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-5">
+              Are You a Legal Professional?{" "}
+              <span className="text-[var(--brand-accent)]">We&apos;d Love to Hear From You.</span>
             </h2>
-            <p className="font-body text-[var(--brand-primary)]/60 text-lg mt-4 max-w-2xl mx-auto leading-relaxed text-pretty">
-              {t("team.valuesSubtitle")}
+            <p className="text-white/70 font-body text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              MIT Legal Consultants is always looking for talented, driven attorneys who share our commitment
+              to excellence, integrity, and client-centered service. Send us your profile.
             </p>
-          </div>
-        </Reveal>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((val, i) => {
-            const Icon = val.icon;
-            return (
-              <Reveal key={val.title} delay={i * 0.1}>
-                <div className="bg-white border border-[var(--brand-primary)]/8 rounded-2xl p-7 shadow-[0_1px_2px_rgba(10,31,68,0.04),0_8px_24px_-8px_rgba(10,31,68,0.08)] h-full">
-                  <div className="w-11 h-11 rounded-xl bg-[var(--brand-accent)]/15 flex items-center justify-center mb-5">
-                    <Icon size={20} className="text-[var(--brand-accent)]" />
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[var(--brand-primary)] mb-2">
-                    {t(`team.value${i}Title`)}
-                  </h3>
-                  <p className="font-body text-sm text-[var(--brand-primary)]/60 leading-relaxed">
-                    {t(`team.value${i}Desc`)}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+              >
+                Get in Touch
+                <ChevronRight size={16} />
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/30 text-white font-body font-semibold text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              >
+                Learn About Our Firm
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
-
-      {/* Join the team CTA */}
-      <Reveal>
-        <section className="bg-[var(--brand-primary)] mx-4 sm:mx-6 lg:mx-8 rounded-3xl mb-24 overflow-hidden relative">
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[var(--brand-accent)] blur-[100px] translate-x-1/4 -translate-y-1/4" />
-          </div>
-          <div className="relative max-w-4xl mx-auto px-8 py-16 text-center">
-            <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-              {t("team.joinEyebrow")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight text-balance mb-5">
-              {t("team.joinTitle")}
-            </h2>
-            <p className="font-body text-white/65 text-lg leading-relaxed max-w-xl mx-auto mb-8 text-pretty">
-              {t("team.joinSubtitle")}
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-xl hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
-            >
-              {t("team.joinCta")}
-              <ChevronRight size={16} />
-            </Link>
-          </div>
-        </section>
-      </Reveal>
     </main>
-  );
-}
-
-interface AttorneyCardProps {
-  member: TeamMember;
-  t: ReturnType<typeof useTranslations>;
-  featured: boolean;
-}
-
-function AttorneyCard({ member, featured }: AttorneyCardProps) {
-  return (
-    <motion.article
-      variants={scaleIn}
-      whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
-      className={`bg-white rounded-2xl overflow-hidden border border-[var(--brand-primary)]/8 shadow-[0_1px_2px_rgba(10,31,68,0.04),0_8px_24px_-8px_rgba(10,31,68,0.10)] flex flex-col group transition-shadow duration-300 hover:shadow-[0_4px_32px_-8px_rgba(10,31,68,0.18)]`}
-    >
-      {/* Photo */}
-      <div className={`relative overflow-hidden bg-[var(--brand-primary)]/5 ${featured ? "h-64" : "h-52"}`}>
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          onError={(e) => {
-            const target = e.currentTarget;
-            target.style.display = "none";
-            const parent = target.parentElement;
-            if (parent) {
-              const fallback = document.createElement("div");
-              fallback.className = "w-full h-full flex items-center justify-center bg-[var(--brand-primary)]/10";
-              const initials = document.createElement("span");
-              initials.className = "font-heading text-4xl font-bold text-[var(--brand-primary)]/30";
-              initials.textContent = member.name
-                .split(" ")
-                .map((n) => n[0] ?? "")
-                .join("")
-                .slice(0, 2);
-              fallback.appendChild(initials);
-              parent.appendChild(fallback);
-            }
-          }}
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        {/* Social links on hover */}
-        <div className="absolute bottom-4 left-4 right-4 flex gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-          {member.linkedin && (
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${member.name} LinkedIn`}
-              className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)] transition-colors duration-200"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Linkedin size={14} />
-            </a>
-          )}
-          {member.email && (
-            <a
-              href={`mailto:${member.email}`}
-              aria-label={`Email ${member.name}`}
-              className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)] transition-colors duration-200"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Mail size={14} />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-1">
-        <div className="mb-3">
-          <span className="inline-block text-[10px] font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] bg-[var(--brand-accent)]/10 px-2.5 py-1 rounded-full mb-2">
-            {member.title}
-          </span>
-          <h3 className="font-heading text-xl font-bold text-[var(--brand-primary)] leading-tight">
-            {member.name}
-          </h3>
-        </div>
-
-        {featured && (
-          <p className="font-body text-sm text-[var(--brand-primary)]/60 leading-relaxed mb-4 line-clamp-3">
-            {member.bio}
-          </p>
-        )}
-
-        {/* Specializations */}
-        <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-[var(--brand-primary)]/8">
-          {member.specializations.map((spec) => (
-            <span
-              key={spec}
-              className="text-[10px] font-body font-medium text-[var(--brand-primary)]/70 bg-[var(--brand-primary)]/5 border border-[var(--brand-primary)]/10 px-2 py-0.5 rounded-full"
-            >
-              {spec}
-            </span>
-          ))}
-        </div>
-
-        {featured && (
-          <div className="mt-4 pt-4 border-t border-[var(--brand-primary)]/8">
-            <p className="text-[10px] font-body font-semibold uppercase tracking-widest text-[var(--brand-primary)]/40 mb-2">
-              Education
-            </p>
-            <ul className="space-y-1">
-              {(member.education ?? []).slice(0, 2).map((edu) => (
-                <li key={edu} className="font-body text-xs text-[var(--brand-primary)]/55 leading-snug">
-                  {edu}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </motion.article>
   );
 }
