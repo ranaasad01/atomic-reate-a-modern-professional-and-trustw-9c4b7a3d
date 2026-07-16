@@ -84,226 +84,203 @@ interface TypicalMatter {
 const typicalMatters: TypicalMatter[] = [
   { id: "tm-1", category: "Civil", matter: "Breach of contract claims between commercial parties" },
   { id: "tm-2", category: "Civil", matter: "Property boundary and title disputes" },
-  { id: "tm-3", category: "Civil", matter: "Professional negligence actions against advisors and contractors" },
-  { id: "tm-4", category: "Civil", matter: "Shareholder and partnership disputes" },
-  { id: "tm-5", category: "Civil", matter: "Defamation and reputational harm proceedings" },
-  { id: "tm-6", category: "Civil", matter: "Debt recovery and insolvency-related litigation" },
-  { id: "tm-7", category: "Criminal", matter: "Defence in fraud, corruption, and financial crime prosecutions" },
-  { id: "tm-8", category: "Criminal", matter: "Regulatory investigations and white-collar criminal defence" },
-  { id: "tm-9", category: "Criminal", matter: "Bail applications and pre-trial detention challenges" },
-  { id: "tm-10", category: "Criminal", matter: "Sentencing mitigation and plea negotiations" },
-  { id: "tm-11", category: "Criminal", matter: "Appeals against conviction and sentence" },
-  { id: "tm-12", category: "Urgent", matter: "Ex parte injunctions and freezing orders" },
+  { id: "tm-3", category: "Civil", matter: "Professional negligence actions against lawyers, doctors, and accountants" },
+  { id: "tm-4", category: "Civil", matter: "Debt recovery and enforcement proceedings" },
+  { id: "tm-5", category: "Civil", matter: "Shareholder and partnership disputes" },
+  { id: "tm-6", category: "Civil", matter: "Defamation and reputation management litigation" },
+  { id: "tm-7", category: "Civil", matter: "Tortious liability and personal injury claims" },
+  { id: "tm-8", category: "Civil", matter: "Injunctions and emergency relief applications" },
+  { id: "tm-9", category: "Criminal", matter: "Defence in financial crime and fraud prosecutions" },
+  { id: "tm-10", category: "Criminal", matter: "Representation in corruption and bribery cases" },
+  { id: "tm-11", category: "Criminal", matter: "Criminal appeals and post-conviction relief" },
+  { id: "tm-12", category: "Criminal", matter: "Bail applications and pre-trial detention challenges" },
+  { id: "tm-13", category: "Criminal", matter: "Corporate criminal liability and regulatory offences" },
+  { id: "tm-14", category: "Criminal", matter: "Extradition proceedings and mutual legal assistance" },
+  { id: "tm-15", category: "Criminal", matter: "Asset forfeiture and proceeds of crime matters" },
+  { id: "tm-16", category: "Criminal", matter: "Cybercrime and digital evidence matters" },
 ];
 
 const relatedAreas = [
   {
-    id: "corporate-commercial",
-    title: "Corporate & Commercial Law",
-    href: "/practice-areas/corporate-commercial-law",
-    icon: <Briefcase size={20} />,
-  },
-  {
-    id: "mediation-arbitration",
+    id: "mediation",
     title: "Mediation & Arbitration",
+    description: "Efficient dispute resolution outside the courtroom.",
     href: "/practice-areas/mediation-arbitration",
-    icon: <Scale size={20} />,
   },
   {
-    id: "employment-law",
+    id: "corporate",
+    title: "Corporate & Commercial Law",
+    description: "Business formation, contracts, and commercial transactions.",
+    href: "/practice-areas/corporate-commercial-law",
+  },
+  {
+    id: "employment",
     title: "Employment Law",
+    description: "Workplace rights, contracts, and compliance advisory.",
     href: "/practice-areas/employment-law",
-    icon: <Users size={20} />,
-  },
-  {
-    id: "family-law",
-    title: "Family Law",
-    href: "/practice-areas/family-law",
-    icon: <Heart size={20} />,
   },
 ];
 
-const statsData = [
-  { id: "s1", value: "500+", label: "Cases Litigated" },
-  { id: "s2", value: "95%", label: "Success Rate" },
-  { id: "s3", value: "25+", label: "Years Combined Experience" },
-  { id: "s4", value: "All", label: "Court Levels Covered" },
-];
-
-// ─── Hover card variant ──────────────────────────────────────────────────────
-
-const cardHover: Variants = {
-  rest: { y: 0, boxShadow: "0 1px 3px rgba(10,31,68,0.08), 0 4px 16px -4px rgba(10,31,68,0.10)" },
-  hover: { y: -4, boxShadow: "0 4px 24px -4px rgba(10,31,68,0.18), 0 1px 3px rgba(10,31,68,0.08)" },
+const heroVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
 };
 
-// ─── Component ───────────────────────────────────────────────────────────────
+const heroChild: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function CivilCriminalLitigationPage() {
   const t = useTranslations();
 
   return (
-    <main className="min-h-screen bg-white">
-
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[var(--brand-primary)] overflow-hidden min-h-[520px] flex items-center">
-        {/* Background texture */}
+    <main className="bg-white min-h-screen">
+      {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
+      <section className="relative bg-[var(--brand-primary)] overflow-hidden">
+        {/* Decorative background */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.10) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 60%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.6) 39px,rgba(255,255,255,0.6) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,0.6) 39px,rgba(255,255,255,0.6) 40px)",
+              "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
-          aria-hidden="true"
-        />
-        {/* Radial glow */}
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
-          style={{ background: "radial-gradient(circle, var(--brand-accent) 0%, transparent 70%)" }}
-          aria-hidden="true"
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
           <motion.div
-            variants={staggerContainer}
+            variants={heroVariants}
             initial="hidden"
             animate="visible"
-            className="text-white"
+            className="max-w-3xl"
           >
-            <motion.span
-              variants={fadeInUp}
-              className="inline-flex items-center gap-2 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4"
+            <motion.div variants={heroChild} className="flex items-center gap-2 mb-6">
+              <Link
+                href="/practice-areas"
+                className="text-white/50 hover:text-white/80 text-sm font-body transition-colors"
+              >
+                Practice Areas
+              </Link>
+              <ChevronRight size={14} className="text-white/30" />
+              <span className="text-[var(--brand-accent)] text-sm font-body font-medium">
+                Civil & Criminal Litigation
+              </span>
+            </motion.div>
+
+            <motion.p
+              variants={heroChild}
+              className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4"
             >
-              <ChevronRight size={14} />
               {heroData.eyebrow}
-            </motion.span>
+            </motion.p>
+
             <motion.h1
-              variants={fadeInUp}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance mb-6"
+              variants={heroChild}
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
               {heroData.title}
             </motion.h1>
+
             <motion.p
-              variants={fadeInUp}
-              className="font-body text-white/70 text-lg leading-relaxed max-w-xl mb-8"
+              variants={heroChild}
+              className="font-body text-white/70 text-lg leading-relaxed mb-10 max-w-2xl"
             >
               {heroData.subtitle}
             </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+
+            <motion.div variants={heroChild} className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
-                {t("cta.scheduleConsultation")}
+                Request a Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               >
-                {t("cta.allPracticeAreas")}
+                All Practice Areas
               </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div
-            variants={slideInRight}
-            initial="hidden"
-            animate="visible"
-            className="hidden lg:block relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_48px_rgba(0,0,0,0.35)] border border-white/10 aspect-[4/3]">
-              <img
-                src={heroData.image}
-                alt="Courtroom representing civil and criminal litigation"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--brand-primary)]/40 to-transparent" />
-            </div>
-            {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
-              className="absolute -bottom-5 -left-5 bg-white rounded-xl px-5 py-3 shadow-[0_4px_24px_rgba(10,31,68,0.18)] border border-black/5"
-            >
-              <p className="font-heading text-[var(--brand-primary)] font-bold text-xl leading-none">500+</p>
-              <p className="font-body text-[var(--brand-primary)]/60 text-xs mt-0.5">Cases Litigated</p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Stats bar ────────────────────────────────────────────────────── */}
-      <Reveal>
-        <section className="bg-[var(--brand-primary)]/5 border-y border-[var(--brand-primary)]/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {statsData.map((stat) => (
-                <div key={stat.id} className="text-center">
-                  <p className="font-heading text-3xl font-bold text-[var(--brand-primary)] tracking-tight">
-                    {stat.value}
-                  </p>
-                  <p className="font-body text-[var(--brand-primary)]/60 text-sm mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </Reveal>
-
-      {/* ── Service Overview ─────────────────────────────────────────────── */}
-      <Reveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      {/* ── 2. Overview ──────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-                {t("practiceArea.overviewLabel")}
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
-                {t("litigation.overviewHeading")}
-              </h2>
-              <div className="space-y-4">
-                {overviewParagraphs.map((para, i) => (
-                  <p key={i} className="font-body text-[var(--brand-primary)]/70 leading-relaxed">
-                    {para}
-                  </p>
-                ))}
+            <Reveal>
+              <div>
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                  Overview
+                </p>
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-6">
+                  Tenacious Advocacy at Every Court Level
+                </h2>
+                <div className="space-y-4">
+                  {overviewParagraphs.map((para, idx) => (
+                    <p
+                      key={idx}
+                      className="font-body text-[var(--brand-muted-foreground)] leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(10,31,68,0.12)] border border-black/5 aspect-[4/3]">
-                <img
-                  src="https://www.uslegalsupport.com/wp-content/uploads/2025/06/legal-partners-and-team.jpg"
-                  alt="Legal team preparing litigation strategy"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              </div>
-              {/* Accent block */}
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-2xl bg-[var(--brand-accent)]/15 -z-10" aria-hidden="true" />
-            </div>
-          </div>
-        </section>
-      </Reveal>
+            </Reveal>
 
-      {/* ── Expertise Tiles ──────────────────────────────────────────────── */}
-      <section className="bg-[var(--brand-primary)]/[0.03] py-20 lg:py-28">
+            <Reveal delay={0.15}>
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={heroData.image}
+                    alt="Civil and criminal litigation courtroom"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-[var(--brand-primary)]/10" />
+                </div>
+                {/* Floating stat card */}
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 border border-[var(--brand-border)]">
+                  <p className="font-heading text-3xl font-bold text-[var(--brand-primary)]">500+</p>
+                  <p className="font-body text-xs text-[var(--brand-muted-foreground)] mt-1">
+                    Cases Successfully Resolved
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. Expertise Tiles ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-                {t("practiceArea.expertiseLabel")}
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
-                {t("litigation.expertiseHeading")}
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                Areas of Expertise
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
+                Our Litigation Capabilities
               </h2>
             </div>
           </Reveal>
@@ -312,195 +289,246 @@ export default function CivilCriminalLitigationPage() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: "-80px" }}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {expertiseTiles.map((tile, i) => (
+            {expertiseTiles.map((tile) => (
               <motion.div
                 key={tile.id}
-                variants={scaleIn}
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                // @ts-expect-error framer-motion variants typing
-                custom={i}
+                variants={fadeInUp}
+                className="bg-white rounded-2xl p-7 border border-[var(--brand-border)] hover:border-[var(--brand-accent)]/40 hover:shadow-lg transition-all duration-300 group"
               >
-                <motion.div
-                  variants={cardHover}
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="bg-white rounded-2xl p-7 border border-black/5 h-full cursor-default"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary)]/8 flex items-center justify-center text-[var(--brand-primary)] mb-5">
-                    {tile.icon}
-                  </div>
-                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-3 leading-snug">
-                    {tile.title}
-                  </h3>
-                  <p className="font-body text-[var(--brand-primary)]/65 text-sm leading-relaxed">
-                    {tile.description}
-                  </p>
-                </motion.div>
+                <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary)]/5 flex items-center justify-center text-[var(--brand-primary)] mb-5 group-hover:bg-[var(--brand-accent)]/10 group-hover:text-[var(--brand-accent)] transition-colors duration-300">
+                  {tile.icon}
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-3">
+                  {tile.title}
+                </h3>
+                <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">
+                  {tile.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ── Typical Matters ──────────────────────────────────────────────── */}
-      <Reveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-5 gap-12 items-start">
-            {/* Heading col */}
-            <div className="lg:col-span-2">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
-                {t("practiceArea.mattersLabel")}
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-5">
-                {t("litigation.mattersHeading")}
-              </h2>
-              <p className="font-body text-[var(--brand-primary)]/65 leading-relaxed mb-8">
-                Our litigators have successfully handled a wide range of civil and criminal matters. Below is a representative sample of the cases we manage.
+      {/* ── 4. Typical Matters ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                Typical Matters
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-              >
-                {t("cta.discussYourCase")}
-                <ArrowRight size={15} />
-              </Link>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
+                What We Handle
+              </h2>
+              <p className="font-body text-[var(--brand-muted-foreground)] mt-4 leading-relaxed">
+                MIT Legal Consultants handles a broad range of civil and criminal matters across all court levels.
+              </p>
             </div>
+          </Reveal>
 
-            {/* Matters list col */}
-            <div className="lg:col-span-3">
-              {(["Civil", "Criminal", "Urgent"] as const).map((cat) => (
-                <div key={cat} className="mb-8 last:mb-0">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span
-                      className={`inline-block px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wide ${
-                        cat === "Civil"
-                          ? "bg-blue-50 text-blue-700"
-                          : cat === "Criminal"
-                          ? "bg-red-50 text-red-700"
-                          : "bg-amber-50 text-amber-700"
-                      }`}
-                    >
-                      {cat}
-                    </span>
-                    <div className="flex-1 h-px bg-[var(--brand-primary)]/10" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Civil */}
+            <Reveal>
+              <div className="bg-[var(--brand-background)] rounded-2xl p-8 border border-[var(--brand-border)]">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center">
+                    <Scale size={16} className="text-white" />
                   </div>
-                  <ul className="space-y-3">
-                    {typicalMatters
-                      .filter((m) => m.category === cat)
-                      .map((matter) => (
-                        <li key={matter.id} className="flex items-start gap-3">
-                          <CheckCircle
-                            size={16}
-                            className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5"
-                          />
-                          <span className="font-body text-[var(--brand-primary)]/75 text-sm leading-relaxed">
-                            {matter.matter}
-                          </span>
-                        </li>
-                      ))}
-                  </ul>
+                  <h3 className="font-heading text-xl font-semibold text-[var(--brand-primary)]">
+                    Civil Matters
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </Reveal>
+                <ul className="space-y-3">
+                  {typicalMatters
+                    .filter((m) => m.category === "Civil")
+                    .map((m) => (
+                      <li key={m.id} className="flex items-start gap-3">
+                        <CheckCircle
+                          size={16}
+                          className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5"
+                        />
+                        <span className="font-body text-sm text-[var(--brand-foreground)] leading-relaxed">
+                          {m.matter}
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </Reveal>
 
-      {/* ── Why Choose Us strip ──────────────────────────────────────────── */}
-      <Reveal>
-        <section className="bg-[var(--brand-primary)] py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid sm:grid-cols-3 gap-8 text-center">
-              {[
-                { id: "w1", heading: "Courtroom-Ready", body: "Our litigators are seasoned trial advocates with extensive experience arguing before judges and juries at every level." },
-                { id: "w2", heading: "Strategic Preparation", body: "We invest heavily in pre-trial preparation, evidence analysis, and witness strategy to maximise your prospects of success." },
-                { id: "w3", heading: "Transparent Communication", body: "You receive clear, honest advice on the merits of your case, realistic outcome assessments, and regular progress updates." },
-              ].map((item) => (
-                <div key={item.id} className="px-4">
-                  <div className="w-10 h-0.5 bg-[var(--brand-accent)] mx-auto mb-5" />
-                  <h3 className="font-heading text-white text-xl font-semibold mb-3">{item.heading}</h3>
-                  <p className="font-body text-white/60 text-sm leading-relaxed">{item.body}</p>
+            {/* Criminal */}
+            <Reveal delay={0.1}>
+              <div className="bg-[var(--brand-background)] rounded-2xl p-8 border border-[var(--brand-border)]">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center">
+                    <Shield size={16} className="text-white" />
+                  </div>
+                  <h3 className="font-heading text-xl font-semibold text-[var(--brand-primary)]">
+                    Criminal Matters
+                  </h3>
                 </div>
-              ))}
-            </div>
+                <ul className="space-y-3">
+                  {typicalMatters
+                    .filter((m) => m.category === "Criminal")
+                    .map((m) => (
+                      <li key={m.id} className="flex items-start gap-3">
+                        <CheckCircle
+                          size={16}
+                          className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5"
+                        />
+                        <span className="font-body text-sm text-[var(--brand-foreground)] leading-relaxed">
+                          {m.matter}
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </Reveal>
           </div>
-        </section>
-      </Reveal>
+        </div>
+      </section>
 
-      {/* ── CTA Card ─────────────────────────────────────────────────────── */}
-      <Reveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[var(--brand-primary)] to-[var(--brand-primary)]/85 overflow-hidden px-8 py-14 sm:px-14 text-center shadow-[0_8px_48px_rgba(10,31,68,0.22)]">
-            {/* Glow */}
-            <div
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] opacity-20 pointer-events-none"
-              style={{ background: "radial-gradient(ellipse, var(--brand-accent) 0%, transparent 70%)" }}
-              aria-hidden="true"
-            />
-            <span className="relative inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-              {t("cta.readyLabel")}
-            </span>
-            <h2 className="relative font-heading text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-4 max-w-2xl mx-auto">
-              {t("litigation.ctaHeading")}
-            </h2>
-            <p className="relative font-body text-white/65 leading-relaxed max-w-xl mx-auto mb-8">
-              {t("litigation.ctaSubtext")}
+      {/* ── 5. Why Choose MIT Legal Consultants ──────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div>
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                  Why Choose Us
+                </p>
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
+                  Why Clients Trust MIT Legal Consultants for Litigation
+                </h2>
+                <p className="font-body text-white/70 leading-relaxed mb-8">
+                  When your freedom, assets, or reputation are at stake, you need litigators who combine
+                  legal mastery with unwavering commitment. MIT Legal Consultants delivers both.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Deep procedural expertise across civil and criminal courts",
+                    "Proven track record in high-value and high-profile matters",
+                    "Transparent communication at every stage of proceedings",
+                    "Strategic thinking that anticipates the opposing party's moves",
+                    "Coordinated international counsel for cross-border matters",
+                  ].map((point, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle
+                        size={18}
+                        className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5"
+                      />
+                      <span className="font-body text-white/80 text-sm leading-relaxed">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="grid grid-cols-2 gap-5">
+                {[
+                  { value: "20+", label: "Years of Litigation Experience" },
+                  { value: "500+", label: "Cases Successfully Resolved" },
+                  { value: "All", label: "Court Levels Covered" },
+                  { value: "98%", label: "Client Satisfaction Rate" },
+                ].map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center"
+                  >
+                    <p className="font-heading text-3xl font-bold text-[var(--brand-accent)] mb-2">
+                      {stat.value}
+                    </p>
+                    <p className="font-body text-xs text-white/60 leading-snug">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Related Practice Areas ────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-background)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                Related Services
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
+                Explore Related Practice Areas
+              </h2>
+            </div>
+          </Reveal>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid sm:grid-cols-3 gap-6"
+          >
+            {relatedAreas.map((area) => (
+              <motion.div key={area.id} variants={fadeInUp}>
+                <Link
+                  href={area.href}
+                  className="block bg-white rounded-2xl p-7 border border-[var(--brand-border)] hover:border-[var(--brand-accent)]/40 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-2 group-hover:text-[var(--brand-accent)] transition-colors">
+                    {area.title}
+                  </h3>
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed mb-4">
+                    {area.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-sm font-body font-semibold">
+                    Learn More <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── 7. CTA ───────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal>
+            <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+              Get Started
             </p>
-            <div className="relative flex flex-wrap justify-center gap-4">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-6">
+              Facing a Legal Dispute? MIT Legal Consultants Is Ready.
+            </h2>
+            <p className="font-body text-[var(--brand-muted-foreground)] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              Contact MIT Legal Consultants today to schedule a confidential consultation with one of our
+              experienced litigators. We will assess your matter and advise on the strongest path forward.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
               >
-                {t("cta.scheduleConsultation")}
+                Schedule a Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="/team"
-                className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/30 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                href="/practice-areas"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--brand-border)] text-[var(--brand-primary)] font-body font-medium text-sm rounded-lg hover:bg-[var(--brand-muted)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
               >
-                {t("cta.meetOurTeam")}
+                View All Practice Areas
               </Link>
             </div>
-          </div>
-        </section>
-      </Reveal>
-
-      {/* ── Related Areas ────────────────────────────────────────────────── */}
-      <Reveal>
-        <section className="border-t border-[var(--brand-primary)]/10 py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="font-body text-[var(--brand-primary)]/50 text-xs uppercase tracking-widest font-semibold mb-8 text-center">
-              {t("practiceArea.relatedLabel")}
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedAreas.map((area) => (
-                <motion.div
-                  key={area.id}
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                >
-                  <Link
-                    href={area.href}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-[var(--brand-primary)]/10 hover:border-[var(--brand-accent)]/40 hover:bg-[var(--brand-primary)]/[0.03] transition-all duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-                  >
-                    <span className="text-[var(--brand-accent)] flex-shrink-0">{area.icon}</span>
-                    <span className="font-body text-[var(--brand-primary)] text-sm font-medium group-hover:text-[var(--brand-primary)] leading-snug">
-                      {area.title}
-                    </span>
-                    <ChevronRight size={14} className="ml-auto text-[var(--brand-primary)]/30 group-hover:text-[var(--brand-accent)] transition-colors" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </Reveal>
+          </Reveal>
+        </div>
+      </section>
     </main>
   );
 }

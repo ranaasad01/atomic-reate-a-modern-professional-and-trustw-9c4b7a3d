@@ -82,361 +82,392 @@ const adrProcessSteps = [
   },
   {
     step: "02",
-    title: "Agreement & Appointment",
-    description: "Parties agree on the ADR process, applicable rules, and the appointment of a neutral mediator or arbitral tribunal.",
+    title: "Procedure Selection",
+    description: "We help parties agree on the appropriate rules, seat, language, and appointment of a neutral mediator or arbitral tribunal.",
   },
   {
     step: "03",
-    title: "Proceedings & Advocacy",
-    description: "Our team prepares submissions, manages evidence, and advocates vigorously on your behalf throughout the proceedings.",
+    title: "Case Preparation",
+    description: "Our team prepares comprehensive written submissions, evidence bundles, and witness statements to present your case with maximum persuasive force.",
   },
   {
     step: "04",
-    title: "Settlement or Award",
-    description: "We guide parties to a binding settlement agreement or enforce the arbitral award in the relevant jurisdiction.",
+    title: "Hearing & Advocacy",
+    description: "We represent you throughout mediation sessions or arbitral hearings, deploying skilled oral advocacy and strategic negotiation techniques.",
+  },
+  {
+    step: "05",
+    title: "Award & Enforcement",
+    description: "We secure the award or settlement agreement and, where necessary, pursue enforcement through domestic courts or under the New York Convention.",
   },
 ];
+
+const heroVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+};
+
+const heroChild: Variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function MediationArbitrationPage() {
   const t = useTranslations();
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
+    <main className="bg-white min-h-screen">
+      {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
       <section className="relative bg-[var(--brand-primary)] overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, var(--brand-accent) 0%, transparent 60%), radial-gradient(circle at 80% 20%, #ffffff 0%, transparent 50%)" }} />
-        </div>
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
+        {/* Decorative background */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.10) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 60%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 lg:pt-40 lg:pb-32">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="max-w-3xl"
+        <motion.div
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Breadcrumb */}
+          <motion.nav
+            variants={heroChild}
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-white/50 text-xs font-body mb-8"
           >
-            <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-6">
-              <Link
-                href="/practice-areas"
-                className="text-white/50 hover:text-white/80 text-sm font-body transition-colors duration-200"
-              >
-                {t("practiceAreas.breadcrumbRoot")}
-              </Link>
-              <ChevronRight size={14} className="text-white/30" />
-              <span className="text-[var(--brand-accent)] text-sm font-body font-medium">
-                {t("mediationArbitration.breadcrumb")}
-              </span>
-            </motion.div>
+            <Link href="/" className="hover:text-white/80 transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <Link href="/practice-areas" className="hover:text-white/80 transition-colors">Practice Areas</Link>
+            <ChevronRight size={12} />
+            <span className="text-[var(--brand-accent)]">Mediation &amp; Arbitration</span>
+          </motion.nav>
 
-            <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-[var(--brand-accent)]/20 border border-[var(--brand-accent)]/30 flex items-center justify-center flex-shrink-0">
-                <Scale size={28} className="text-[var(--brand-accent)]" />
+          <div className="max-w-3xl">
+            <motion.div variants={heroChild} className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-[var(--brand-accent)]/15 border border-[var(--brand-accent)]/30 flex items-center justify-center">
+                <Scale size={24} className="text-[var(--brand-accent)]" />
               </div>
-              <span className="text-[var(--brand-accent)] text-xs font-body font-bold uppercase tracking-widest">
-                {t("mediationArbitration.practiceLabel")}
+              <span className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest">
+                Practice Area
               </span>
             </motion.div>
 
             <motion.h1
-              variants={fadeInUp}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance mb-6"
+              variants={heroChild}
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
-              {t("mediationArbitration.heroTitle")}
+              Mediation &amp; Arbitration
             </motion.h1>
 
             <motion.p
-              variants={fadeInUp}
-              className="font-body text-lg text-white/70 leading-relaxed mb-10 max-w-2xl text-pretty"
+              variants={heroChild}
+              className="font-body text-white/70 text-lg leading-relaxed mb-10 max-w-2xl"
             >
-              {t("mediationArbitration.heroSubtitle")}
+              MIT Legal Consultants delivers expert alternative dispute resolution services — helping individuals, businesses, and governments resolve complex disputes efficiently, confidentially, and cost-effectively outside traditional court proceedings.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={heroChild} className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
-                {t("mediationArbitration.heroCta")}
+                Request a Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-body font-medium text-sm rounded-lg hover:bg-white/20 border border-white/20 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               >
-                {t("mediationArbitration.heroSecondary")}
+                All Practice Areas
               </Link>
             </motion.div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
+      </section>
 
-        {/* Trust signals bar */}
-        <div className="relative border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6"
-            >
-              {trustSignals.map((signal, i) => (
-                <motion.div
-                  key={signal.label}
-                  variants={fadeInUp}
-                  custom={i}
-                  className="flex items-center gap-3"
-                >
+      {/* ── 2. Trust Signals Bar ─────────────────────────────────────────── */}
+      <section className="bg-[var(--brand-primary)]/95 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {trustSignals.map((signal) => {
+              const Icon = signal.icon;
+              return (
+                <div key={signal.label} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center flex-shrink-0">
-                    <signal.icon size={18} className="text-[var(--brand-accent)]" />
+                    <Icon size={20} className="text-[var(--brand-accent)]" />
                   </div>
                   <div>
-                    <p className="font-heading text-xl font-bold text-white leading-none">{signal.value}</p>
-                    <p className="font-body text-xs text-white/50 mt-0.5">{signal.label}</p>
+                    <p className="font-heading text-2xl font-bold text-white leading-none">{signal.value}</p>
+                    <p className="font-body text-white/55 text-xs mt-0.5">{signal.label}</p>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Service Overview */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* ── 3. Overview ──────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <Reveal>
               <div>
-                <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-bold uppercase tracking-widest mb-4">
-                  {t("mediationArbitration.overviewLabel")}
-                </span>
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
-                  {t("mediationArbitration.overviewTitle")}
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-4">
+                  Overview
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-6 leading-tight">
+                  Resolving Disputes Without the Courtroom
                 </h2>
-                <div className="space-y-4 font-body text-[var(--brand-text)]/70 leading-relaxed">
-                  <p>{t("mediationArbitration.overviewP1")}</p>
-                  <p>{t("mediationArbitration.overviewP2")}</p>
-                  <p>{t("mediationArbitration.overviewP3")}</p>
-                </div>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-                  >
-                    {t("mediationArbitration.overviewCta")}
-                    <ArrowRight size={15} />
-                  </Link>
+                <div className="space-y-4 font-body text-[var(--brand-muted-foreground)] leading-relaxed">
+                  <p>
+                    MIT Legal Consultants offers a full suite of alternative dispute resolution (ADR) services designed to help parties resolve conflicts efficiently, privately, and on terms they can live with. Our ADR practice spans commercial mediation, domestic and international arbitration, and specialist dispute resolution across a wide range of sectors.
+                  </p>
+                  <p>
+                    We understand that litigation is not always the right answer. Court proceedings can be costly, time-consuming, and damaging to business relationships. MIT Legal Consultants provides a sophisticated alternative — combining procedural expertise, neutral facilitation, and strategic advocacy to deliver outcomes that protect your interests and preserve what matters most.
+                  </p>
+                  <p>
+                    Our arbitrators and mediators are accredited under leading international institutions and bring decades of combined experience to every engagement. Whether you are a multinational corporation, a government entity, or an individual party, MIT Legal Consultants has the expertise to guide you to resolution.
+                  </p>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(10,31,68,0.25)]">
-                  <img
-                    src="https://www.erlawyers.com/wp-content/uploads/2026/03/Mediation-vs-Arbitration-901x1024.webp"
-                    alt="Mediation and arbitration proceedings at MIT Legal Consultants"
-                    className="w-full h-80 lg:h-96 object-cover"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.style.display = "none";
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.style.background = "linear-gradient(135deg, var(--brand-primary) 0%, #1a3a6b 100%)";
-                        parent.style.minHeight = "320px";
-                        parent.style.display = "flex";
-                        parent.style.alignItems = "center";
-                        parent.style.justifyContent = "center";
-                      }
-                    }}
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-[var(--brand-accent)] rounded-xl p-5 shadow-[0_8px_24px_rgba(201,168,76,0.35)]">
-                  <p className="font-heading text-3xl font-bold text-[var(--brand-primary)]">20+</p>
-                  <p className="font-body text-xs text-[var(--brand-primary)]/80 font-semibold mt-0.5">Years of ADR Experience</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ADR Process Steps */}
-      <section className="py-20 lg:py-28 bg-[var(--brand-primary)]/3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-bold uppercase tracking-widest mb-4">
-                {t("mediationArbitration.processLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
-                {t("mediationArbitration.processTitle")}
-              </h2>
-            </div>
-          </Reveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {adrProcessSteps.map((step, i) => (
-              <Reveal key={step.step} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="relative bg-white rounded-2xl p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(10,31,68,0.10)] border border-black/5 h-full"
-                >
-                  <div className="font-heading text-5xl font-bold text-[var(--brand-primary)]/8 leading-none mb-4 select-none">
-                    {step.step}
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[var(--brand-primary)] mb-3">{step.title}</h3>
-                  <p className="font-body text-sm text-[var(--brand-text)]/65 leading-relaxed">{step.description}</p>
-                  {i < adrProcessSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                      <ChevronRight size={20} className="text-[var(--brand-accent)]" />
+              <div className="space-y-4">
+                {[
+                  { title: "Confidential Process", body: "All ADR proceedings are conducted in strict confidence, protecting sensitive commercial information and reputational interests." },
+                  { title: "Cost-Effective Resolution", body: "ADR typically costs a fraction of full litigation, with faster timelines and greater control over the outcome." },
+                  { title: "Enforceable Outcomes", body: "Arbitral awards are enforceable in over 170 countries under the New York Convention, providing genuine international reach." },
+                  { title: "Preserved Relationships", body: "Mediation in particular enables parties to reach mutually acceptable solutions that preserve ongoing commercial relationships." },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-4 p-5 rounded-xl bg-[var(--brand-muted)] border border-[var(--brand-border)]"
+                  >
+                    <CheckCircle size={20} className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-heading text-base font-semibold text-[var(--brand-primary)] mb-1">{item.title}</p>
+                      <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">{item.body}</p>
                     </div>
-                  )}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Expertise Tiles ───────────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-muted)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-3">
+                Areas of Expertise
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-4">
+                Our ADR Capabilities
+              </h2>
+              <p className="font-body text-[var(--brand-muted-foreground)] max-w-2xl mx-auto">
+                MIT Legal Consultants provides specialist ADR services across a broad range of dispute types and institutional frameworks.
+              </p>
+            </div>
+          </Reveal>
+
+          <motion.div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            {expertiseTiles.map((tile) => {
+              const Icon = tile.icon;
+              return (
+                <motion.div
+                  key={tile.id}
+                  variants={scaleIn}
+                  className="bg-white rounded-2xl p-7 border border-[var(--brand-border)] hover:border-[var(--brand-accent)]/40 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary)]/8 flex items-center justify-center mb-5 group-hover:bg-[var(--brand-accent)]/10 transition-colors duration-300">
+                    <Icon size={24} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-300" />
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-3">{tile.title}</h3>
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">{tile.description}</p>
                 </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── 5. ADR Process ───────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-3">
+                Our Process
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-4">
+                How MIT Legal Consultants Handles Your Dispute
+              </h2>
+              <p className="font-body text-[var(--brand-muted-foreground)] max-w-2xl mx-auto">
+                A structured, transparent approach from initial assessment through to final resolution.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="relative">
+            {/* Connector line */}
+            <div
+              aria-hidden="true"
+              className="hidden lg:block absolute top-8 left-[calc(10%+1.5rem)] right-[calc(10%+1.5rem)] h-px bg-[var(--brand-border)]"
+            />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+              {adrProcessSteps.map((step) => (
+                <Reveal key={step.step}>
+                  <div className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-[var(--brand-primary)] text-white font-heading font-bold text-lg flex items-center justify-center mx-auto mb-5 relative z-10">
+                      {step.step}
+                    </div>
+                    <h3 className="font-heading text-base font-semibold text-[var(--brand-primary)] mb-2">{step.title}</h3>
+                    <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">{step.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Typical Matters ───────────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-3">
+                Typical Matters
+              </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+                Disputes We Resolve
+              </h2>
+              <p className="font-body text-white/60 max-w-2xl mx-auto">
+                MIT Legal Consultants has successfully handled ADR proceedings across a wide range of industries and dispute types.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {typicalMatters.map((matter) => (
+              <Reveal key={matter}>
+                <div className="flex items-start gap-3 p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors duration-200">
+                  <CheckCircle size={18} className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5" />
+                  <p className="font-body text-sm text-white/80 leading-relaxed">{matter}</p>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Expertise Tiles */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* ── 7. Related Practice Areas ────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-muted)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="max-w-2xl mb-14">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-bold uppercase tracking-widest mb-4">
-                {t("mediationArbitration.expertiseLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
-                {t("mediationArbitration.expertiseTitle")}
+            <div className="mb-10">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-3">
+                Related Services
+              </p>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-[var(--brand-primary)]">
+                Explore Related Practice Areas
               </h2>
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {expertiseTiles.map((tile, i) => (
-              <Reveal key={tile.id} delay={i * 0.08}>
-                <motion.div
-                  whileHover={{ y: -5, boxShadow: "0 16px 40px -12px rgba(10,31,68,0.18)" }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="group bg-white rounded-2xl p-7 border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(10,31,68,0.08)] h-full flex flex-col"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary)]/8 group-hover:bg-[var(--brand-accent)]/15 flex items-center justify-center mb-5 transition-colors duration-300">
-                    <tile.icon size={22} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[var(--brand-primary)] mb-3">{tile.title}</h3>
-                  <p className="font-body text-sm text-[var(--brand-text)]/65 leading-relaxed flex-1">{tile.description}</p>
-                </motion.div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Typical Matters */}
-      <section className="py-20 lg:py-28 bg-[var(--brand-primary)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-14 items-start">
-            <Reveal className="lg:col-span-2">
-              <div>
-                <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-bold uppercase tracking-widest mb-4">
-                  {t("mediationArbitration.mattersLabel")}
-                </span>
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-6">
-                  {t("mediationArbitration.mattersTitle")}
-                </h2>
-                <p className="font-body text-white/60 leading-relaxed mb-8">
-                  {t("mediationArbitration.mattersSubtitle")}
-                </p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {relatedAreas.map((area) => (
+              <Reveal key={area.href}>
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+                  href={area.href}
+                  className="group block p-6 bg-white rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)]/40 hover:shadow-md transition-all duration-300"
                 >
-                  {t("mediationArbitration.mattersCta")}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1} className="lg:col-span-3">
-              <ul className="space-y-3">
-                {typicalMatters.map((matter, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ delay: i * 0.05, duration: 0.4, ease: "easeOut" }}
-                    className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4"
-                  >
-                    <CheckCircle size={16} className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5" />
-                    <span className="font-body text-sm text-white/80 leading-relaxed">{matter}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Card */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[var(--brand-primary)] via-[#0d2a5e] to-[#1a3a6b] p-10 lg:p-16 text-center">
-              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, var(--brand-accent) 0%, transparent 55%)" }} />
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-[var(--brand-accent)]/20 border border-[var(--brand-accent)]/30 flex items-center justify-center mx-auto mb-6">
-                  <Scale size={30} className="text-[var(--brand-accent)]" />
-                </div>
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-4 max-w-2xl mx-auto">
-                  {t("mediationArbitration.ctaTitle")}
-                </h2>
-                <p className="font-body text-white/65 leading-relaxed mb-8 max-w-xl mx-auto">
-                  {t("mediationArbitration.ctaSubtitle")}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-                  >
-                    {t("mediationArbitration.ctaButton")}
-                    <ArrowRight size={16} />
-                  </Link>
-                  <Link
-                    href="/team"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-body font-medium text-sm rounded-lg hover:bg-white/20 border border-white/20 transition-all duration-300"
-                  >
-                    {t("mediationArbitration.ctaSecondary")}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Related Areas */}
-      <section className="py-16 bg-[var(--brand-primary)]/3 border-t border-black/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <p className="font-body text-xs font-bold uppercase tracking-widest text-[var(--brand-accent)] mb-8">
-              {t("mediationArbitration.relatedLabel")}
-            </p>
-          </Reveal>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {relatedAreas.map((area, i) => (
-              <Reveal key={area.href} delay={i * 0.08}>
-                <Link href={area.href} className="group block bg-white rounded-xl p-6 border border-black/5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_-4px_rgba(10,31,68,0.08)] hover:shadow-[0_8px_24px_-8px_rgba(10,31,68,0.18)] hover:border-[var(--brand-accent)]/30 transition-all duration-300">
-                  <h3 className="font-heading text-base font-bold text-[var(--brand-primary)] mb-2 group-hover:text-[var(--brand-accent)] transition-colors duration-200">{area.title}</h3>
-                  <p className="font-body text-sm text-[var(--brand-text)]/60 leading-relaxed mb-4">{area.description}</p>
+                  <h3 className="font-heading text-base font-semibold text-[var(--brand-primary)] mb-2 group-hover:text-[var(--brand-accent)] transition-colors duration-200">
+                    {area.title}
+                  </h3>
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed mb-4">
+                    {area.description}
+                  </p>
                   <span className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-xs font-body font-semibold">
-                    {t("mediationArbitration.relatedLearnMore")} <ArrowRight size={12} />
+                    Learn More <ArrowRight size={12} />
                   </span>
                 </Link>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── 8. CTA ───────────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal>
+            <div className="bg-[var(--brand-primary)] rounded-3xl p-12 md:p-16 relative overflow-hidden">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.12) 0%, transparent 70%)",
+                }}
+              />
+              <div className="relative">
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-4">
+                  Get Started
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-5">
+                  Ready to Resolve Your Dispute?
+                </h2>
+                <p className="font-body text-white/65 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+                  Contact MIT Legal Consultants today to discuss your matter with one of our ADR specialists. We will assess your situation and recommend the most effective path to resolution.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                  >
+                    Schedule a Consultation
+                    <ArrowRight size={16} />
+                  </Link>
+                  <Link
+                    href="/practice-areas"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/20 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200"
+                  >
+                    View All Practice Areas
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </main>

@@ -83,251 +83,200 @@ const whyChoosePoints = [
   {
     id: "w1",
     title: "Decades of Legislative Experience",
-    body: "Our attorneys have served as parliamentary counsel, government legal advisors, and policy consultants across multiple jurisdictions in Africa and beyond.",
+    body: `Our attorneys at ${BRAND_NAME} have served as parliamentary counsel, government legal advisors, and policy consultants across multiple jurisdictions in Africa and beyond.`,
   },
   {
     id: "w2",
     title: "Comparative Law Expertise",
-    body: "We draw on common law, civil law, and customary law traditions to craft legislation that is contextually appropriate and internationally benchmarked.",
+    body: "We draw on common law, civil law, and customary law traditions to craft legislation that is contextually appropriate, internationally benchmarked, and domestically enforceable.",
   },
   {
     id: "w3",
-    title: "Stakeholder-Centered Process",
-    body: "We facilitate inclusive consultation processes, ensuring that legislation reflects the needs of affected communities, industry, and civil society.",
+    title: "End-to-End Policy Support",
+    body: `${BRAND_NAME} supports clients from initial policy conception through stakeholder consultation, drafting, parliamentary scrutiny, and post-enactment review — providing continuity at every stage.`,
   },
   {
     id: "w4",
-    title: "Plain Language Commitment",
-    body: "We draft legislation that is accessible and unambiguous, reducing interpretive disputes and improving compliance across all levels of government and society.",
+    title: "Confidential & Politically Neutral",
+    body: "We maintain strict confidentiality and political neutrality in all government engagements, ensuring our advice is grounded in legal principle rather than political expediency.",
   },
 ];
 
-const stats = [
-  { id: "st1", value: "120+", label: "Legislative Instruments Drafted" },
-  { id: "st2", value: "18", label: "Governments Advised" },
-  { id: "st3", value: "30+", label: "Years Combined Experience" },
-  { id: "st4", value: "12", label: "Countries Served" },
-];
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Practice Areas", href: "/practice-areas" },
-  { label: "Legislative Drafting & Policy", href: "/practice-areas/legislative-drafting-policy" },
+const relatedAreas = [
+  {
+    id: "r1",
+    title: "Public International Law",
+    href: "/practice-areas/public-international-law",
+    description: "Cross-border treaties, international trade, and diplomatic matters.",
+  },
+  {
+    id: "r2",
+    title: "Corporate & Commercial Law",
+    href: "/practice-areas/corporate-commercial-law",
+    description: "Business formation, contracts, and commercial transactions.",
+  },
 ];
 
 export default function LegislativeDraftingPolicyPage() {
   const t = useTranslations();
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* ── Hero ── */}
+    <main className="bg-white min-h-screen">
+      {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
       <section className="relative bg-[var(--brand-primary)] overflow-hidden">
-        {/* Background texture */}
+        {/* Decorative background */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,1) 40px,rgba(255,255,255,1) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,1) 40px,rgba(255,255,255,1) 41px)",
-          }}
           aria-hidden="true"
-        />
-        {/* Radial glow */}
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at center, var(--brand-accent), transparent 70%)",
+              "radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.10) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 60%)",
           }}
+        />
+        <div
           aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-28">
-          {/* Breadcrumb */}
-          <motion.nav
-            aria-label={t("breadcrumb.ariaLabel")}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center gap-2 text-white/50 text-xs font-body mb-8 flex-wrap"
-          >
-            {breadcrumbs.map((crumb, i) => (
-              <span key={crumb.href} className="flex items-center gap-2">
-                {i > 0 && <ChevronRight size={12} className="text-white/30" />}
-                {i < breadcrumbs.length - 1 ? (
-                  <Link
-                    href={crumb.href}
-                    className="hover:text-[var(--brand-accent)] transition-colors duration-200"
-                  >
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span className="text-[var(--brand-accent)]">{crumb.label}</span>
-                )}
-              </span>
-            ))}
-          </motion.nav>
-
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
           <motion.div
             variants={heroVariants}
             initial="hidden"
             animate="visible"
             className="max-w-3xl"
           >
-            <motion.div variants={heroChild} className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--brand-accent)]/20 border border-[var(--brand-accent)]/30 flex items-center justify-center">
-                <FileText size={24} className="text-[var(--brand-accent)]" />
-              </div>
-              <span className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest">
-                {t("legislativePage.practiceAreaLabel")}
-              </span>
-            </motion.div>
+            {/* Breadcrumb */}
+            <motion.nav
+              variants={heroChild}
+              aria-label="Breadcrumb"
+              className="flex items-center gap-2 text-white/50 text-xs font-body mb-8"
+            >
+              <Link href="/" className="hover:text-white/80 transition-colors">
+                Home
+              </Link>
+              <ChevronRight size={12} />
+              <Link
+                href="/practice-areas"
+                className="hover:text-white/80 transition-colors"
+              >
+                Practice Areas
+              </Link>
+              <ChevronRight size={12} />
+              <span className="text-[var(--brand-accent)]">Legislative Drafting & Policy</span>
+            </motion.nav>
+
+            <motion.p
+              variants={heroChild}
+              className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            >
+              Practice Area
+            </motion.p>
 
             <motion.h1
               variants={heroChild}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance mb-6"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
-              {t("legislativePage.heroTitle")}
+              Legislative Drafting{" "}
+              <span className="text-[var(--brand-accent)]">&amp; Public Policy</span>
             </motion.h1>
 
             <motion.p
               variants={heroChild}
-              className="font-body text-lg text-white/70 leading-relaxed mb-10 max-w-2xl text-pretty"
+              className="font-body text-white/70 text-lg leading-relaxed mb-10 max-w-2xl"
             >
-              {t("legislativePage.heroSubtitle")}
+              Crafting clear, enforceable laws and policy frameworks that shape governance, protect rights, and drive sustainable development — for governments, institutions, and international organisations.
             </motion.p>
 
-            <motion.div variants={heroChild} className="flex flex-wrap gap-4">
+            <motion.div
+              variants={heroChild}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 shadow-[0_4px_20px_rgba(201,168,76,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
-                {t("legislativePage.heroCta")}
+                Request a Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/20 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               >
-                {t("legislativePage.heroSecondary")}
+                All Practice Areas
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Stats Bar ── */}
-      <Reveal>
-        <section className="bg-[var(--brand-primary)]/5 border-y border-[var(--brand-primary)]/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5, ease: "easeOut" }}
-                  className="text-center"
-                >
-                  <p className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-none mb-2">
-                    {stat.value}
+      {/* ── 2. Overview ──────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div>
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                  Overview
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-6">
+                  Shaping Law &amp; Policy with Precision
+                </h2>
+                <div className="space-y-4 font-body text-[var(--brand-muted-foreground)] leading-relaxed">
+                  <p>
+                    {BRAND_NAME} provides specialist legislative drafting and public policy advisory services to governments, ministries, parliaments, regulatory bodies, international organisations, and NGOs. Our work sits at the intersection of law, governance, and public administration.
                   </p>
-                  <p className="font-body text-sm text-[var(--brand-primary)]/60">
-                    {stat.label}
+                  <p>
+                    Effective legislation is the foundation of good governance. Poorly drafted laws create ambiguity, invite litigation, and undermine the very objectives they seek to achieve. {BRAND_NAME} brings the technical precision, comparative legal knowledge, and policy insight needed to produce legislation that is clear, coherent, and constitutionally sound.
                   </p>
-                </motion.div>
-              ))}
-            </div>
+                  <p>
+                    From drafting a single statutory instrument to designing an entire regulatory framework for a new industry, our team delivers end-to-end legislative support tailored to the specific legal, political, and institutional context of each client.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "50+", label: "Legislative Instruments Drafted" },
+                  { value: "15+", label: "Jurisdictions Served" },
+                  { value: "20+", label: "Years of Policy Experience" },
+                  { value: "100%", label: "Constitutionally Compliant" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="bg-[var(--brand-muted)] rounded-2xl p-6 text-center"
+                  >
+                    <p className="font-heading text-3xl font-bold text-[var(--brand-primary)] mb-1">
+                      {stat.value}
+                    </p>
+                    <p className="font-body text-xs text-[var(--brand-muted-foreground)] leading-snug">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
-        </section>
-      </Reveal>
-
-      {/* ── Overview ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <Reveal>
-            <motion.div
-              variants={slideInLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-            >
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-                {t("legislativePage.overviewLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
-                {t("legislativePage.overviewTitle")}
-              </h2>
-              <div className="space-y-4 font-body text-[var(--brand-primary)]/70 leading-relaxed">
-                <p>{t("legislativePage.overviewP1")}</p>
-                <p>{t("legislativePage.overviewP2")}</p>
-                <p>{t("legislativePage.overviewP3")}</p>
-              </div>
-            </motion.div>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <motion.div
-              variants={slideInRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(10,31,68,0.15)]">
-                <img
-                  src="https://www.espadvisor.com/wp-content/uploads/2026/05/Copy-of--1024x576.jpg"
-                  alt="Legislative drafting and policy advisory session"
-                  className="w-full h-80 lg:h-96 object-cover"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.classList.add(
-                        "bg-[var(--brand-primary)]",
-                        "flex",
-                        "items-center",
-                        "justify-center",
-                        "h-80"
-                      );
-                      const placeholder = document.createElement("div");
-                      placeholder.className = "text-center p-8";
-                      placeholder.innerHTML = `<div class="w-16 h-16 rounded-full bg-[var(--brand-accent)]/20 flex items-center justify-center mx-auto mb-4"><svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='var(--brand-accent)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/><line x1='16' y1='13' x2='8' y2='13'/><line x1='16' y1='17' x2='8' y2='17'/><polyline points='10 9 9 9 8 9'/></svg></div>`;
-                      parent.appendChild(placeholder);
-                    }
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-primary)]/40 to-transparent" />
-              </div>
-              {/* Floating accent card */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-5 shadow-[0_4px_24px_rgba(10,31,68,0.15)] border border-[var(--brand-primary)]/8 max-w-[200px]">
-                <p className="font-heading text-2xl font-bold text-[var(--brand-primary)] mb-1">
-                  120+
-                </p>
-                <p className="font-body text-xs text-[var(--brand-primary)]/60 leading-snug">
-                  {t("legislativePage.floatingCardLabel")}
-                </p>
-              </div>
-            </motion.div>
-          </Reveal>
         </div>
       </section>
 
-      {/* ── Services ── */}
-      <section className="bg-[var(--brand-primary)]/3 py-20 lg:py-28">
+      {/* ── 3. Services ──────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-muted)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-                {t("legislativePage.servicesLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-4">
-                {t("legislativePage.servicesTitle")}
-              </h2>
-              <p className="font-body text-[var(--brand-primary)]/60 leading-relaxed">
-                {t("legislativePage.servicesSubtitle")}
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+                Our Services
               </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
+                Legislative &amp; Policy Services
+              </h2>
             </div>
           </Reveal>
 
@@ -335,25 +284,24 @@ export default function LegislativeDraftingPolicyPage() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {services.map((service, i) => {
+            {services.map((service) => {
               const Icon = service.icon;
               return (
                 <motion.div
                   key={service.id}
                   variants={fadeInUp}
-                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                  className="bg-white rounded-2xl p-7 border border-[var(--brand-primary)]/8 shadow-[0_1px_2px_rgba(10,31,68,0.04),0_8px_24px_-8px_rgba(10,31,68,0.10)] hover:shadow-[0_4px_32px_rgba(10,31,68,0.14)] transition-shadow duration-300 group"
+                  className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-300 border border-[var(--brand-border)]/40"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[var(--brand-primary)]/8 group-hover:bg-[var(--brand-accent)]/15 flex items-center justify-center mb-5 transition-colors duration-300">
-                    <Icon size={22} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary)]/8 flex items-center justify-center mb-5 text-[var(--brand-primary)]">
+                    <Icon size={24} />
                   </div>
-                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-3 leading-snug">
+                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-3">
                     {service.title}
                   </h3>
-                  <p className="font-body text-sm text-[var(--brand-primary)]/65 leading-relaxed">
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">
                     {service.description}
                   </p>
                 </motion.div>
@@ -363,80 +311,62 @@ export default function LegislativeDraftingPolicyPage() {
         </div>
       </section>
 
-      {/* ── Typical Matters ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-5 gap-14 items-start">
-          <Reveal className="lg:col-span-2">
-            <div className="lg:sticky lg:top-28">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-                {t("legislativePage.mattersLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
-                {t("legislativePage.mattersTitle")}
-              </h2>
-              <p className="font-body text-[var(--brand-primary)]/65 leading-relaxed mb-8">
-                {t("legislativePage.mattersBody")}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-              >
-                {t("legislativePage.mattersCta")}
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className="lg:col-span-3">
-            <motion.ul
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              className="space-y-3"
-            >
-              {typicalMatters.map((matter, i) => (
-                <motion.li
-                  key={i}
-                  variants={fadeInUp}
-                  className="flex items-start gap-4 bg-white border border-[var(--brand-primary)]/8 rounded-xl px-5 py-4 shadow-[0_1px_4px_rgba(10,31,68,0.05)] hover:border-[var(--brand-accent)]/40 hover:shadow-[0_4px_16px_rgba(10,31,68,0.08)] transition-all duration-200 group"
+      {/* ── 4. Typical Matters ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <Reveal>
+              <div>
+                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+                  Experience
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-6">
+                  Typical Matters We Handle
+                </h2>
+                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8">
+                  {BRAND_NAME} has advised on a wide range of legislative and policy mandates across Africa and internationally. The following examples illustrate the breadth and depth of our experience.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
                 >
-                  <CheckCircle
-                    size={18}
-                    className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200"
-                  />
-                  <span className="font-body text-sm text-[var(--brand-primary)]/75 leading-relaxed">
+                  Discuss Your Matter
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <ul className="space-y-3">
+                {typicalMatters.map((matter) => (
+                  <li
+                    key={matter}
+                    className="flex items-start gap-3 font-body text-sm text-[var(--brand-foreground)] leading-relaxed"
+                  >
+                    <CheckCircle
+                      size={16}
+                      className="flex-shrink-0 mt-0.5 text-[var(--brand-accent)]"
+                    />
                     {matter}
-                  </span>
-                </motion.li>
-              ))}
-            </motion.ul>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── Why Choose Us ── */}
-      <section className="bg-[var(--brand-primary)] py-20 lg:py-28 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(255,255,255,1) 30px,rgba(255,255,255,1) 31px)",
-          }}
-          aria-hidden="true"
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 5. Why Choose MIT Legal Consultants ──────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-                {t("legislativePage.whyLabel")}
-              </span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-4">
-                {t("legislativePage.whyTitle")}
-              </h2>
-              <p className="font-body text-white/60 leading-relaxed">
-                {t("legislativePage.whySubtitle")}
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+                Why {BRAND_NAME}
               </p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white leading-tight">
+                Why Choose {BRAND_NAME} for Legislative Work?
+              </h2>
             </div>
           </Reveal>
 
@@ -444,135 +374,95 @@ export default function LegislativeDraftingPolicyPage() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid md:grid-cols-2 gap-6"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid sm:grid-cols-2 gap-6"
           >
-            {whyChoosePoints.map((point, i) => (
+            {whyChoosePoints.map((point) => (
               <motion.div
                 key={point.id}
                 variants={fadeInUp}
-                className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-colors duration-300"
+                className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/10 transition-colors duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-[var(--brand-accent)]/20 border border-[var(--brand-accent)]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="font-heading text-[var(--brand-accent)] text-sm font-bold">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-lg font-semibold text-white mb-2 leading-snug">
-                      {point.title}
-                    </h3>
-                    <p className="font-body text-sm text-white/60 leading-relaxed">
-                      {point.body}
-                    </p>
-                  </div>
-                </div>
+                <h3 className="font-heading text-lg font-semibold text-[var(--brand-accent)] mb-3">
+                  {point.title}
+                </h3>
+                <p className="font-body text-sm text-white/70 leading-relaxed">
+                  {point.body}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
-      <Reveal>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="relative bg-gradient-to-br from-[var(--brand-primary)] to-[var(--brand-primary)]/90 rounded-3xl overflow-hidden px-8 py-14 lg:px-16 lg:py-16 text-center shadow-[0_8px_48px_rgba(10,31,68,0.25)]">
-            <div
-              className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle at center, var(--brand-accent), transparent 70%)",
-              }}
-              aria-hidden="true"
-            />
-            <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--brand-accent)]/20 border border-[var(--brand-accent)]/30 flex items-center justify-center mx-auto mb-6">
-                <FileText size={28} className="text-[var(--brand-accent)]" />
-              </div>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-4 max-w-2xl mx-auto">
-                {t("legislativePage.ctaTitle")}
-              </h2>
-              <p className="font-body text-white/65 leading-relaxed mb-10 max-w-xl mx-auto">
-                {t("legislativePage.ctaBody")}
+      {/* ── 6. Related Practice Areas ────────────────────────────────────── */}
+      <section className="py-20 md:py-24 bg-[var(--brand-muted)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-12">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+                Explore More
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-xl hover:bg-[var(--brand-accent)]/90 transition-all duration-200 shadow-[0_4px_20px_rgba(201,168,76,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
-                >
-                  {t("legislativePage.ctaButton")}
-                  <ArrowRight size={16} />
-                </Link>
-                <a
-                  href={`tel:${contactInfo?.phone ?? ""}`}
-                  className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-body font-medium text-sm rounded-xl hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-                >
-                  <Phone size={15} />
-                  {t("legislativePage.ctaCallButton")}
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Reveal>
-
-      {/* ── Related Practice Areas ── */}
-      <Reveal>
-        <section className="border-t border-[var(--brand-primary)]/10 py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h2 className="font-heading text-xl font-semibold text-[var(--brand-primary)]">
-                {t("legislativePage.relatedTitle")}
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-[var(--brand-primary)]">
+                Related Practice Areas
               </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {relatedAreas.map((area) => (
+              <Reveal key={area.id}>
+                <Link
+                  href={area.href}
+                  className="group block bg-white rounded-2xl p-7 shadow-sm hover:shadow-md border border-[var(--brand-border)]/40 transition-all duration-300"
+                >
+                  <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-2 group-hover:text-[var(--brand-accent)] transition-colors">
+                    {area.title}
+                  </h3>
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed mb-4">
+                    {area.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-sm font-body font-semibold">
+                    Learn More <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. CTA ───────────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal>
+            <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+              Get Started
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-5">
+              Ready to Work with {BRAND_NAME}?
+            </h2>
+            <p className="font-body text-[var(--brand-muted-foreground)] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              Whether you need a single regulation drafted or a comprehensive legislative reform program, {BRAND_NAME} has the expertise to deliver. Contact us today to discuss your requirements.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+              >
+                Request a Consultation
+                <ArrowRight size={16} />
+              </Link>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center gap-1.5 text-[var(--brand-accent)] font-body font-semibold text-sm hover:gap-2.5 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[var(--brand-primary)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-primary)] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
               >
-                {t("legislativePage.relatedViewAll")}
-                <ArrowRight size={14} />
+                View All Practice Areas
               </Link>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                {
-                  title: "Public International Law",
-                  href: "/practice-areas/public-international-law",
-                  desc: "Cross-border legal expertise covering treaties, international trade, and diplomatic matters.",
-                },
-                {
-                  title: "Corporate & Commercial Law",
-                  href: "/practice-areas/corporate-commercial-law",
-                  desc: "Comprehensive legal support for business formation, contracts, and commercial transactions.",
-                },
-                {
-                  title: "Employment Law",
-                  href: "/practice-areas/employment-law",
-                  desc: "Protecting the rights of employers and employees in workplace disputes and compliance.",
-                },
-              ].map((area) => (
-                <Link
-                  key={area.href}
-                  href={area.href}
-                  className="group flex items-start gap-4 bg-white border border-[var(--brand-primary)]/8 rounded-xl p-5 hover:border-[var(--brand-accent)]/40 hover:shadow-[0_4px_20px_rgba(10,31,68,0.08)] transition-all duration-200"
-                >
-                  <div className="w-9 h-9 rounded-lg bg-[var(--brand-primary)]/6 group-hover:bg-[var(--brand-accent)]/15 flex items-center justify-center flex-shrink-0 transition-colors duration-200">
-                    <FileText size={16} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-200" />
-                  </div>
-                  <div>
-                    <p className="font-heading text-sm font-semibold text-[var(--brand-primary)] mb-1 group-hover:text-[var(--brand-accent)] transition-colors duration-200">
-                      {area.title}
-                    </p>
-                    <p className="font-body text-xs text-[var(--brand-primary)]/55 leading-relaxed">
-                      {area.desc}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      </Reveal>
+          </Reveal>
+        </div>
+      </section>
     </main>
   );
 }

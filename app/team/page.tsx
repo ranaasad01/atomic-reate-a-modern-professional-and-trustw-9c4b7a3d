@@ -90,17 +90,18 @@ export default function TeamPage() {
               </span>
             </div>
           </Reveal>
+
           <Reveal delay={0.1}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Meet Our{" "}
-              <span className="text-[var(--brand-accent)]">Legal Team</span>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              Meet the Team at{" "}
+              <span className="text-[var(--brand-accent)]">MIT Legal Consultants</span>
             </h1>
           </Reveal>
+
           <Reveal delay={0.2}>
-            <p className="text-white/70 text-lg md:text-xl font-body max-w-3xl mx-auto leading-relaxed">
-              Our attorneys combine deep legal expertise with a genuine commitment to client success.
-              Each member of our team brings specialized knowledge and a results-driven approach
-              to every matter we handle.
+            <p className="font-body text-white/70 text-lg md:text-xl max-w-3xl mx-auto">
+              Our team combines deep legal expertise with a commitment to client-centred service,
+              delivering practical, results-oriented counsel across every practice area.
             </p>
           </Reveal>
         </div>
@@ -110,19 +111,22 @@ export default function TeamPage() {
       <section className="py-20 md:py-28 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="text-center mb-16">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-4">
-                Attorneys &amp; Consultants
+            <div className="text-center mb-14">
+              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-3">
+                Legal Professionals
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] mb-4">
+                Our Attorneys &amp; Consultants
               </h2>
-              <p className="text-[var(--brand-muted-foreground)] font-body max-w-2xl mx-auto">
-                Dedicated professionals committed to delivering exceptional legal counsel
-                across all practice areas.
+              <p className="font-body text-[var(--brand-muted-foreground)] max-w-2xl mx-auto">
+                MIT Legal Consultants is built on a foundation of exceptional talent. Each member of our
+                team brings specialized expertise and an unwavering dedication to client success.
               </p>
             </div>
           </Reveal>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -132,30 +136,38 @@ export default function TeamPage() {
               <motion.div
                 key={member.id}
                 variants={scaleIn}
-                className="bg-[var(--brand-card)] rounded-2xl border border-[var(--brand-border)] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-[var(--brand-card)] rounded-2xl shadow-sm border border-[var(--brand-border)] overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
-                {/* Card Header */}
-                <div className="bg-gradient-to-br from-[var(--brand-primary)] to-[#1a3a6e] p-8 text-center">
-                  {/* SVG Avatar with initials */}
-                  <div className="w-24 h-24 rounded-full bg-[var(--brand-primary)] flex items-center justify-center mx-auto mb-4 border-4 border-[var(--brand-accent)]">
-                    <span className="font-heading text-white text-2xl font-bold">{getInitials(member.name)}</span>
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-[var(--brand-accent)] text-sm font-body font-semibold uppercase tracking-wider">
-                    {member.title}
-                  </p>
-                </div>
+                <div className="p-8">
+                  {/* Avatar + Name Row */}
+                  <div className="flex items-start gap-5 mb-6">
+                    {/* Avatar */}
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[var(--brand-primary)] flex items-center justify-center">
+                      <span className="font-heading text-xl font-bold text-[var(--brand-accent)]">
+                        {getInitials(member.name)}
+                      </span>
+                    </div>
 
-                {/* Card Body */}
-                <div className="p-6">
+                    {/* Name & Title */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-heading text-xl font-bold text-[var(--brand-primary)] leading-tight">
+                        {member.name}
+                      </h3>
+                      <p className="font-body text-[var(--brand-accent)] text-sm font-semibold mt-0.5">
+                        {member.title}
+                      </p>
+                      <p className="font-body text-[var(--brand-muted-foreground)] text-xs mt-1">
+                        {member.yearsExp}+ years experience
+                      </p>
+                    </div>
+                  </div>
+
                   {/* Specializations */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {member.specializations.map((spec) => (
                       <span
                         key={spec}
-                        className="px-3 py-1 bg-[var(--brand-muted)] text-[var(--brand-primary)] text-xs font-body font-semibold rounded-full border border-[var(--brand-border)]"
+                        className="inline-block px-3 py-1 rounded-full bg-[var(--brand-muted)] text-[var(--brand-primary)] text-xs font-body font-medium"
                       >
                         {spec}
                       </span>
@@ -163,7 +175,7 @@ export default function TeamPage() {
                   </div>
 
                   {/* Bio */}
-                  <p className="text-[var(--brand-muted-foreground)] text-sm font-body leading-relaxed mb-5">
+                  <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed mb-5">
                     {member.bio}
                   </p>
 
@@ -171,52 +183,44 @@ export default function TeamPage() {
                   <div className="mb-5">
                     <div className="flex items-center gap-2 mb-2">
                       <BookOpen size={14} className="text-[var(--brand-accent)]" />
-                      <span className="text-[var(--brand-primary)] text-xs font-body font-bold uppercase tracking-wider">
+                      <span className="font-body text-xs font-semibold text-[var(--brand-primary)] uppercase tracking-wider">
                         Education
                       </span>
                     </div>
                     <ul className="space-y-1">
                       {member.education.map((edu) => (
-                        <li
-                          key={edu}
-                          className="text-[var(--brand-muted-foreground)] text-xs font-body flex items-start gap-2"
-                        >
-                          <ChevronRight size={12} className="text-[var(--brand-accent)] mt-0.5 flex-shrink-0" />
+                        <li key={edu} className="font-body text-sm text-[var(--brand-muted-foreground)] flex items-start gap-2">
+                          <ChevronRight size={14} className="mt-0.5 flex-shrink-0 text-[var(--brand-accent)]" />
                           {edu}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Years of Experience */}
-                  <div className="flex items-center justify-between pt-4 border-t border-[var(--brand-border)]">
-                    <span className="text-[var(--brand-muted-foreground)] text-xs font-body">
-                      <span className="font-bold text-[var(--brand-primary)]">{member.yearsExp}+</span> years experience
-                    </span>
-
-                    {/* Contact links */}
-                    <div className="flex items-center gap-2">
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${member.name} LinkedIn`}
-                          className="w-8 h-8 rounded-lg bg-[var(--brand-muted)] hover:bg-[var(--brand-primary)] hover:text-white text-[var(--brand-primary)] flex items-center justify-center transition-colors duration-200"
-                        >
-                          <Linkedin size={14} />
-                        </a>
-                      )}
-                      {member.email && (
-                        <a
-                          href={`mailto:${member.email}`}
-                          aria-label={`Email ${member.name}`}
-                          className="w-8 h-8 rounded-lg bg-[var(--brand-muted)] hover:bg-[var(--brand-accent)] hover:text-white text-[var(--brand-primary)] flex items-center justify-center transition-colors duration-200"
-                        >
-                          <Mail size={14} />
-                        </a>
-                      )}
-                    </div>
+                  {/* Contact Links */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-[var(--brand-border)]">
+                    {member.email && (
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors"
+                        aria-label={`Email ${member.name}`}
+                      >
+                        <Mail size={14} />
+                        <span>{member.email}</span>
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-body font-medium text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors ml-auto"
+                        aria-label={`LinkedIn profile of ${member.name}`}
+                      >
+                        <Linkedin size={14} />
+                        <span>LinkedIn</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -225,41 +229,55 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ─── JOIN OUR TEAM CTA ────────────────────────────────────────────── */}
-      <section className="py-20 bg-[var(--brand-muted)]">
+      {/* ─── JOIN THE TEAM CTA ─────────────────────────────────────────────── */}
+      <section className="py-16 bg-[var(--brand-muted)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-accent)]/10 border border-[var(--brand-accent)]/30 mb-6">
-              <span className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest">
-                Careers
-              </span>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[var(--brand-primary)] mb-4">
-              Join Our Growing Team
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] mb-4">
+              Join MIT Legal Consultants
             </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="text-[var(--brand-muted-foreground)] font-body text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              MIT Legal Consultants is always looking for talented, driven legal professionals
-              who share our commitment to excellence, integrity, and client service.
+            <p className="font-body text-[var(--brand-muted-foreground)] text-lg mb-8 max-w-2xl mx-auto">
+              We are always looking for talented legal professionals who share our commitment to
+              excellence, integrity, and client-centred service.
             </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
+            >
+              Get In Touch
+              <ChevronRight size={16} />
+            </Link>
           </Reveal>
-          <Reveal delay={0.3}>
+        </div>
+      </section>
+
+      {/* ─── CONSULT CTA ──────────────────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-primary)]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal>
+            <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-widest mb-4">
+              Ready to Work With Us?
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-6">
+              Schedule a Consultation with MIT Legal Consultants
+            </h2>
+            <p className="font-body text-white/70 text-lg mb-8 max-w-2xl mx-auto">
+              Our team is ready to provide the expert legal counsel you need. Contact us today to
+              discuss your matter in confidence.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-all duration-200 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
-                Get in Touch
+                Request a Consultation
                 <ChevronRight size={16} />
               </Link>
               <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg border-2 border-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
+                href="/practice-areas"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/30 text-white font-body font-semibold text-sm rounded-lg hover:bg-white/10 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
-                About the Firm
+                View Practice Areas
               </Link>
             </div>
           </Reveal>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "employment law",
     "international law",
     "legislative drafting",
-    "MIT Legal",
+    "MIT Legal Consultants",
   ],
   authors: [{ name: "MIT Legal Consultants" }],
   creator: "MIT Legal Consultants",

@@ -122,7 +122,7 @@ export default function ContactPage() {
             variants={fadeInUp}
             className="font-body text-white/70 text-lg max-w-2xl mx-auto mb-10"
           >
-            Schedule a consultation or send us an inquiry. Our team will respond
+            Schedule a consultation or send us an inquiry. Our team at MIT Legal Consultants will respond
             within one business day.
           </motion.p>
 
@@ -132,17 +132,17 @@ export default function ContactPage() {
           >
             <a
               href="tel:+233300000000"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-colors duration-200"
             >
               <Phone size={16} />
               Call Us Now
             </a>
             <a
               href="mailto:info@mitlegal.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white text-white font-body font-bold text-sm rounded-lg hover:bg-white hover:text-[var(--brand-primary)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 text-white font-body font-semibold text-sm rounded-lg hover:bg-white/20 transition-colors duration-200 border border-white/20"
             >
               <Mail size={16} />
-              Send an Email
+              Email Us
             </a>
           </motion.div>
         </motion.div>
@@ -151,254 +151,266 @@ export default function ContactPage() {
       {/* ── 2. CONTACT DETAILS + FORM ────────────────────────────────────── */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-            {/* Left: Contact Info */}
-            <Reveal className="lg:col-span-2">
-              <div className="bg-[var(--brand-card)] rounded-2xl shadow-sm border border-[var(--brand-border)] p-8 h-full">
-                <h2 className="font-heading text-2xl font-bold text-[var(--brand-primary)] mb-2">
-                  Our Office
-                </h2>
-                <p className="font-body text-[var(--brand-muted-foreground)] text-sm mb-8">
-                  Visit us, call us, or send an email. We are here to help.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 
-                <div className="space-y-6 mb-8">
-                  {contactDetails.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <div key={item.id} className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--brand-accent)]/10 flex items-center justify-center">
-                          <Icon
-                            size={18}
-                            className="text-[var(--brand-accent)]"
+            {/* ── Left: Contact Details ── */}
+            <div className="lg:col-span-2 space-y-6">
+              <Reveal>
+                <div>
+                  <h2 className="font-heading text-3xl font-bold text-[var(--brand-primary)] mb-2">
+                    Our Contact Information
+                  </h2>
+                  <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed">
+                    Reach out to MIT Legal Consultants directly or use the inquiry form. We look forward to
+                    hearing from you.
+                  </p>
+                </div>
+              </Reveal>
+
+              <div className="space-y-4">
+                {contactDetails.map((detail, index) => (
+                  <Reveal key={detail.id} delay={index * 0.08}>
+                    <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-[var(--brand-border)] shadow-sm">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[var(--brand-primary)]/5 flex items-center justify-center">
+                        <detail.icon size={18} className="text-[var(--brand-accent)]" />
+                      </div>
+                      <div>
+                        <p className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-muted-foreground)] mb-1">
+                          {detail.label}
+                        </p>
+                        <p className="font-body text-sm text-[var(--brand-foreground)] leading-relaxed whitespace-pre-line">
+                          {detail.value}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+
+              {/* Map placeholder */}
+              <Reveal delay={0.35}>
+                <div className="rounded-xl overflow-hidden border border-[var(--brand-border)] shadow-sm">
+                  <div className="bg-[var(--brand-muted)] h-56 flex flex-col items-center justify-center gap-3">
+                    <MapPin size={32} className="text-[var(--brand-accent)]" />
+                    <p className="font-body text-sm text-[var(--brand-muted-foreground)] text-center px-4">
+                      Google Maps embed will appear here.
+                      <br />
+                      <span className="text-xs">14 Legal Avenue, Suite 300, Accra, Ghana</span>
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* ── Right: Inquiry Form ── */}
+            <div className="lg:col-span-3">
+              <Reveal>
+                <div className="bg-white rounded-2xl border border-[var(--brand-border)] shadow-lg p-8 md:p-10">
+                  {submitted ? (
+                    /* ── Success State ── */
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                      className="flex flex-col items-center justify-center text-center py-12 gap-5"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center">
+                        <CheckCircle size={32} className="text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-2xl font-bold text-[var(--brand-primary)] mb-2">
+                          Inquiry Received
+                        </h3>
+                        <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed max-w-sm">
+                          Thank you for contacting MIT Legal Consultants. A member of our team will review
+                          your inquiry and respond within one business day.
+                        </p>
+                      </div>
+                      <button
+                        onClick={handleReset}
+                        className="mt-2 px-6 py-2.5 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-colors duration-200"
+                      >
+                        Submit Another Inquiry
+                      </button>
+                    </motion.div>
+                  ) : (
+                    /* ── Form ── */
+                    <>
+                      <div className="mb-8">
+                        <h2 className="font-heading text-2xl md:text-3xl font-bold text-[var(--brand-primary)] mb-2">
+                          Send Us an Inquiry
+                        </h2>
+                        <p className="font-body text-[var(--brand-muted-foreground)] text-sm">
+                          Complete the form below and a member of the MIT Legal Consultants team will be in touch shortly.
+                        </p>
+                      </div>
+
+                      <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                        {/* Name + Email */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          <div className="flex flex-col gap-1.5">
+                            <label
+                              htmlFor="name"
+                              className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-foreground)]"
+                            >
+                              Full Name <span className="text-[var(--brand-destructive)]">*</span>
+                            </label>
+                            <input
+                              id="name"
+                              name="name"
+                              type="text"
+                              required
+                              autoComplete="name"
+                              placeholder="Your full name"
+                              value={form.name}
+                              onChange={handleChange}
+                              className={inputClass}
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <label
+                              htmlFor="email"
+                              className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-foreground)]"
+                            >
+                              Email Address <span className="text-[var(--brand-destructive)]">*</span>
+                            </label>
+                            <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              required
+                              autoComplete="email"
+                              placeholder="your@email.com"
+                              value={form.email}
+                              onChange={handleChange}
+                              className={inputClass}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Phone + Subject */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          <div className="flex flex-col gap-1.5">
+                            <label
+                              htmlFor="phone"
+                              className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-foreground)]"
+                            >
+                              Phone Number
+                            </label>
+                            <input
+                              id="phone"
+                              name="phone"
+                              type="tel"
+                              autoComplete="tel"
+                              placeholder="+233 (0) 00 000 0000"
+                              value={form.phone}
+                              onChange={handleChange}
+                              className={inputClass}
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <label
+                              htmlFor="subject"
+                              className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-foreground)]"
+                            >
+                              Subject <span className="text-[var(--brand-destructive)]">*</span>
+                            </label>
+                            <select
+                              id="subject"
+                              name="subject"
+                              required
+                              value={form.subject}
+                              onChange={handleChange}
+                              className={inputClass}
+                            >
+                              <option value="" disabled>
+                                Select a practice area
+                              </option>
+                              {subjectOptions.map((opt) => (
+                                <option key={opt} value={opt}>
+                                  {opt}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+
+                        {/* Message */}
+                        <div className="flex flex-col gap-1.5">
+                          <label
+                            htmlFor="message"
+                            className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-foreground)]"
+                          >
+                            Message <span className="text-[var(--brand-destructive)]">*</span>
+                          </label>
+                          <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows={6}
+                            placeholder="Please describe your legal matter or inquiry..."
+                            value={form.message}
+                            onChange={handleChange}
+                            className={`${inputClass} resize-none`}
                           />
                         </div>
-                        <div>
-                          <p className="font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-muted-foreground)] mb-1">
-                            {item.label}
-                          </p>
-                          <p className="font-body text-sm text-[var(--brand-foreground)] whitespace-pre-line leading-relaxed">
-                            {item.value}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
+
+                        {/* Disclaimer */}
+                        <p className="font-body text-xs text-[var(--brand-muted-foreground)] leading-relaxed">
+                          By submitting this form, you acknowledge that your inquiry does not create an
+                          attorney-client relationship. MIT Legal Consultants will treat your information
+                          with strict confidentiality in accordance with our{" "}
+                          <Link
+                            href="/privacy-policy"
+                            className="text-[var(--brand-primary)] underline underline-offset-2 hover:text-[var(--brand-accent)] transition-colors"
+                          >
+                            Privacy Policy
+                          </Link>
+                          .
+                        </p>
+
+                        {/* Submit */}
+                        <button
+                          type="submit"
+                          className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-primary)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
+                        >
+                          <Send size={16} />
+                          Submit Inquiry to MIT Legal Consultants
+                        </button>
+                      </form>
+                    </>
+                  )}
                 </div>
-
-                {/* Google Maps Placeholder */}
-                <div className="bg-[var(--brand-muted)] h-48 rounded-lg flex flex-col items-center justify-center gap-2 border border-[var(--brand-border)]">
-                  <MapPin
-                    size={28}
-                    className="text-[var(--brand-muted-foreground)]"
-                  />
-                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] text-center">
-                    Google Maps — Location Preview
-                  </p>
-                  <p className="font-body text-xs text-[var(--brand-muted-foreground)]/70 text-center px-4">
-                    14 Legal Avenue, Suite 300, Accra, Ghana
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Right: Inquiry Form */}
-            <Reveal className="lg:col-span-3" delay={0.1}>
-              <div className="bg-[var(--brand-card)] rounded-2xl shadow-sm border border-[var(--brand-border)] p-8">
-                <h2 className="font-heading text-2xl font-bold text-[var(--brand-primary)] mb-2">
-                  Send Us an Inquiry
-                </h2>
-                <p className="font-body text-[var(--brand-muted-foreground)] text-sm mb-8">
-                  Complete the form below and a member of our team will be in
-                  touch promptly.
-                </p>
-
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <div className="w-16 h-16 rounded-full bg-[var(--brand-accent)]/10 flex items-center justify-center mb-5">
-                      <CheckCircle
-                        size={32}
-                        className="text-[var(--brand-accent)]"
-                      />
-                    </div>
-                    <h3 className="font-heading text-xl font-bold text-[var(--brand-primary)] mb-3">
-                      Inquiry Received
-                    </h3>
-                    <p className="font-body text-[var(--brand-muted-foreground)] text-sm max-w-sm leading-relaxed mb-8">
-                      Thank you for your inquiry. A member of our team will be
-                      in touch within one business day.
-                    </p>
-                    <button
-                      onClick={handleReset}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-                    >
-                      Send Another Inquiry
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                    {/* Row 1: Name + Email */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-foreground)] mb-1.5"
-                        >
-                          Full Name <span className="text-[var(--brand-destructive)]">*</span>
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={form.name}
-                          onChange={handleChange}
-                          placeholder="Your full name"
-                          className={inputClass}
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-foreground)] mb-1.5"
-                        >
-                          Email Address <span className="text-[var(--brand-destructive)]">*</span>
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={form.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com"
-                          className={inputClass}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Row 2: Phone + Subject */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label
-                          htmlFor="phone"
-                          className="block font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-foreground)] mb-1.5"
-                        >
-                          Phone Number{" "}
-                          <span className="text-[var(--brand-muted-foreground)] font-normal normal-case tracking-normal">
-                            (optional)
-                          </span>
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={form.phone}
-                          onChange={handleChange}
-                          placeholder="+233 (0) 00 000 0000"
-                          className={inputClass}
-                        />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="subject"
-                          className="block font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-foreground)] mb-1.5"
-                        >
-                          Subject <span className="text-[var(--brand-destructive)]">*</span>
-                        </label>
-                        <select
-                          id="subject"
-                          name="subject"
-                          required
-                          value={form.subject}
-                          onChange={handleChange}
-                          className={inputClass}
-                        >
-                          <option value="" disabled>
-                            Select a subject
-                          </option>
-                          {subjectOptions.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Message */}
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block font-body text-xs font-semibold uppercase tracking-wider text-[var(--brand-foreground)] mb-1.5"
-                      >
-                        Message <span className="text-[var(--brand-destructive)]">*</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        value={form.message}
-                        onChange={handleChange}
-                        placeholder="Please describe your legal matter or inquiry..."
-                        className={`${inputClass} resize-none`}
-                      />
-                    </div>
-
-                    {/* Submit */}
-                    <button
-                      type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)] hover:text-[var(--brand-primary)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
-                    >
-                      <Send size={16} />
-                      Submit Inquiry
-                    </button>
-
-                    <p className="font-body text-xs text-[var(--brand-muted-foreground)] text-center">
-                      By submitting this form you agree to our{" "}
-                      <Link
-                        href="/privacy-policy"
-                        className="underline hover:text-[var(--brand-primary)] transition-colors"
-                      >
-                        Privacy Policy
-                      </Link>
-                      . All communications are strictly confidential.
-                    </p>
-                  </form>
-                )}
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. BOTTOM CTA STRIP ──────────────────────────────────────────── */}
-      <section className="bg-[var(--brand-primary)] py-20 px-4">
+      {/* ── 3. BOTTOM CTA ────────────────────────────────────────────────── */}
+      <section className="bg-[var(--brand-primary)] py-16 px-4">
         <Reveal>
           <div className="max-w-3xl mx-auto text-center">
-            <p className="font-body text-[var(--brand-accent)] text-sm font-semibold uppercase tracking-widest mb-4">
-              We Are Here to Help
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-5">
-              Ready to Discuss Your Legal Matter?
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+              Need Immediate Legal Assistance?
             </h2>
-            <p className="font-body text-white/70 text-base max-w-xl mx-auto mb-10">
-              Our experienced attorneys are ready to provide the strategic
-              counsel you need. Reach out today for a confidential consultation.
+            <p className="font-body text-white/70 text-base mb-8 leading-relaxed">
+              MIT Legal Consultants is ready to help. Call us directly or visit our office during business
+              hours for urgent matters.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+              <a
+                href="tel:+233300000000"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-colors duration-200"
               >
-                Schedule a Consultation
-              </Link>
+                <Phone size={16} />
+                +233 (0) 30 000 0000
+              </a>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white text-white font-body font-bold text-sm rounded-lg hover:bg-white hover:text-[var(--brand-primary)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 text-white font-body font-semibold text-sm rounded-lg hover:bg-white/20 transition-colors duration-200 border border-white/20"
               >
-                View Practice Areas
+                Explore Practice Areas
               </Link>
             </div>
           </div>

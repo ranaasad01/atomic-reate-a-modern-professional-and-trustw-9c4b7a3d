@@ -1,599 +1,71 @@
 {
   "nav": {
     "ariaLabel": "Navegación principal",
-    "logoAriaLabel": "MIT Legal Consultants — volver a la página de inicio",
+    "logoAriaLabel": "MIT Legal Consultants - Inicio",
     "logoInitials": "MIT",
     "brandName": "MIT Legal Consultants",
     "home": "Inicio",
-    "about": "Acerca de",
+    "about": "Nosotros",
     "practiceareas": "Áreas de Práctica",
     "ourteam": "Nuestro Equipo",
     "contact": "Contacto",
-    "corporatecommerciallaw": "Derecho Corporativo y Comercial",
-    "mediationarbitration": "Mediación y Arbitraje",
-    "civilcriminallitigation": "Litigio Civil y Penal",
-    "familylaw": "Derecho de Familia",
-    "publicinternationallaw": "Derecho Internacional Público",
-    "legislativedraftingpolicy": "Redacción Legislativa y Política",
-    "employmentlaw": "Derecho Laboral",
-    "cta": "Agendar Consulta",
-    "openMenu": "Abrir menú de navegación",
-    "closeMenu": "Cerrar menú de navegación",
-    "practiceAreas": "Áreas de Práctica"
+    "getConsultation": "Consulta Gratuita"
   },
   "footer": {
-    "ariaLabel": "Pie de página del sitio",
-    "ctaHeading": "¿Listo para discutir tu asunto legal?",
-    "ctaSubtext": "Nuestros abogados están disponibles para consultas confidenciales.",
-    "ctaButton": "Agendar una Consulta",
-    "brandDescription": "MIT Legal Consultants proporciona asesoría legal experta en siete áreas de práctica, sirviendo a individuos, corporaciones y gobiernos con integridad y precisión.",
+    "ariaLabel": "Pie de página",
+    "ctaHeading": "¿Necesita asesoría legal?",
+    "ctaSubtext": "Nuestro equipo está listo para ayudarle con su consulta legal.",
+    "ctaButton": "Contáctenos Hoy",
+    "brandDescription": "MIT Legal Consultants ofrece servicios legales expertos en siete áreas de práctica. Confiado por individuos, corporaciones y gobiernos.",
     "followUs": "Síguenos",
     "linkedinAriaLabel": "MIT Legal Consultants en LinkedIn",
-    "twitterAriaLabel": "MIT Legal Consultants en Twitter / X",
+    "twitterAriaLabel": "MIT Legal Consultants en Twitter",
     "facebookAriaLabel": "MIT Legal Consultants en Facebook",
-    "practiceAreasHeading": "Áreas de Práctica",
-    "quickLinksHeading": "Enlaces Rápidos",
-    "contactHeading": "Contáctanos",
-    "address": "14 Justice Avenue, Suite 800, Nairobi, Kenya",
-    "hoursLabel": "Horario de Oficina",
-    "hoursWeekdays": "Lun – Vie: 8:00 AM – 6:00 PM",
-    "hoursSaturday": "Sábado: 9:00 AM – 1:00 PM",
-    "hoursSunday": "Domingo: Cerrado",
+    "practiceAreas": "Áreas de Práctica",
+    "quickLinks": "Enlaces Rápidos",
+    "contactInfo": "Información de Contacto",
     "privacyPolicy": "Política de Privacidad",
-    "terms": "Términos y Condiciones",
-    "copyright": "© {year} {brand}. Todos los derechos reservados.",
-    "disclaimer": "Publicidad de abogados. Los resultados previos no garantizan un resultado similar."
+    "termsConditions": "Términos y Condiciones",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "disclaimer": "MIT Legal Consultants es una firma de consultoría legal. El contenido de este sitio web es solo para fines informativos y no constituye asesoramiento legal."
   },
-  "practiceAreas": {
-    "corporate-commercial": {
-      "title": "Derecho Corporativo y Comercial"
-    },
-    "mediation-arbitration": {
-      "title": "Mediación y Arbitraje"
-    },
-    "civil-criminal-litigation": {
-      "title": "Litigio Civil y Penal"
-    },
-    "family-law": {
-      "title": "Derecho de Familia"
-    },
-    "public-international-law": {
-      "title": "Derecho Público Internacional"
-    },
-    "legislative-drafting": {
-      "title": "Redacción Legislativa y Política"
-    },
-    "employment-law": {
-      "title": "Derecho Laboral"
-    },
-    "breadcrumbRoot": "Áreas de Práctica",
-    "civilLitigation": {
-      "shortDesc": "Representación estratégica en disputas civiles y penales, desde la negociación hasta el juicio.",
-      "title": "Litigio Civil y Penal"
-    },
-    "corporateCommercial": {
-      "shortDesc": "Asesoramiento legal integral para la formación empresarial, transacciones y cumplimiento normativo.",
-      "title": "Derecho Corporativo y Comercial"
-    },
-    "employmentLaw": {
-      "ctaBody": "Permita que nuestros especialistas en derecho laboral protejan sus derechos e intereses.",
-      "ctaHeading": "¿Listo para resolver su asunto laboral?",
-      "mattersBody": "Manejamos disputas que involucran despido injustificado, discriminación, acoso, reclamaciones salariales y disputas contractuales con precisión estratégica.",
-      "mattersHeading": "Asuntos Laborales que Manejamos",
-      "overviewHeading": "Experiencia en Derecho Laboral",
-      "processHeading": "Nuestro Enfoque",
-      "servicesHeading": "Nuestros Servicios",
-      "title": "Derecho Laboral",
-      "whyHeading": "Por Qué Elegirnos"
-    },
-    "eyebrow": "Nuestra Experiencia",
-    "heading": "Áreas de Práctica",
-    "learnMore": "Más Información",
-    "matters": {
-      "eyebrow": "Lo Que Manejamos",
-      "legend": "Asuntos clave en esta área de práctica"
-    },
-    "mediationArbitration": {
-      "shortDesc": "Resolución eficiente de disputas a través de servicios de mediación y arbitraje.",
-      "title": "Mediación y Arbitraje"
-    },
-    "overview": {
-      "eyebrow": "Descripción General"
-    },
-    "process": {
-      "eyebrow": "Cómo Trabajamos",
-      "step1Body": "Realizamos una evaluación exhaustiva de su situación y opciones legales.",
-      "step1Title": "Consulta Inicial",
-      "step2Body": "Nuestro equipo desarrolla una estrategia personalizada alineada con sus objetivos.",
-      "step2Title": "Desarrollo de Estrategia",
-      "step3Body": "Ejecutamos con precisión, manejando todas las negociaciones y procedimientos.",
-      "step3Title": "Implementación",
-      "step4Body": "Logramos la resolución y aseguramos el cumplimiento de todos los resultados.",
-      "step4Title": "Resolución y Seguimiento"
-    },
-    "related": {
-      "heading": "Áreas de Práctica Relacionadas",
-      "learnMore": "Más Información",
-      "viewAll": "Ver Todas las Áreas"
-    },
-    "services": {
-      "eyebrow": "Lo Que Ofrecemos"
-    },
-    "subtext": "Soluciones legales integrales en siete áreas de práctica principales.",
-    "viewAll": "Ver Todas las Áreas de Práctica",
-    "why": {
-      "eyebrow": "Por Qué Asociarse Con Nosotros"
-    }
+  "home": {
+    "heroEyebrow": "Bienvenido a MIT Legal Consultants",
+    "heroTitle": "Asesoría Legal de Confianza. Resultados Comprobados.",
+    "heroSubtitle": "MIT Legal Consultants ofrece soluciones legales estratégicas y orientadas a resultados para individuos, empresas y organizaciones internacionales.",
+    "heroCta": "Programar Consulta",
+    "heroSecondaryCta": "Conocer Más",
+    "practiceAreasTitle": "Nuestras Áreas de Práctica",
+    "practiceAreasSubtitle": "Experiencia legal integral en siete áreas de práctica especializadas.",
+    "whyChooseTitle": "¿Por Qué Elegir MIT Legal Consultants?",
+    "whyChooseSubtitle": "Nos distinguimos por nuestra experiencia, integridad y compromiso con el éxito del cliente.",
+    "testimonialsTitle": "Lo Que Dicen Nuestros Clientes",
+    "ctaSectionTitle": "¿Listo para Hablar con un Abogado?",
+    "ctaSectionSubtitle": "Contáctenos hoy para una consulta confidencial con uno de nuestros abogados especializados.",
+    "ctaButton": "Programar Consulta"
   },
   "about": {
-    "cta": {
-      "eyebrow": "Próximos Pasos",
-      "primaryButton": "Agendar una Consulta",
-      "secondaryButton": "Ver Nuestros Servicios",
-      "subtitle": "Hablemos sobre cómo MIT Legal Consultants puede apoyar tus necesidades legales con experiencia estratégica y resultados comprobados.",
-      "title": "Asociarse con MIT Legal Consultants"
-    },
-    "eyebrow": "Acerca de MIT Legal Consultants",
-    "heading": "Experiencia Legal Confiable para Desafíos Complejos",
-    "hero": {
-      "eyebrow": "Nuestra Historia",
-      "subtitle": "Entregando soluciones legales prácticas, estratégicas y orientadas a resultados desde nuestra fundación.",
-      "title": "Excelencia Legal Construida sobre Integridad"
-    },
-    "imageAlt": "Interior de la oficina de MIT Legal Consultants",
-    "leadership": {
-      "eyebrow": "Liderazgo",
-      "firmLabel": "Fundador y Socio Gerente",
-      "imageAlt": "Retrato del liderazgo de la firma",
-      "initials": "ML",
-      "name": "Socio Gerente",
-      "p1": "Con décadas de experiencia en derecho corporativo, litigio y asuntos internacionales, nuestro equipo de liderazgo aporta visión estratégica y profunda experiencia legal a cada compromiso.",
-      "p2": "Comprometidos con la mentoría de la próxima generación de profesionales legales mientras mantenemos los más altos estándares de servicio al cliente e integridad profesional.",
-      "quote": "Nuestro éxito se mide por el éxito de nuestros clientes. Combinamos análisis legal riguroso con criterio empresarial práctico para entregar soluciones que importan.",
-      "signatureName": "Liderazgo de MIT Legal Consultants",
-      "signatureTitle": "Fundador y Socio Gerente",
-      "title": "Liderazgo Que Impulsa Resultados"
-    },
-    "para1": "MIT Legal Consultants es una firma legal de servicio completo dedicada a proporcionar soluciones legales integrales y estratégicas a individuos, empresas, organizaciones y clientes internacionales. Combinamos profunda experiencia legal con perspicacia empresarial práctica para abordar los desafíos más complejos de nuestros clientes.",
-    "para2": "Nuestro equipo de abogados experimentados se especializa en derecho corporativo, litigio, derecho de familia, derecho laboral, derecho internacional público y redacción legislativa. Nos enorgullece entregar asesoramiento orientado a resultados mientras mantenemos los más altos estándares de profesionalismo y confidencialidad del cliente.",
-    "pillar1": "Experiencia Estratégica",
-    "pillar2": "Soluciones Enfocadas en el Cliente",
-    "pillar3": "Integridad Profesional",
-    "pillar4": "Resultados Comprobados",
-    "story": {
-      "check1": "Equipo experimentado en múltiples áreas de práctica",
-      "check2": "Compromiso con el éxito del cliente y la confidencialidad",
-      "check3": "Asesoramiento legal estratégico y orientado a resultados",
-      "eyebrow": "Nuestros Fundamentos",
-      "missionLabel": "Nuestra Misión",
-      "missionQuote": "Entregar soluciones legales prácticas, estratégicas y orientadas a resultados mientras mantenemos los más altos estándares de profesionalismo, integridad y confidencialidad del cliente.",
-      "p1": "Fundada en el principio de que el asesoramiento legal excepcional requiere tanto análisis riguroso como criterio empresarial práctico, MIT Legal Consultants se ha establecido como un socio de confianza para clientes que navegan paisajes legales complejos.",
-      "p2": "Servimos a individuos, empresas, organizaciones y clientes internacionales en diversas industrias y jurisdicciones. Nuestro enfoque multidisciplinario garantiza soluciones integrales adaptadas a las circunstancias únicas de cada cliente.",
-      "p3": "Cada compromiso se guía por nuestros valores fundamentales: integridad, excelencia, enfoque en el cliente y confidencialidad. Medimos nuestro éxito por el éxito de nuestros clientes.",
-      "title": "Por qué MIT Legal Consultants"
-    },
-    "values": {
-      "eyebrow": "Qué nos impulsa",
-      "subtitle": "Nuestros valores fundamentales moldean cada decisión e interacción con clientes.",
-      "title": "Nuestros Valores"
-    },
-    "yearsLabel": "Años de Excelencia Legal"
-  },
-  "breadcrumb": {
-    "ariaLabel": "Navegación de migas de pan",
-    "home": "Inicio",
-    "practiceAreas": "Áreas de Práctica"
+    "heroEyebrow": "Sobre Nosotros",
+    "heroTitle": "Sobre MIT Legal Consultants",
+    "heroSubtitle": "Dos décadas de excelencia legal, integridad y resultados comprobados para clientes en tres continentes.",
+    "overviewTitle": "Quiénes Somos",
+    "missionTitle": "Nuestra Misión",
+    "visionTitle": "Nuestra Visión",
+    "valuesTitle": "Nuestros Valores",
+    "timelineTitle": "Nuestra Historia"
   },
   "contact": {
-    "callUs": "Llámanos",
-    "emailUs": "Envíanos un Correo",
-    "hoursValue": "Lunes–Viernes, 9 AM–6 PM",
-    "officeHours": "Horario de Oficina"
-  },
-  "corporateCommercial": {
-    "cta": {
-      "body": "Navega transacciones complejas y requisitos regulatorios con orientación legal estratégica adaptada a los objetivos de tu negocio.",
-      "eyebrow": "¿Listo para Fortalecer tu Posición Legal?",
-      "primaryButton": "Programar Consulta",
-      "secondaryButton": "Ver Nuestra Experiencia",
-      "title": "Protejamos los Intereses de tu Negocio"
-    },
-    "hero": {
-      "cta": "Obtener Orientación Legal",
-      "eyebrow": "Derecho Corporativo y Comercial",
-      "secondaryCta": "Explorar Nuestros Servicios",
-      "subtitle": "Soluciones legales estratégicas para fusiones, contratos, cumplimiento y crecimiento empresarial.",
-      "title": "Asesoramiento Legal Corporativo Experto para tu Negocio"
-    },
-    "matters": {
-      "body": "Desde negociación de contratos y transacciones de M&A hasta cumplimiento regulatorio y gobierno corporativo, manejamos las complejidades legales para que te enfoque en el crecimiento.",
-      "cta": "Discute tu Asunto",
-      "eyebrow": "Lo que Manejamos",
-      "title": "Soluciones Corporativas y Comerciales Integrales"
-    },
-    "overview": {
-      "body1": "Nuestro equipo de derecho corporativo aporta décadas de experiencia asesorando a empresas de todos los tamaños—desde startups hasta empresas establecidas—sobre sus desafíos legales más críticos.",
-      "body2": "Combinamos conocimiento profundo de la industria con resolución práctica de problemas para entregar resultados alineados con tu estrategia empresarial.",
-      "eyebrow": "Por qué Elegir MIT Legal Consultants",
-      "imageAlt": "Reunión de consulta de derecho corporativo",
-      "link": "Aprende Más Sobre Nuestro Enfoque",
-      "title": "Asesoramiento Corporativo de Confianza para Crecimiento Estratégico"
-    },
-    "services": {
-      "eyebrow": "Nuestros Servicios",
-      "subtitle": "Apoyo legal de extremo a extremo en cada etapa de tu negocio.",
-      "title": "Servicios de Derecho Corporativo y Comercial"
-    },
-    "why": {
-      "eyebrow": "Por qué Destacamos",
-      "subtitle": "Experiencia estratégica combinada con criterio empresarial práctico.",
-      "title": "La Diferencia Legal de MIT"
-    }
-  },
-  "cta": {
-    "allPracticeAreas": "Explorar Todas las Áreas de Práctica",
-    "callUs": "Llámenos",
-    "discussYourCase": "Discuta Su Caso",
-    "meetOurTeam": "Conozca Nuestro Equipo",
-    "readyLabel": "¿Listo para Comenzar?",
-    "scheduleConsultation": "Programar una Consulta"
-  },
-  "ctaStrip": {
-    "addressLabel": "Dirección",
-    "addressValue": "Oficina de MIT Legal Consultants",
-    "ctaPhone": "Llamar Ahora",
-    "ctaPrimary": "Programar Consulta",
-    "emailLabel": "Correo Electrónico",
-    "emailValue": "hello@mitlegalconsultants.com",
-    "heading": "Póngase en Contacto con Nuestro Equipo Legal",
-    "phoneLabel": "Teléfono",
-    "phoneValue": "+1 (555) 123-4567",
-    "subtext": "Estamos aquí para responder sus preguntas y discutir sus necesidades legales."
-  },
-  "familyLaw": {
-    "cta": {
-      "phoneButton": "Llamar a Nuestro Equipo de Derecho Familiar",
-      "primaryButton": "Programar una Consulta",
-      "subtitle": "Representación legal compasiva en los momentos más importantes de la vida.",
-      "title": "Proteja el Futuro de Su Familia"
-    },
-    "hero": {
-      "cta": "Obtener Apoyo en Derecho Familiar",
-      "eyebrow": "Derecho Familiar",
-      "secondaryCta": "Conozca Nuestros Servicios",
-      "subtitle": "Orientación legal compasiva y confidencial para divorcio, custodia, adopción y asuntos familiares.",
-      "title": "Soluciones de Derecho Familiar Basadas en la Confianza"
-    },
-    "intro": {
-      "badgeSubtitle": "Orientación Legal Compasiva",
-      "badgeTitle": "Derecho Familiar",
-      "body1": "Los asuntos familiares requieren tanto experiencia legal como inteligencia emocional. Nuestros abogados manejan divorcio, custodia, herencia y asuntos de estado personal con sensibilidad y precisión estratégica.",
-      "body2": "Protegemos los intereses de su familia mientras minimizamos conflictos y preservamos relaciones cuando es posible.",
-      "eyebrow": "Nuestro Enfoque",
-      "imageAlt": "Reunión de consulta de derecho familiar",
-      "link": "Programar una consulta",
-      "title": "Protegiendo Lo Que Más Importa"
-    },
-    "matters": {
-      "body": "Manejamos el espectro completo de asuntos de derecho familiar con discreción y experiencia.",
-      "eyebrow": "Áreas de Práctica",
-      "imageAlt": "Áreas de práctica de derecho familiar",
-      "item1": "Divorcio y Separación",
-      "item2": "Custodia y Tutela",
-      "item3": "Manutención de Menores y Pensión Alimenticia",
-      "item4": "Acuerdos Prenupciales",
-      "item5": "Herencia y Sucesión",
-      "item6": "Adopción y Legitimación",
-      "item7": "Asuntos de Estado Personal",
-      "item8": "Mediación en Relaciones Familiares",
-      "title": "Asuntos de Derecho Familiar que Manejamos"
-    },
-    "process": {
-      "eyebrow": "Nuestro Proceso",
-      "subtitle": "Pasos claros y transparentes desde la consulta inicial hasta la resolución",
-      "title": "Cómo Trabajamos"
-    },
-    "related": {
-      "employment": {
-        "desc": "Disputas laborales que afectan la estabilidad familiar y la seguridad financiera.",
-        "title": "Derecho Laboral"
-      },
-      "eyebrow": "Servicios Relacionados",
-      "learnMore": "Más información",
-      "litigation": {
-        "desc": "Litigio civil para disputas relacionadas con la familia y asuntos de ejecución.",
-        "title": "Litigio Civil"
-      },
-      "mediation": {
-        "desc": "Mediación colaborativa para resolver conflictos familiares de manera amistosa.",
-        "title": "Mediación y Arbitraje"
-      },
-      "title": "Servicios Complementarios",
-      "viewAll": "Ver todas las áreas de práctica"
-    },
-    "services": {
-      "eyebrow": "Lo Que Ofrecemos",
-      "subtitle": "Representación integral en derecho familiar adaptada a sus necesidades",
-      "title": "Nuestros Servicios de Derecho Familiar"
-    },
-    "why": {
-      "body": "El derecho familiar requiere tanto experiencia técnica como comprensión humana. Nuestro equipo combina décadas de experiencia con un compromiso de proteger el futuro de su familia.",
-      "cta": "Hable con un abogado",
-      "eyebrow": "Por Qué Elegirnos",
-      "title": "Defensores Experimentados para Su Familia"
-    }
-  },
-  "hero": {
-    "ctaPrimary": "Obtener Asesoría Legal",
-    "ctaSecondary": "Explorar Nuestros Servicios",
-    "eyebrow": "Excelencia Legal",
-    "headline1": "Soluciones Legales Estratégicas",
-    "headline2": "para Individuos y Empresas",
-    "headline3": "Confiado por clientes en diversas industrias",
-    "imageAlt": "Oficina de MIT Legal Consultants",
-    "subtext": "Orientación legal práctica y orientada a resultados de consultores experimentados comprometidos con su éxito."
-  },
-  "legislativePage": {
-    "ctaBody": "¿Listo para influir en la política? Hablemos sobre sus necesidades legislativas.",
-    "ctaButton": "Programar Consulta",
-    "ctaCallButton": "Llamar Ahora",
-    "ctaTitle": "¿Listo para Influir en la Política?",
-    "floatingCardLabel": "Orientación Experta",
-    "heroCta": "Comenzar",
-    "heroSecondary": "Más Información",
-    "heroSubtitle": "Elaboración de legislación que impulsa cambios significativos y claridad regulatoria.",
-    "heroTitle": "Redacción Legislativa y Política Pública",
-    "mattersBody": "Desde la redacción de proyectos de ley hasta marcos de cumplimiento regulatorio, ayudamos a gobiernos y organizaciones a navegar paisajes legislativos complejos con precisión e insight estratégico.",
-    "mattersCta": "Explorar Nuestro Enfoque",
-    "mattersLabel": "Lo Que Manejamos",
-    "mattersTitle": "Asuntos Legislativos Que Gestionamos",
-    "overviewLabel": "Nuestra Experiencia",
-    "overviewP1": "Nos asociamos con organismos gubernamentales, ONG y líderes del sector privado para redactar legislación que equilibre los intereses de las partes interesadas mientras garantiza solidez legal y aplicabilidad.",
-    "overviewP2": "Nuestro equipo combina conocimiento legal profundo con experiencia en políticas, traduciendo requisitos regulatorios complejos en lenguaje legislativo claro y accionable.",
-    "overviewP3": "Ya sea que esté estableciendo nuevos marcos o modernizando estatutos existentes, entregamos soluciones fundamentadas en principios constitucionales y mejores prácticas internacionales.",
-    "overviewTitle": "Soluciones Legislativas Estratégicas",
-    "practiceAreaLabel": "Área de Práctica",
-    "relatedTitle": "Áreas de Práctica Relacionadas",
-    "relatedViewAll": "Ver Todos los Servicios",
-    "servicesLabel": "Nuestros Servicios",
-    "servicesSubtitle": "Apoyo legislativo y de políticas integral adaptado a sus necesidades.",
-    "servicesTitle": "Servicios Legislativos",
-    "whyLabel": "Por Qué Elegirnos",
-    "whySubtitle": "Confiado por agencias gubernamentales y organizaciones en todos los sectores.",
-    "whyTitle": "Por Qué MIT Legal Consultants"
-  },
-  "litigation": {
-    "breadcrumbAriaLabel": "Navegación de migas de pan",
-    "breadcrumbCurrent": "Litigio Civil y Penal",
-    "breadcrumbHome": "Inicio",
-    "breadcrumbPractice": "Áreas de Práctica",
-    "civilDesc": "Resolución de disputas comerciales y civiles complejas a través de litigio estratégico y defensa.",
-    "civilTitle": "Litigio Civil",
-    "criminalDesc": "Defensa penal integral y apoyo en procedimientos con compromiso inquebrantable con la justicia.",
-    "criminalTitle": "Litigio Penal",
-    "ctaButton1": "Programar Consulta",
-    "ctaButton2": "Contáctenos",
-    "ctaHeading": "¿Necesita Apoyo en Litigio?",
-    "ctaSubtext": "Nuestros litigantes experimentados están listos para defender sus intereses.",
-    "ctaTitle": "Hablemos Sobre Su Caso",
-    "expertiseCardTitle": "Experiencia en Litigio",
-    "expertiseEyebrow": "Nuestras Fortalezas",
-    "expertiseHeading": "Lo Que Nos Distingue",
-    "expertiseItem1": "Análisis estratégico de casos y preparación para juicio",
-    "expertiseItem2": "Defensa agresiva en la sala de audiencias",
-    "expertiseItem3": "Experiencia en negociación de acuerdos",
-    "expertiseItem4": "Experiencia en litigio multijurisdiccional",
-    "expertiseP1": "Abordamos cada caso con preparación meticulosa y previsión estratégica, asegurando que sus intereses estén protegidos en cada etapa del litigio.",
-    "expertiseP2": "Nuestros litigantes combinan experiencia en la sala de audiencias con resolución práctica de problemas para lograr resultados favorables para nuestros clientes.",
-    "expertiseTitle": "Excelencia Litigiosa Comprobada",
-    "eyebrow": "Área de Práctica",
-    "floatingCardLabel": "Litigio Civil y Penal",
-    "heroCta1": "Programar Consulta",
-    "heroCta2": "Ver Nuestro Enfoque",
-    "heroSubtext": "Representación estratégica en asuntos civiles y penales complejos con éxito comprobado en la sala de audiencias.",
-    "heroTitle": "Representación Litigiosa Agresiva",
-    "mattersEyebrow": "Enfoque de Práctica",
-    "mattersHeading": "Tipos de Casos que Manejamos",
-    "mattersSubtext": "Desde disputas corporativas hasta defensa penal, proporcionamos apoyo litigioso integral.",
-    "mattersTitle": "Nuestros Asuntos de Litigio",
-    "overviewEyebrow": "Nuestra Experiencia",
-    "overviewHeading": "Defensa Legal Estratégica",
-    "overviewImageAlt": "Equipo de litigio de MIT Legal Consultants en sala de conferencias",
-    "overviewLink": "Conozca nuestro equipo",
-    "overviewP1": "Nuestro equipo de litigio combina experiencia legal profunda con pensamiento estratégico para navegar disputas complejas. Manejamos casos en dominios civiles, comerciales y penales con atención meticulosa al detalle y compromiso inquebrantable con los intereses de nuestros clientes.",
-    "overviewP2": "Creemos en la preparación exhaustiva de casos, la resolución creativa de problemas y la defensa agresiva cuando sea necesario. Ya sea negociando acuerdos o litigando en la corte, perseguimos los mejores resultados posibles para nuestros clientes.",
-    "overviewTitle": "Litigio Civil y Penal",
-    "processEyebrow": "Nuestra Metodología",
-    "processSubtext": "Un enfoque estructurado para la gestión y resolución de casos.",
-    "processTitle": "Nuestro Proceso de Litigio",
-    "related1Desc": "Navegue disputas comerciales complejas con asesoramiento experto y negociación estratégica.",
-    "related1Title": "Disputas Corporativas",
-    "related2Desc": "Servicios integrales de mediación y arbitraje para resolución eficiente de disputas.",
-    "related2Title": "Mediación y Arbitraje",
-    "related3Desc": "Orientación especializada en asuntos de derecho laboral y disputas laborales.",
-    "related3Title": "Derecho Laboral",
-    "relatedLearnMore": "Más información",
-    "relatedTitle": "Áreas de Práctica Relacionadas",
-    "relatedViewAll": "Ver todos los servicios",
-    "tag1": "Litigio Civil",
-    "tag2": "Defensa Penal",
-    "tag3": "Disputas Comerciales",
-    "tag4": "Práctica de Apelaciones",
-    "tag5": "Resolución Alternativa de Disputas",
-    "whyEyebrow": "Por Qué Elegirnos",
-    "whySubtext": "Defensores experimentados dedicados a proteger sus intereses legales.",
-    "whyTitle": "Por qué MIT Legal Consultants"
-  },
-  "mediationArbitration": {
-    "breadcrumb": "Mediación y Arbitraje",
-    "cta": {
-      "badge": "Resolución Eficiente",
-      "body": "Permita que nuestros mediadores y árbitros experimentados lo guíen hacia resoluciones justas y vinculantes.",
-      "primaryButton": "Iniciar Su Caso",
-      "secondaryButton": "Solicitar Información",
-      "title": "¿Listo para Resolver Su Disputa?"
-    },
-    "ctaButton": "Comenzar",
-    "ctaSecondary": "Más Información",
-    "ctaSubtitle": "Servicios de evaluación neutral experta y arbitraje vinculante.",
-    "ctaTitle": "Servicios de Mediación y Arbitraje",
-    "expertiseLabel": "Nuestra Experiencia",
-    "expertiseTitle": "Mediación y Arbitraje Especializados",
-    "faq": {
-      "eyebrow": "Preguntas Frecuentes",
-      "subtitle": "Encuentre respuestas a preguntas frecuentes sobre nuestros servicios de mediación y arbitraje.",
-      "title": "Preguntas Frecuentes"
-    },
-    "hero": {
-      "cta": "Programar Consulta",
-      "eyebrow": "Mediación y Arbitraje",
-      "secondaryCta": "Explorar Nuestro Proceso",
-      "subtitle": "Resuelva disputas eficientemente con nuestros mediadores y árbitros expertos que entregan decisiones vinculantes y acuerdos negociados.",
-      "title": "Resolución Alternativa de Disputas que Funciona"
-    },
-    "heroCta": "Programar Consulta",
-    "heroSecondary": "Explorar Nuestro Proceso",
-    "heroSubtitle": "Resuelva disputas eficientemente con nuestros mediadores y árbitros expertos que entregan decisiones vinculantes y acuerdos negociados.",
-    "heroTitle": "Resolución Alternativa de Disputas que Funciona",
-    "mattersCta": "Discutir Su Asunto",
-    "mattersLabel": "Tipos de Asuntos que Manejamos",
-    "mattersSubtitle": "Resolvemos disputas complejas en múltiples industrias y jurisdicciones.",
-    "mattersTitle": "Disputas que Resolvemos",
-    "overview": {
-      "body1": "La mediación y el arbitraje ofrecen alternativas más rápidas y rentables al litigio tradicional. Nuestros profesionales experimentados guían a las partes hacia la resolución mientras protegen la confidencialidad y mantienen las relaciones comerciales.",
-      "body2": "Ya sea que necesite un mediador neutral para facilitar la negociación o un árbitro para dictar una decisión vinculante, proporcionamos orientación estratégica adaptada a las circunstancias únicas de su disputa.",
-      "bullet1": "Mediadores expertos con habilidades en negociación y facilitación de acuerdos",
-      "bullet2": "Árbitros calificados con profunda experiencia en la materia",
-      "bullet3": "Procedimientos confidenciales que preservan las relaciones comerciales",
-      "bullet4": "Plazos de resolución más rápidos y costos legales reducidos",
-      "eyebrow": "Por Qué Elegir Mediación y Arbitraje",
-      "imageAlt": "Consulta de mediación y arbitraje",
-      "statLabel": "de disputas resueltas a través de métodos alternativos",
-      "title": "Resolución Eficiente de Disputas"
-    },
-    "overviewCta": "Más Información",
-    "overviewLabel": "Descripción General",
-    "overviewP1": "La mediación y el arbitraje ofrecen alternativas efectivas al litigio prolongado, permitiendo a las partes resolver disputas de manera confidencial y rentable.",
-    "overviewP2": "Nuestros mediadores facilitan el diálogo constructivo entre las partes, mientras que nuestros árbitros proporcionan decisiones vinculantes basadas en evidencia y principios legales.",
-    "overviewP3": "Manejamos disputas comerciales, conflictos laborales, desacuerdos en construcción y asuntos internacionales con profesionalismo e imparcialidad.",
-    "overviewTitle": "Mediación y Arbitraje",
-    "practiceLabel": "Área de Práctica",
-    "process": {
-      "eyebrow": "Nuestro Enfoque",
-      "subtitle": "Un camino estructurado hacia la resolución.",
-      "title": "El Proceso de Resolución"
-    },
-    "processLabel": "Proceso",
-    "processTitle": "Cómo Resolvemos Disputas",
-    "relatedLabel": "Áreas de Práctica Relacionadas",
-    "relatedLearnMore": "Más Información",
-    "services": {
-      "eyebrow": "Nuestros Servicios",
-      "subtitle": "Servicios integrales de resolución de disputas.",
-      "title": "Lo Que Ofrecemos"
-    },
-    "why": {
-      "body": "MIT Legal Consultants aporta décadas de experiencia combinada en la resolución de disputas de alto riesgo. Nuestros profesionales son reconocidos por su imparcialidad, perspicacia estratégica y compromiso con el logro de resultados justos.",
-      "cta": "Comenzar",
-      "eyebrow": "Por Qué MIT Legal Consultants",
-      "title": "Expertos Confiables en Resolución de Disputas"
-    }
-  },
-  "practiceArea": {
-    "expertiseLabel": "Nuestra Experiencia",
-    "mattersLabel": "Asuntos Que Manejamos",
-    "overviewLabel": "Descripción General",
-    "relatedLabel": "Servicios Relacionados"
-  },
-  "practiceAreasOverview": {
-    "areasEyebrow": "Nuestra Experiencia",
-    "areasSubtitle": "Soluciones legales estratégicas adaptadas a sus necesidades.",
-    "areasTitle": "Siete Áreas de Práctica Principal",
-    "cardAriaPrefix": "Más información sobre",
-    "cardLearnMore": "Explorar",
-    "ctaBannerEyebrow": "¿Listo para Comenzar?",
-    "ctaBannerPrimary": "Programar Consulta",
-    "ctaBannerSecondary": "Contáctenos",
-    "ctaBannerSubtitle": "Nuestro equipo está listo para discutir sus necesidades legales.",
-    "ctaBannerTitle": "Resolvamos Su Desafío Legal",
-    "eyebrow": "Áreas de Práctica",
-    "heroCta": "Explore Nuestros Servicios",
-    "heroSecondary": "Explore nuestras competencias principales",
-    "heroSubtitle": "Soluciones legales estratégicas en asuntos corporativos, litigio, familia e internacionales.",
-    "heroTitle": "Nuestras Áreas de Práctica",
-    "introEyebrow": "Servicios Legales Integrales",
-    "introLink": "Obtenga más información sobre nuestro enfoque",
-    "introParagraph1": "MIT Legal Consultants ofrece experiencia especializada en siete áreas de práctica principales, sirviendo a individuos, empresas y clientes internacionales con soluciones prácticas y orientadas a resultados.",
-    "introParagraph2": "Cada área de práctica es liderada por abogados experimentados que combinan conocimiento legal profundo con perspectiva estratégica para navegar asuntos complejos y lograr resultados óptimos.",
-    "introStatLabel": "Años de experiencia legal combinada",
-    "introTitle": "Experiencia Legal Confiable en Todas las Áreas de Práctica",
-    "testimonialsEyebrow": "Historias de Éxito de Clientes",
-    "testimonialsTitle": "Lo Que Dicen Nuestros Clientes",
-    "whyCta": "Discuta sus necesidades legales",
-    "whyEyebrow": "Por Qué Elegir MIT Legal Consultants",
-    "whySubtitle": "Combinamos pensamiento estratégico con ejecución práctica para entregar resultados.",
-    "whyTitle": "Excelencia en Cada Área de Práctica"
-  },
-  "publicIntlLaw": {
-    "breadcrumb": "Derecho Internacional Público y Asuntos Transfronterizos",
-    "ctaButton": "Agendar una consulta",
-    "ctaSubtitle": "Permita que nuestros expertos en derecho internacional guíen su estrategia transfronteriza.",
-    "ctaTeamButton": "Conozca nuestro equipo",
-    "ctaTitle": "¿Listo para Navegar Desafíos Legales Internacionales?",
-    "expertiseEyebrow": "Nuestra Experiencia",
-    "expertiseSubtitle": "Conocimiento profundo de marcos internacionales y regulaciones transfronterizas.",
-    "expertiseTitle": "Excelencia en Derecho Internacional",
-    "eyebrow": "Derecho Internacional Público y Asuntos Transfronterizos",
-    "floatingCardSub": "Navegue transacciones internacionales complejas y disputas con confianza.",
-    "floatingCardTitle": "Soluciones Legales Globales",
-    "heroCta": "Consulte a nuestros expertos",
-    "heroSecondary": "Orientación experta para asuntos internacionales",
-    "heroSubtitle": "Asesoramiento estratégico para transacciones transfronterizas, tratados y disputas internacionales.",
-    "heroTitle": "Derecho Internacional Público y Asuntos Transfronterizos",
-    "mattersCta": "Explorar todas las áreas de práctica",
-    "mattersEyebrow": "Áreas de Práctica Clave",
-    "mattersSubtitle": "Servicios especializados en dominios legales internacionales.",
-    "mattersTitle": "Lo Que Manejamos",
-    "overviewEyebrow": "Descripción General de la Práctica",
-    "overviewP1": "En un mundo cada vez más interconectado, empresas e individuos enfrentan desafíos legales complejos que cruzan fronteras y jurisdicciones. MIT Legal Consultants proporciona orientación experta en derecho internacional público y asuntos transfronterizos, ayudando a los clientes a navegar tratados, regulaciones y disputas internacionales con confianza.",
-    "overviewP2": "Nuestros abogados tienen amplia experiencia en comercio internacional, derecho de inversiones, relaciones diplomáticas y resolución de disputas transfronterizas. Asesoramos sobre cumplimiento de marcos internacionales y representamos a clientes en asuntos que involucran múltiples jurisdicciones.",
-    "overviewP3": "Ya sea que se esté expandiendo internacionalmente, gestionando transacciones transfronterizas o resolviendo disputas internacionales, proporcionamos asesoramiento estratégico adaptado a sus objetivos globales.",
-    "overviewTagline": "Conectando sistemas legales, resolviendo desafíos internacionales.",
-    "overviewTitle": "Navegando el Panorama Legal Global",
-    "relatedEyebrow": "Áreas de Práctica Relacionadas",
-    "relatedLearnMore": "Obtenga más información",
-    "relatedTitle": "Servicios Complementarios",
-    "relatedViewAll": "Ver todas las áreas de práctica",
-    "whyEyebrow": "Por Qué Nuestra Firma",
-    "whySubtitle": "Experiencia internacional combinada con resolución práctica de problemas.",
-    "whyTitle": "Su Socio en Asuntos Legales Globales"
-  },
-  "team": {
-    "associatesEyebrow": "Nuestro Equipo",
-    "associatesTitle": "Conozca a Nuestros Asociados",
-    "cta": "Póngase en contacto con nuestro equipo",
-    "eyebrow": "Nuestro Equipo",
-    "heading": "Expertos Legales en Quienes Confiar",
-    "heroSubtitle": "Abogados experimentados dedicados a entregar soluciones estratégicas en todas las áreas de práctica.",
-    "heroTitle": "Conozca a Nuestros Abogados",
-    "joinCta": "Ver Posiciones Abiertas",
-    "joinEyebrow": "Únase a Nosotros",
-    "joinSubtitle": "Estamos construyendo un equipo de profesionales legales talentosos comprometidos con la excelencia.",
-    "joinTitle": "Carreras en MIT Legal Consultants",
-    "para": "Nuestro equipo está compuesto por profesionales legales experimentados con profunda experiencia en derecho corporativo, litigio, mediación, derecho familiar, asuntos internacionales y política pública. Combinamos conocimiento legal riguroso con perspicacia empresarial práctica para entregar resultados.",
-    "partnersEyebrow": "Liderazgo",
-    "partnersTitle": "Nuestros Socios",
-    "valuesEyebrow": "Qué Nos Impulsa",
-    "valuesSubtitle": "Nuestros principios fundamentales guían cada compromiso con clientes y decisión que tomamos.",
-    "valuesTitle": "Nuestros Valores"
-  },
-  "testimonials": {
-    "eyebrow": "Comentarios de Clientes",
-    "heading": "Confianza de Clientes en Todo el Mundo"
-  },
-  "whyUs": {
-    "eyebrow": "Por Qué Elegirnos",
-    "heading": "Soluciones Legales Estratégicas",
-    "subtext": "Combinamos profunda experiencia legal con perspicacia empresarial práctica para resolver desafíos complejos."
+    "heroEyebrow": "Contáctenos",
+    "heroTitle": "Contactar MIT Legal Consultants",
+    "heroSubtitle": "Programe una consulta o envíenos una consulta. Nuestro equipo responderá dentro de un día hábil.",
+    "formTitle": "Envíenos un Mensaje",
+    "namePlaceholder": "Su nombre completo",
+    "emailPlaceholder": "Su dirección de correo electrónico",
+    "phonePlaceholder": "Su número de teléfono",
+    "subjectPlaceholder": "Seleccione un tema",
+    "messagePlaceholder": "Describa su consulta legal...",
+    "submitButton": "Enviar Consulta",
+    "successTitle": "¡Mensaje Enviado!",
+    "successMessage": "Gracias por contactar MIT Legal Consultants. Nos pondremos en contacto con usted dentro de un día hábil."
   }
 }
