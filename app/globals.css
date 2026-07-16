@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --brand-primary: #0A1F44;
+  --brand-secondary: #1E40AF;
+  --brand-accent: #C9A84C;
+  --brand-background: #F8FAFC;
+  --brand-foreground: #0F172A;
+  --brand-card: #FFFFFF;
+  --brand-muted: #E9EEF5;
+  --brand-muted-foreground: #64748B;
+  --brand-border: #CBD5E1;
+  --brand-ring: #0A1F44;
+  --brand-destructive: #DC2626;
+  --brand-charcoal: #2D2D2D;
+  --brand-on-primary: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--brand-background);
+  color: var(--brand-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'EB Garamond', serif;
+}
+
+.font-heading {
+  font-family: 'EB Garamond', serif;
+}
+
+.font-body {
+  font-family: 'Lato', sans-serif;
+}
