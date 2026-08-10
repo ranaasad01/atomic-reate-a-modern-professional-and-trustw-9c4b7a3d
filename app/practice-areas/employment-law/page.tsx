@@ -78,37 +78,30 @@ const services: ServiceItem[] = [
     icon: <AlertCircle size={22} />,
     title: "Whistleblower Protection",
     description:
-      "Advising and representing employees who have made protected disclosures, and helping employers establish robust whistleblowing frameworks that comply with statutory obligations.",
+      "Advising and representing employees who have made protected disclosures, and helping employers establish robust whistleblowing frameworks that meet statutory requirements.",
   },
   {
     id: "investigations",
     icon: <Users size={22} />,
     title: "Workplace Investigations",
     description:
-      "Conducting independent, thorough investigations into allegations of misconduct, harassment, fraud, or policy violations, with detailed findings reports and recommended remedial actions.",
+      "Conducting independent, thorough investigations into workplace misconduct, grievances, and disciplinary matters, delivering findings that withstand legal scrutiny.",
   },
 ];
 
 const typicalMatters = [
-  "Drafting bespoke employment contracts and executive service agreements",
-  "Advising on lawful termination procedures and redundancy processes",
-  "Representing employees in unfair and wrongful dismissal tribunal claims",
-  "Defending employers against discrimination and harassment complaints",
-  "Advising on collective bargaining agreements and trade union relations",
-  "Conducting workplace investigations into misconduct and grievances",
-  "Advising on TUPE transfers and employment implications of business sales",
+  "Drafting and reviewing employment contracts and executive service agreements",
+  "Representing employees in unfair dismissal and wrongful termination claims",
+  "Advising employers on lawful redundancy and collective consultation procedures",
+  "Handling discrimination and harassment complaints before employment tribunals",
   "Negotiating settlement agreements and compromise agreements",
+  "Advising on TUPE (Transfer of Undertakings) obligations during business transfers",
+  "Drafting non-compete, non-solicitation, and garden leave provisions",
+  "Conducting workplace investigations into misconduct and grievance matters",
   "Advising on minimum wage compliance and working time regulations",
-  "Representing clients in appeals against employment tribunal decisions",
+  "Representing clients in whistleblower retaliation claims",
   "Advising on data protection obligations in the employment context",
-  "Drafting and reviewing non-compete and non-solicitation clauses",
-];
-
-const statsData = [
-  { id: "s1", icon: Award, value: "500+", label: "Employment Matters Handled" },
-  { id: "s2", icon: CheckCircle, value: "95%", label: "Favourable Outcomes" },
-  { id: "s3", icon: Clock, value: "48hrs", label: "Average Initial Response" },
-  { id: "s4", icon: Users, value: "Both", label: "Employers & Employees" },
+  "Structuring executive compensation, bonus, and equity incentive plans",
 ];
 
 const relatedAreas = [
@@ -127,7 +120,7 @@ const relatedAreas = [
   {
     id: "mediation",
     title: "Mediation & Arbitration",
-    description: "Efficient, confidential dispute resolution outside the courtroom.",
+    description: "Efficient dispute resolution outside the courtroom.",
     href: "/practice-areas/mediation-arbitration",
   },
 ];
@@ -141,7 +134,7 @@ const heroVariants: Variants = {
 };
 
 const heroChild: Variants = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
@@ -150,65 +143,44 @@ export default function EmploymentLawPage() {
 
   return (
     <main className="bg-white min-h-screen">
-
       {/* ── 1. Hero ──────────────────────────────────────────────────────── */}
       <section className="relative bg-[var(--brand-primary)] overflow-hidden">
-        {/* Decorative background */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.10) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 60%)",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--brand-accent) 1px, transparent 1px), linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)] via-[#0d2a5e] to-[#0A1F44]" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-[var(--brand-accent)]/30" />
+          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--brand-accent)]/5 blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-white/[0.02] blur-3xl" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <motion.div
-            className="max-w-3xl"
             variants={heroVariants}
             initial="hidden"
             animate="visible"
+            className="max-w-3xl"
           >
-            {/* Breadcrumb */}
-            <motion.nav
-              variants={heroChild}
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-white/50 text-xs font-body mb-6"
-            >
-              <Link href="/" className="hover:text-white/80 transition-colors">Home</Link>
-              <ChevronRightIcon />
-              <Link href="/practice-areas" className="hover:text-white/80 transition-colors">Practice Areas</Link>
-              <ChevronRightIcon />
-              <span className="text-[var(--brand-accent)]">{heroData.title}</span>
-            </motion.nav>
+            <motion.div variants={heroChild}>
+              <Link
+                href="/practice-areas"
+                className="inline-flex items-center gap-2 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-6 hover:text-[var(--brand-accent)]/80 transition-colors"
+              >
+                <span>←</span> Practice Areas
+              </Link>
+            </motion.div>
 
-            {/* Eyebrow */}
-            <motion.p
-              variants={heroChild}
-              className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4"
-            >
-              {heroData.eyebrow}
-            </motion.p>
+            <motion.div variants={heroChild}>
+              <span className="inline-block px-3 py-1 rounded-full bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-5">
+                {heroData.eyebrow}
+              </span>
+            </motion.div>
 
-            {/* Title */}
             <motion.h1
               variants={heroChild}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6"
             >
               {heroData.title}
             </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
               variants={heroChild}
               className="font-body text-white/70 text-lg leading-relaxed max-w-2xl mb-10"
@@ -216,58 +188,40 @@ export default function EmploymentLawPage() {
               {heroData.subtitle}
             </motion.p>
 
-            {/* CTAs */}
-            <motion.div
-              variants={heroChild}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <motion.div variants={heroChild} className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
               >
-                Schedule a Consultation
-                <ArrowRight size={16} />
+                Schedule a Consultation <ArrowRight size={16} />
               </Link>
-              <Link
-                href="/practice-areas"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/30 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              <a
+                href="tel:+233300000000"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/25 text-white font-body font-medium text-sm rounded hover:border-white/50 hover:bg-white/5 transition-all duration-200"
               >
-                All Practice Areas
-              </Link>
+                <Phone size={16} /> Call Us Now
+              </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── 2. Stats Bar ─────────────────────────────────────────────────── */}
-      <section className="bg-[var(--brand-primary)]/95 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {statsData.map((stat) => (
-              <div key={stat.id} className="text-center">
-                <p className="font-heading text-3xl font-bold text-[var(--brand-accent)] mb-1">{stat.value}</p>
-                <p className="font-body text-white/60 text-xs uppercase tracking-wider">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. Overview ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 2. Overview ──────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <Reveal>
               <div>
-                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                  Overview
-                </p>
+                <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
+                  Practice Overview
+                </span>
                 <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-6">
                   Comprehensive Employment Law Counsel
                 </h2>
+                <div className="w-12 h-0.5 bg-[var(--brand-accent)] mb-8" />
                 <div className="space-y-4">
-                  {overviewParagraphs.map((para, idx) => (
-                    <p key={idx} className="font-body text-[var(--brand-muted-foreground)] leading-relaxed">
+                  {overviewParagraphs.map((para, i) => (
+                    <p key={i} className="font-body text-[var(--brand-muted-foreground)] leading-relaxed">
                       {para}
                     </p>
                   ))}
@@ -277,21 +231,18 @@ export default function EmploymentLawPage() {
 
             <Reveal delay={0.15}>
               <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src={heroData.image}
-                    alt="Employment Law — MIT Legal Consultants"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-[var(--brand-primary)]/10" />
-                </div>
-                {/* Accent card */}
-                <div className="absolute -bottom-6 -left-6 bg-[var(--brand-accent)] text-[var(--brand-primary)] rounded-xl p-5 shadow-xl">
-                  <p className="font-heading text-2xl font-bold">7+</p>
-                  <p className="font-body text-xs font-semibold uppercase tracking-wider mt-0.5">Years Specialising</p>
+                <div className="absolute -inset-4 bg-[var(--brand-muted)] rounded-2xl" aria-hidden="true" />
+                <img
+                  src={heroData.image}
+                  alt="Employment law attorneys at MIT Legal Consultants"
+                  className="relative rounded-xl w-full object-cover aspect-[4/3] shadow-[0_4px_24px_rgba(10,31,68,0.12)] border border-[var(--brand-border)]"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
+                />
+                <div className="absolute -bottom-5 -left-5 bg-[var(--brand-primary)] text-white rounded-xl px-6 py-4 shadow-lg">
+                  <p className="font-heading text-2xl font-bold text-[var(--brand-accent)]">10+</p>
+                  <p className="font-body text-xs text-white/70 mt-0.5">Years of Employment Law Practice</p>
                 </div>
               </div>
             </Reveal>
@@ -299,32 +250,33 @@ export default function EmploymentLawPage() {
         </div>
       </section>
 
-      {/* ── 4. Services ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[var(--brand-muted)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 3. Services Grid ─────────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--brand-muted)]">
+        <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                Our Services
-              </p>
+            <div className="text-center mb-14">
+              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
+                Areas of Expertise
+              </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
-                Areas of Employment Law Expertise
+                Our Employment Law Services
               </h2>
+              <div className="w-12 h-0.5 bg-[var(--brand-accent)] mx-auto mt-5" />
             </div>
           </Reveal>
 
           <motion.div
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {services.map((service) => (
               <motion.div
                 key={service.id}
                 variants={fadeInUp}
-                className="bg-white rounded-xl p-6 shadow-sm border border-[var(--brand-border)] hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-xl p-6 border border-[var(--brand-border)] shadow-[0_1px_3px_rgba(10,31,68,0.06),0_8px_24px_-8px_rgba(10,31,68,0.08)] hover:shadow-[0_4px_12px_rgba(10,31,68,0.10),0_20px_48px_-12px_rgba(10,31,68,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-[var(--brand-primary)]/10 flex items-center justify-center text-[var(--brand-primary)] mb-4">
                   {service.icon}
@@ -332,7 +284,7 @@ export default function EmploymentLawPage() {
                 <h3 className="font-heading text-base font-semibold text-[var(--brand-primary)] mb-2 leading-snug">
                   {service.title}
                 </h3>
-                <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed">
+                <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
@@ -341,26 +293,27 @@ export default function EmploymentLawPage() {
         </div>
       </section>
 
-      {/* ── 5. Typical Matters ───────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 4. Typical Matters ───────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <Reveal>
               <div>
-                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+                <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
                   Typical Matters
-                </p>
+                </span>
                 <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight mb-4">
-                  Employment Matters We Handle
+                  Legal Matters We Handle
                 </h2>
+                <div className="w-12 h-0.5 bg-[var(--brand-accent)] mb-8" />
                 <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8">
-                  MIT Legal Consultants handles the full range of employment law matters for both employers and employees, from day-to-day HR advisory to complex multi-party tribunal proceedings.
+                  Our employment law team handles a broad range of matters for both employers and employees, from day-to-day HR advisory to complex tribunal litigation.
                 </p>
                 <ul className="space-y-3">
-                  {typicalMatters.map((matter) => (
-                    <li key={matter} className="flex items-start gap-3">
+                  {typicalMatters.map((matter, i) => (
+                    <li key={i} className="flex items-start gap-3">
                       <CheckCircle size={16} className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5" />
-                      <span className="font-body text-[var(--brand-foreground)] text-sm leading-relaxed">{matter}</span>
+                      <span className="font-body text-sm text-[var(--brand-foreground)] leading-relaxed">{matter}</span>
                     </li>
                   ))}
                 </ul>
@@ -369,81 +322,88 @@ export default function EmploymentLawPage() {
 
             <Reveal delay={0.15}>
               <div className="bg-[var(--brand-primary)] rounded-2xl p-8 text-white">
-                <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                  Our Approach
-                </p>
-                <h3 className="font-heading text-2xl font-bold mb-6 leading-tight">
-                  Practical, Results-Driven Employment Advice
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">
+                  Need Employment Law Advice?
                 </h3>
-                <div className="space-y-5">
-                  {[
-                    {
-                      id: "a1",
-                      title: "Early Assessment",
-                      body: "We assess the merits and risks of your matter at the outset, giving you a clear picture of your legal position and realistic expectations.",
-                    },
-                    {
-                      id: "a2",
-                      title: "Strategic Counsel",
-                      body: "We develop a tailored strategy — whether that means negotiating a settlement, pursuing tribunal proceedings, or implementing preventive HR policies.",
-                    },
-                    {
-                      id: "a3",
-                      title: "Commercial Awareness",
-                      body: "We understand that employment matters have business implications. Our advice balances legal compliance with commercial pragmatism.",
-                    },
-                    {
-                      id: "a4",
-                      title: "Ongoing Support",
-                      body: "Beyond individual matters, we serve as trusted advisors to businesses, providing proactive guidance to prevent disputes before they arise.",
-                    },
-                  ].map((item) => (
-                    <div key={item.id} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-[var(--brand-accent)]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle size={14} className="text-[var(--brand-accent)]" />
-                      </div>
-                      <div>
-                        <p className="font-heading text-base font-semibold text-white mb-1">{item.title}</p>
-                        <p className="font-body text-white/70 text-sm leading-relaxed">{item.body}</p>
-                      </div>
+                <p className="font-body text-white/70 text-sm leading-relaxed mb-8">
+                  Whether you are an employer managing workforce challenges or an employee facing a workplace dispute, our team is ready to provide confidential, expert guidance.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center flex-shrink-0">
+                      <Phone size={16} className="text-[var(--brand-accent)]" />
                     </div>
-                  ))}
+                    <div>
+                      <p className="font-body text-xs text-white/50 uppercase tracking-wider">Phone</p>
+                      <a href="tel:+233300000000" className="font-body text-sm text-white hover:text-[var(--brand-accent)] transition-colors">
+                        +233 (0) 30 000 0000
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center flex-shrink-0">
+                      <Mail size={16} className="text-[var(--brand-accent)]" />
+                    </div>
+                    <div>
+                      <p className="font-body text-xs text-white/50 uppercase tracking-wider">Email</p>
+                      <a href="mailto:info@mitlegal.com" className="font-body text-sm text-white hover:text-[var(--brand-accent)] transition-colors">
+                        info@mitlegal.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center flex-shrink-0">
+                      <Clock size={16} className="text-[var(--brand-accent)]" />
+                    </div>
+                    <div>
+                      <p className="font-body text-xs text-white/50 uppercase tracking-wider">Hours</p>
+                      <p className="font-body text-sm text-white">Monday – Friday, 8:00 AM – 6:00 PM</p>
+                    </div>
+                  </div>
                 </div>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 w-full justify-center px-6 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+                >
+                  Schedule a Consultation <ArrowRight size={16} />
+                </Link>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── 6. Related Practice Areas ────────────────────────────────────── */}
-      <section className="py-20 bg-[var(--brand-muted)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 5. Related Practice Areas ────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--brand-muted)]">
+        <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <div className="text-center mb-12">
+              <span className="inline-block text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
                 Related Services
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight">
-                Related Practice Areas
+              </span>
+              <h2 className="font-heading text-3xl font-bold text-[var(--brand-primary)]">
+                Explore Related Practice Areas
               </h2>
             </div>
           </Reveal>
 
           <div className="grid sm:grid-cols-3 gap-6">
-            {relatedAreas.map((area) => (
-              <Reveal key={area.id}>
+            {relatedAreas.map((area, i) => (
+              <Reveal key={area.id} delay={i * 0.1}>
                 <Link
                   href={area.href}
-                  className="group block bg-white rounded-xl p-6 border border-[var(--brand-border)] hover:border-[var(--brand-primary)]/30 hover:shadow-md transition-all duration-300"
+                  className="group block bg-white rounded-xl p-6 border border-[var(--brand-border)] shadow-[0_1px_3px_rgba(10,31,68,0.06)] hover:shadow-[0_4px_20px_rgba(10,31,68,0.12)] hover:-translate-y-1 transition-all duration-300"
                 >
                   <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-2 group-hover:text-[var(--brand-accent)] transition-colors">
                     {area.title}
                   </h3>
-                  <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed mb-4">
+                  <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed mb-4">
                     {area.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-sm font-body font-semibold">
-                    Learn More <ArrowRight size={14} />
+                  <span className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-wider">
+                    Learn More <ArrowRight size={12} />
                   </span>
                 </Link>
               </Reveal>
@@ -452,48 +412,36 @@ export default function EmploymentLawPage() {
         </div>
       </section>
 
-      {/* ── 7. CTA ───────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[var(--brand-primary)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── 6. CTA Banner ────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--brand-primary)]">
+        <div className="max-w-4xl mx-auto text-center">
           <Reveal>
-            <p className="font-body text-[var(--brand-accent)] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--brand-accent)]/15 text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-6">
               Get Expert Advice
-            </p>
+            </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
-              Speak with an Employment Law Specialist
+              Facing a Workplace Legal Challenge?
             </h2>
             <p className="font-body text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-              Whether you are an employer managing workforce challenges or an employee facing a workplace dispute, MIT Legal Consultants is here to help. Contact us today for a confidential consultation.
+              Our employment law specialists are ready to provide confidential, strategic advice tailored to your specific situation. Contact MIT Legal Consultants today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
               >
-                Schedule a Consultation
-                <ArrowRight size={16} />
+                Request a Consultation <ArrowRight size={16} />
               </Link>
-              <a
-                href="tel:+233300000000"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-white/30 text-white font-body font-medium text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              <Link
+                href="/practice-areas"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/25 text-white font-body font-medium text-sm rounded hover:border-white/50 hover:bg-white/5 transition-all duration-200"
               >
-                <Phone size={16} />
-                Call Us Now
-              </a>
+                View All Practice Areas
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
-
     </main>
-  );
-}
-
-// ─── Inline SVG helper ───────────────────────────────────────────────────────
-function ChevronRightIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m9 18 6-6-6-6" />
-    </svg>
   );
 }

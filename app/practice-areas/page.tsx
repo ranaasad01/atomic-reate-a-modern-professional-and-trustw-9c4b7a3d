@@ -90,7 +90,7 @@ export default function PracticeAreasPage() {
         </div>
       </section>
 
-      {/* Practice Area Cards */}
+      {/* Practice Area Cards Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -101,64 +101,65 @@ export default function PracticeAreasPage() {
             viewport={{ once: true, margin: "-60px" }}
           >
             {practiceAreas.map((area) => {
-              const details = practiceDetails[area.id];
-              const icon = iconMap[area.icon] ?? <Briefcase size={28} />;
+              const details = practiceDetails[area.id] ?? {
+                tagline: area.shortDescription,
+                expertise: [],
+              };
               return (
                 <motion.div key={area.id} variants={fadeInUp}>
                   <motion.div
-                    className="bg-white rounded-2xl p-8 h-full flex flex-col border border-[var(--brand-border)] cursor-pointer"
+                    className="group bg-white rounded-2xl border border-[var(--brand-border)] overflow-hidden cursor-pointer h-full flex flex-col"
                     variants={cardHover}
                     initial="rest"
                     whileHover="hover"
-                    animate="rest"
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                   >
-                    {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-[var(--brand-primary)] text-[var(--brand-accent)] flex items-center justify-center mb-6 flex-shrink-0">
-                      {icon}
-                    </div>
+                    {/* Card top accent bar */}
+                    <div className="h-1 w-full bg-[var(--brand-accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* Title */}
-                    <h2 className="font-heading text-xl font-bold text-[var(--brand-primary)] mb-2 leading-snug">
-                      {area.title}
-                    </h2>
+                    <div className="p-8 flex flex-col flex-1">
+                      {/* Icon */}
+                      <div className="w-14 h-14 rounded-xl bg-[var(--brand-primary)]/8 flex items-center justify-center text-[var(--brand-primary)] mb-6 group-hover:bg-[var(--brand-accent)]/10 group-hover:text-[var(--brand-accent)] transition-colors duration-300">
+                        {iconMap[area.icon] ?? <Briefcase size={28} />}
+                      </div>
 
-                    {/* Tagline */}
-                    {details && (
-                      <p className="text-[var(--brand-accent)] text-sm font-body font-medium italic mb-3">
+                      {/* Title */}
+                      <h2 className="font-heading text-xl font-semibold text-[var(--brand-primary)] mb-3 leading-snug">
+                        {area.title}
+                      </h2>
+
+                      {/* Tagline */}
+                      <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed mb-6">
                         {details.tagline}
                       </p>
-                    )}
 
-                    {/* Short description */}
-                    <p className="text-[var(--brand-muted-foreground)] text-sm font-body leading-relaxed mb-5">
-                      {area.shortDescription}
-                    </p>
+                      {/* Expertise tags */}
+                      {details.expertise.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {details.expertise.map((tag) => (
+                            <span
+                              key={tag}
+                              className="inline-block px-3 py-1 rounded-full bg-[var(--brand-muted)] text-[var(--brand-primary)] text-xs font-body font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
 
-                    {/* Expertise tags */}
-                    {details && (
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {details.expertise.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 bg-[var(--brand-muted)] text-[var(--brand-primary)] text-xs font-body font-medium rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      {/* CTA link */}
+                      <div className="mt-auto">
+                        <Link
+                          href={area.href}
+                          className="inline-flex items-center gap-2 text-[var(--brand-primary)] font-body font-semibold text-sm hover:text-[var(--brand-accent)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] rounded"
+                          aria-label={`Learn more about ${area.title}`}
+                        >
+                          Learn More
+                          <motion.span variants={arrowHover}>
+                            <ArrowRight size={16} />
+                          </motion.span>
+                        </Link>
                       </div>
-                    )}
-
-                    {/* CTA link */}
-                    <div className="mt-auto">
-                      <Link
-                        href={area.href}
-                        className="inline-flex items-center gap-2 text-[var(--brand-primary)] font-body font-semibold text-sm hover:text-[var(--brand-accent)] transition-colors group"
-                      >
-                        Learn More
-                        <motion.span variants={arrowHover}>
-                          <ArrowRight size={16} />
-                        </motion.span>
-                      </Link>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -168,28 +169,35 @@ export default function PracticeAreasPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* CTA Section */}
       <section className="bg-[var(--brand-primary)] py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <Reveal>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
               Not Sure Which Practice Area Fits Your Needs?
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-white/70 font-body text-lg mb-8">
-              Our team will assess your situation and connect you with the right specialist. Schedule a
-              confidential consultation today.
+            <p className="text-white/70 font-body text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              Our attorneys will assess your situation and connect you with the right specialist. Schedule a confidential consultation today.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-base rounded-xl hover:bg-[var(--brand-accent)]/90 transition-all duration-200 shadow-lg"
-            >
-              Schedule a Consultation
-              <ArrowRight size={18} />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[#b8922e] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+              >
+                Schedule a Consultation
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-body font-semibold text-sm rounded-lg hover:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              >
+                About Our Firm
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
