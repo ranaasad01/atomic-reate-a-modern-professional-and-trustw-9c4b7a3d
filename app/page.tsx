@@ -101,7 +101,7 @@ export default function HomePage() {
               className="font-body text-lg sm:text-xl text-white/75 leading-relaxed max-w-2xl mx-auto mb-10 text-pretty"
             >
               MIT Legal Consultants delivers strategic, results-oriented legal counsel to individuals,
-              corporations, and governments across seven specialized practice areas.
+              corporations, and governments. Seven practice areas. One trusted firm.
             </motion.p>
 
             <motion.div
@@ -110,7 +110,7 @@ export default function HomePage() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 shadow-[0_4px_24px_rgba(201,168,76,0.35)] hover:shadow-[0_6px_32px_rgba(201,168,76,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)] shadow-[0_4px_20px_rgba(201,168,76,0.35)]"
               >
                 Schedule a Consultation
                 <ArrowRight size={16} />
@@ -125,12 +125,12 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* Decorative bottom fade */}
+        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--brand-background)] to-transparent" />
       </section>
 
       {/* ─── FIRM INTRODUCTION ────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-background)]">
+      <section className="py-20 md:py-28 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <Reveal>
@@ -142,48 +142,42 @@ export default function HomePage() {
                   A Firm Built on Expertise, Integrity, and Results
                 </h2>
                 <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-5 text-pretty">
-                  MIT Legal Consultants is a professional legal consultancy committed to delivering practical,
+                  MIT Legal Consultants is a full-service legal consultancy committed to delivering practical,
                   strategic, and results-oriented legal solutions. We serve individuals, businesses,
-                  organizations, and international clients with the highest standards of professionalism
-                  and client confidentiality.
+                  organizations, and international clients with the same unwavering standard of excellence.
                 </p>
                 <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8 text-pretty">
-                  Our multidisciplinary team brings deep expertise across seven distinct practice areas,
-                  enabling us to provide comprehensive legal counsel under one roof — from corporate
-                  transactions to international dispute resolution.
+                  Our attorneys combine deep subject-matter expertise with a thorough understanding of the
+                  commercial and human dimensions of every matter. We do not simply advise — we partner with
+                  our clients to achieve their objectives.
                 </p>
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-2 text-[var(--brand-primary)] font-body font-semibold text-sm hover:text-[var(--brand-accent)] transition-colors duration-200 group"
                 >
-                  Learn More About Us
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+                  Learn More About the Firm
+                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </div>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="relative">
-                <div className="bg-[var(--brand-primary)] rounded-2xl p-10 text-white shadow-[0_8px_40px_rgba(10,31,68,0.18)]">
-                  <div className="grid grid-cols-2 gap-8">
-                    {[
-                      { label: "Mission", text: "To deliver practical, strategic legal solutions with integrity and excellence." },
-                      { label: "Vision", text: "To be the most trusted legal consultancy for clients across all sectors." },
-                      { label: "Values", text: "Integrity, confidentiality, excellence, and unwavering client commitment." },
-                      { label: "Approach", text: "Tailored strategies built around each client's unique goals and circumstances." },
-                    ].map((item) => (
-                      <div key={item.label}>
-                        <div className="w-8 h-0.5 bg-[var(--brand-accent)] mb-3" />
-                        <h3 className="font-heading text-[var(--brand-accent)] text-sm font-semibold uppercase tracking-widest mb-2">
-                          {item.label}
-                        </h3>
-                        <p className="font-body text-white/70 text-sm leading-relaxed">{item.text}</p>
-                      </div>
-                    ))}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Practice Areas", value: "7", sub: "Specialized disciplines" },
+                  { label: "Client Focus", value: "360°", sub: "Holistic legal counsel" },
+                  { label: "Jurisdictions", value: "Multi", sub: "Domestic & international" },
+                  { label: "Commitment", value: "100%", sub: "To client success" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.06),0_12px_32px_-8px_rgba(0,0,0,0.14)] transition-shadow duration-300"
+                  >
+                    <div className="font-heading text-3xl font-bold text-[var(--brand-primary)] mb-1">{item.value}</div>
+                    <div className="font-body font-semibold text-sm text-[var(--brand-foreground)] mb-0.5">{item.label}</div>
+                    <div className="font-body text-xs text-[var(--brand-muted-foreground)]">{item.sub}</div>
                   </div>
-                </div>
-                {/* Decorative accent */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--brand-accent)]/10 rounded-2xl -z-10" />
+                ))}
               </div>
             </Reveal>
           </div>
@@ -191,19 +185,19 @@ export default function HomePage() {
       </section>
 
       {/* ─── PRACTICE AREAS ───────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-muted)]">
+      <section className="py-20 md:py-28 bg-[var(--brand-muted)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-                Our Expertise
+                Our Practice Areas
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-4">
-                Seven Areas of Legal Excellence
+                Comprehensive Legal Services
               </h2>
               <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed text-pretty">
-                From corporate transactions to international law, our attorneys provide specialized
-                counsel across a comprehensive range of legal disciplines.
+                From corporate transactions to international disputes, our attorneys provide expert counsel
+                across seven distinct practice areas.
               </p>
             </div>
           </Reveal>
@@ -215,20 +209,20 @@ export default function HomePage() {
                 <Reveal key={area.id} delay={index * 0.07}>
                   <Link
                     href={area.href}
-                    className="group block bg-[var(--brand-card)] rounded-xl p-6 border border-[var(--brand-border)] hover:border-[var(--brand-accent)]/50 hover:shadow-[0_4px_24px_rgba(10,31,68,0.12)] transition-all duration-300 h-full"
+                    className="group flex flex-col h-full bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.06),0_12px_32px_-8px_rgba(10,31,68,0.18)] hover:border-[var(--brand-accent)]/40 transition-all duration-300"
                   >
-                    <div className="w-11 h-11 rounded-lg bg-[var(--brand-primary)]/8 flex items-center justify-center mb-4 group-hover:bg-[var(--brand-accent)]/10 transition-colors duration-300">
+                    <div className="w-11 h-11 rounded-lg bg-[var(--brand-primary)]/8 flex items-center justify-center mb-4 group-hover:bg-[var(--brand-accent)]/12 transition-colors duration-300">
                       <Icon size={22} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-300" />
                     </div>
-                    <h3 className="font-heading text-[var(--brand-primary)] text-lg font-semibold mb-2 leading-snug group-hover:text-[var(--brand-accent)] transition-colors duration-300">
+                    <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] leading-snug mb-2 group-hover:text-[var(--brand-accent)] transition-colors duration-300">
                       {area.title}
                     </h3>
-                    <p className="font-body text-[var(--brand-muted-foreground)] text-sm leading-relaxed mb-4">
+                    <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed flex-1">
                       {area.shortDescription}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-xs font-body font-semibold text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-200">
-                      Learn More <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-200" />
-                    </span>
+                    <div className="mt-4 flex items-center gap-1 text-xs font-body font-semibold text-[var(--brand-accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Learn More <ArrowRight size={12} />
+                    </div>
                   </Link>
                 </Reveal>
               );
@@ -239,7 +233,7 @@ export default function HomePage() {
             <div className="text-center mt-12">
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded hover:bg-[#0d2a5e] transition-all duration-300 shadow-[0_2px_12px_rgba(10,31,68,0.2)] hover:shadow-[0_4px_20px_rgba(10,31,68,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded hover:bg-[#0d2a5e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2 shadow-[0_4px_16px_rgba(10,31,68,0.25)]"
               >
                 View All Practice Areas
                 <ArrowRight size={15} />
@@ -250,19 +244,19 @@ export default function HomePage() {
       </section>
 
       {/* ─── WHY CHOOSE US ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-primary)]">
+      <section className="py-20 md:py-28 bg-[var(--brand-primary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
                 Why MIT Legal
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight text-balance mb-4">
-                The Standard of Legal Excellence
+                The Standard of Excellence You Deserve
               </h2>
               <p className="font-body text-white/65 leading-relaxed text-pretty">
-                We combine deep legal expertise with a genuine commitment to client outcomes,
-                delivering counsel that is both strategically sound and practically effective.
+                We combine legal expertise with a genuine commitment to client outcomes — delivering counsel
+                that is both strategically sound and practically effective.
               </p>
             </div>
           </Reveal>
@@ -272,16 +266,12 @@ export default function HomePage() {
               const Icon = item.icon;
               return (
                 <Reveal key={item.title} delay={index * 0.08}>
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-7 hover:bg-white/8 hover:border-[var(--brand-accent)]/30 transition-all duration-300">
-                    <div className="w-11 h-11 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center mb-5">
-                      <Icon size={22} className="text-[var(--brand-accent)]" />
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 hover:border-[var(--brand-accent)]/30 transition-all duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center mb-4">
+                      <Icon size={20} className="text-[var(--brand-accent)]" />
                     </div>
-                    <h3 className="font-heading text-white text-xl font-semibold mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="font-body text-white/60 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
+                    <h3 className="font-heading text-lg font-semibold text-white mb-2">{item.title}</h3>
+                    <p className="font-body text-sm text-white/65 leading-relaxed">{item.description}</p>
                   </div>
                 </Reveal>
               );
@@ -291,9 +281,10 @@ export default function HomePage() {
       </section>
 
       {/* ─── CONTACT CTA ──────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-background)]">
+      <section className="py-20 md:py-28 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left: CTA copy */}
             <Reveal>
               <div>
                 <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
@@ -307,87 +298,78 @@ export default function HomePage() {
                   specific circumstances. Reach out today to schedule a consultation.
                 </p>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4">
                   {[
                     { icon: Phone, label: "Phone", value: "+1 (555) 000-0000" },
                     { icon: Mail, label: "Email", value: "info@mitlegalconsultants.com" },
                     { icon: MapPin, label: "Office", value: "123 Legal Avenue, Suite 400" },
                   ].map((contact) => (
-                    <div key={contact.label} className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--brand-primary)]/8 flex items-center justify-center flex-shrink-0">
-                        <contact.icon size={18} className="text-[var(--brand-primary)]" />
+                    <div key={contact.label} className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-[var(--brand-primary)]/8 flex items-center justify-center flex-shrink-0">
+                        <contact.icon size={16} className="text-[var(--brand-primary)]" />
                       </div>
                       <div>
-                        <p className="font-body text-xs text-[var(--brand-muted-foreground)] uppercase tracking-wider">{contact.label}</p>
-                        <p className="font-body text-[var(--brand-foreground)] font-medium text-sm">{contact.value}</p>
+                        <div className="font-body text-xs text-[var(--brand-muted-foreground)] uppercase tracking-wide">{contact.label}</div>
+                        <div className="font-body text-sm font-medium text-[var(--brand-foreground)]">{contact.value}</div>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 shadow-[0_4px_24px_rgba(201,168,76,0.3)] hover:shadow-[0_6px_32px_rgba(201,168,76,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-                >
-                  Schedule a Consultation
-                  <ArrowRight size={16} />
-                </Link>
               </div>
             </Reveal>
 
+            {/* Right: Quick contact form */}
             <Reveal delay={0.15}>
-              <div className="bg-[var(--brand-card)] rounded-2xl p-8 border border-[var(--brand-border)] shadow-[0_4px_32px_rgba(10,31,68,0.08)]">
-                <h3 className="font-heading text-[var(--brand-primary)] text-2xl font-semibold mb-6">
-                  Send Us a Message
-                </h3>
+              <div className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-2xl p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.10)]">
+                <h3 className="font-heading text-xl font-semibold text-[var(--brand-primary)] mb-6">Send an Inquiry</h3>
                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wider mb-1.5">
+                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
                         Full Name
                       </label>
                       <input
                         type="text"
-                        placeholder="Your full name"
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-background)] font-body text-sm text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
+                        placeholder="Your name"
+                        className="w-full px-4 py-2.5 border border-[var(--brand-border)] rounded-lg font-body text-sm text-[var(--brand-foreground)] bg-[var(--brand-background)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-colors duration-200"
                       />
                     </div>
                     <div>
-                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wider mb-1.5">
-                        Email Address
+                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
+                        Email
                       </label>
                       <input
                         type="email"
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-background)] font-body text-sm text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
+                        className="w-full px-4 py-2.5 border border-[var(--brand-border)] rounded-lg font-body text-sm text-[var(--brand-foreground)] bg-[var(--brand-background)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-colors duration-200"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wider mb-1.5">
+                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
                       Subject
                     </label>
                     <input
                       type="text"
-                      placeholder="How can we help?"
-                      className="w-full px-4 py-3 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-background)] font-body text-sm text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
+                      placeholder="Brief subject of your inquiry"
+                      className="w-full px-4 py-2.5 border border-[var(--brand-border)] rounded-lg font-body text-sm text-[var(--brand-foreground)] bg-[var(--brand-background)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-colors duration-200"
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wider mb-1.5">
+                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
                       Message
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="Please describe your legal matter..."
-                      className="w-full px-4 py-3 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-background)] font-body text-sm text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200 resize-none"
+                      placeholder="Describe your legal matter..."
+                      className="w-full px-4 py-2.5 border border-[var(--brand-border)] rounded-lg font-body text-sm text-[var(--brand-foreground)] bg-[var(--brand-background)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-colors duration-200 resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[#0d2a5e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
+                    className="w-full py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded-lg hover:bg-[#0d2a5e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2 shadow-[0_4px_16px_rgba(10,31,68,0.25)]"
                   >
-                    Send Inquiry
+                    Submit Inquiry
                   </button>
                 </form>
               </div>
