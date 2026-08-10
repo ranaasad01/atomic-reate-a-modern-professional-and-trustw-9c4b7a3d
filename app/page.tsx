@@ -4,7 +4,14 @@ import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import { Briefcase, Scale, Heart, Globe, FileText, Users, ArrowRight, CheckCircle, Award, Shield, Clock, Phone, Mail, MapPin } from 'lucide-react';
 import { practiceAreas, BRAND_NAME, BRAND_TAGLINE } from "@/lib/data";
-import { fadeInUp, fadeIn, staggerContainer, slideInLeft, slideInRight, scaleIn } from "@/lib/motion";
+import {
+  fadeInUp,
+  fadeIn,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+  scaleIn,
+} from "@/lib/motion";
 import { Reveal } from "@/components/Reveal";
 import { useTranslations } from "next-intl";
 
@@ -19,7 +26,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
 
 const GavelIcon = Scale;
 
-function getIcon(name: string) {
+function getIcon(name: string): React.ComponentType<{ size?: number; className?: string }> {
   if (name === "Gavel") return GavelIcon;
   return iconMap[name] ?? Briefcase;
 }
@@ -68,12 +75,16 @@ export default function HomePage() {
 
   return (
     <main className="overflow-x-hidden">
-      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      {/* ─── SECTION 1: HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[var(--brand-primary)]">
-        {/* Background gradient overlay */}
+        {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)] via-[#0d2a5e] to-[#0A1F44] opacity-95" />
-        {/* Gold accent line */}
+        {/* Gold accent top bar */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--brand-accent)]" />
+        {/* Decorative circles */}
+        <div className="absolute bottom-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full border border-[var(--brand-accent)]/10 opacity-40" />
+        <div className="absolute bottom-[-40px] right-[-40px] w-[260px] h-[260px] rounded-full border border-[var(--brand-accent)]/15 opacity-30" />
+        <div className="absolute top-[-60px] left-[-60px] w-[320px] h-[320px] rounded-full border border-white/5 opacity-30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <motion.div
@@ -82,162 +93,320 @@ export default function HomePage() {
             animate="visible"
             className="max-w-4xl mx-auto"
           >
-            <motion.div variants={fadeInUp}>
-              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] border border-[var(--brand-accent)]/40 rounded-full">
+            {/* Label */}
+            <motion.div variants={fadeInUp} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] border border-[var(--brand-accent)]/40 rounded-full">
                 Trusted Legal Counsel
+                <span className="w-1 h-1 rounded-full bg-[var(--brand-accent)] inline-block" />
+                Est. 2000
               </span>
             </motion.div>
 
+            {/* Heading */}
             <motion.h1
               variants={fadeInUp}
               className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight text-balance mb-6"
             >
-              Expert Legal Solutions
-              <span className="block text-[var(--brand-accent)] mt-2">You Can Rely On</span>
+              Delivering{" "}
+              <span className="text-[var(--brand-accent)]">Justice.</span>
+              <span className="block mt-1">Protecting Interests.</span>
+              <span className="block mt-1">Building Futures.</span>
             </motion.h1>
 
+            {/* Subtitle */}
             <motion.p
               variants={fadeInUp}
-              className="font-body text-lg sm:text-xl text-white/75 leading-relaxed max-w-2xl mx-auto mb-10 text-pretty"
+              className="font-body text-lg sm:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto mb-10 text-pretty"
             >
-              MIT Legal Consultants delivers strategic, results-oriented legal services to individuals,
-              businesses, and governments. Seven practice areas. One trusted firm.
+              MIT Legal Consultants provides strategic, results-oriented legal solutions to individuals,
+              businesses, and governments — with integrity, precision, and unwavering commitment.
             </motion.p>
 
+            {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-wrap gap-4 justify-center mb-14"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 shadow-[0_4px_20px_rgba(201,168,76,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
               >
                 Schedule a Consultation
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/practice-areas"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-body font-medium text-sm rounded hover:border-white/60 hover:bg-white/5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-body font-semibold text-sm rounded hover:border-white hover:bg-white/10 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Explore Practice Areas
               </Link>
             </motion.div>
 
-            {/* Trust indicators */}
+            {/* Stats */}
             <motion.div
               variants={fadeInUp}
-              className="mt-16 pt-10 border-t border-white/10 grid grid-cols-3 gap-6 max-w-lg mx-auto"
+              className="flex flex-wrap gap-8 justify-center"
             >
               {[
-                { value: "7", label: "Practice Areas" },
-                { value: "20+", label: "Years Experience" },
-                { value: "100%", label: "Client Confidentiality" },
+                { number: "7+", label: "Practice Areas" },
+                { number: "20+", label: "Years Experience" },
+                { number: "500+", label: "Clients Served" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="font-heading text-3xl font-bold text-[var(--brand-accent)]">{stat.value}</p>
-                  <p className="font-body text-xs text-white/60 mt-1 uppercase tracking-wide">{stat.label}</p>
+                  <div className="font-heading text-3xl font-bold text-[var(--brand-accent)]">
+                    {stat.number}
+                  </div>
+                  <div className="font-body text-xs text-white/60 uppercase tracking-widest mt-1">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--brand-background)] to-transparent" />
       </section>
 
-      {/* ─── FIRM INTRODUCTION ────────────────────────────────────────────── */}
+      {/* ─── SECTION 2: FIRM INTRODUCTION ────────────────────────────────── */}
       <section className="py-24 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT */}
             <Reveal>
-              <div>
+              <motion.div variants={slideInLeft}>
                 <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-                  About the Firm
+                  About MIT Legal Consultants
                 </span>
-                <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-6">
                   A Firm Built on Expertise, Integrity, and Results
                 </h2>
-                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-5 text-pretty">
-                  MIT Legal Consultants is a full-service legal consultancy committed to delivering practical,
-                  strategic, and results-oriented legal solutions. We serve individuals, corporations, NGOs,
-                  and government bodies across a broad spectrum of legal disciplines.
+                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-4">
+                  MIT Legal Consultants is a premier legal consultancy dedicated to providing comprehensive,
+                  practical, and strategic legal services. We serve individuals, businesses, corporations,
+                  government bodies, NGOs, and international organizations.
                 </p>
-                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8 text-pretty">
-                  Our attorneys combine deep subject-matter expertise with a client-first philosophy, ensuring
-                  every engagement is handled with the highest standards of professionalism and confidentiality.
+                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8">
+                  Our multidisciplinary team of attorneys combines deep legal knowledge with real-world
+                  experience to deliver solutions that protect your interests and advance your objectives —
+                  whether in the boardroom, the courtroom, or across international borders.
                 </p>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 text-[var(--brand-primary)] font-body font-semibold text-sm border-b-2 border-[var(--brand-accent)] pb-0.5 hover:text-[var(--brand-accent)] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-[var(--brand-accent)] font-body font-semibold text-sm hover:gap-3 transition-all duration-300"
                 >
-                  Learn More About Us
-                  <ArrowRight size={14} />
+                  Learn More About Our Firm
+                  <ArrowRight size={16} />
                 </Link>
-              </div>
+              </motion.div>
             </Reveal>
 
+            {/* RIGHT */}
             <Reveal delay={0.15}>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: Award, label: "Proven Excellence", desc: "Decades of successful outcomes across complex legal matters." },
-                  { icon: Shield, label: "Ethical Practice", desc: "Unwavering commitment to integrity and client confidentiality." },
-                  { icon: Globe, label: "Global Reach", desc: "Cross-border expertise spanning multiple jurisdictions." },
-                  { icon: Users, label: "Expert Team", desc: "Specialized attorneys across seven distinct practice areas." },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(10,31,68,0.15)] transition-shadow duration-300"
-                  >
-                    <item.icon size={22} className="text-[var(--brand-accent)] mb-3" />
-                    <p className="font-heading text-sm font-semibold text-[var(--brand-primary)] mb-1">{item.label}</p>
-                    <p className="font-body text-xs text-[var(--brand-muted-foreground)] leading-relaxed">{item.desc}</p>
+              <motion.div variants={slideInRight}>
+                <div className="bg-[var(--brand-primary)] rounded-2xl p-8 text-white shadow-[0_8px_40px_-12px_rgba(10,31,68,0.4)]">
+                  <h3 className="font-heading text-2xl font-bold text-[var(--brand-accent)] mb-6">
+                    Our Commitment to You
+                  </h3>
+                  <ul className="space-y-4 mb-8">
+                    {[
+                      "Confidential & privileged legal advice",
+                      "Transparent communication at every stage",
+                      "Tailored strategies for your unique situation",
+                      "Relentless advocacy for your rights and interests",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <CheckCircle
+                          size={18}
+                          className="text-[var(--brand-accent)] flex-shrink-0 mt-0.5"
+                        />
+                        <span className="font-body text-white/85 text-sm leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="border-t border-white/10 pt-6">
+                    <p className="font-heading italic text-white/70 text-lg">
+                      &ldquo;We don&rsquo;t just practice law — we deliver outcomes.&rdquo;
+                    </p>
                   </div>
-                ))}
+                </div>
+              </motion.div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECTION 3: PRACTICE AREAS HIGHLIGHTS ────────────────────────── */}
+      <section className="py-24 bg-[var(--brand-muted)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center mb-4">
+            <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-3">
+              What We Do
+            </span>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
+              Our Practice Areas
+            </h2>
+            <p className="font-body text-[var(--brand-muted-foreground)] max-w-2xl mx-auto mt-4 leading-relaxed">
+              From corporate transactions to international disputes, our attorneys provide expert counsel
+              across a comprehensive range of legal disciplines.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {practiceAreas.map((area, index) => {
+              const Icon = getIcon(area.icon);
+              return (
+                <Reveal key={area.id} delay={index * 0.08}>
+                  <div className="bg-[var(--brand-card)] rounded-xl p-6 border border-[var(--brand-border)] hover:shadow-[0_4px_24px_-8px_rgba(10,31,68,0.18)] hover:border-[var(--brand-accent)] transition-all duration-300 group flex flex-col h-full">
+                    <div className="w-12 h-12 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center mb-4 flex-shrink-0">
+                      <Icon size={22} className="text-[var(--brand-accent)]" />
+                    </div>
+                    <h3 className="font-heading text-lg font-semibold text-[var(--brand-primary)] mb-2">
+                      {area.title}
+                    </h3>
+                    <p className="font-body text-sm text-[var(--brand-muted-foreground)] leading-relaxed flex-1 mb-4">
+                      {area.shortDescription}
+                    </p>
+                    <Link
+                      href={area.href}
+                      className="inline-flex items-center gap-1 text-[var(--brand-accent)] text-sm font-body font-semibold group-hover:gap-2 transition-all duration-300"
+                    >
+                      Learn More
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          <Reveal className="text-center mt-12">
+            <Link
+              href="/practice-areas"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+            >
+              View All Practice Areas
+              <ArrowRight size={16} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ─── SECTION 4: WHY CHOOSE US ─────────────────────────────────────── */}
+      <section className="py-24 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="text-center mb-4">
+            <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-3">
+              Why MIT Legal
+            </span>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight text-balance">
+              Why Clients Choose Us
+            </h2>
+            <p className="font-body text-white/60 max-w-2xl mx-auto mt-4 leading-relaxed">
+              We combine legal excellence with genuine client care — delivering results that matter,
+              every time.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {whyChooseUs.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Reveal key={item.title} delay={index * 0.08}>
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[var(--brand-accent)] transition-all duration-300 h-full">
+                    <Icon size={28} className="text-[var(--brand-accent)] mb-4" />
+                    <h3 className="font-heading text-lg font-semibold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-sm text-white/60 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECTION 5: CTA BANNER ────────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--brand-accent)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <Reveal>
+              <div>
+                <h2 className="font-heading text-3xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
+                  Ready to Protect What Matters Most?
+                </h2>
+                <p className="font-body text-[var(--brand-primary)]/80 mt-2 leading-relaxed">
+                  Speak with one of our experienced attorneys today. Confidential consultations available.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="flex flex-wrap gap-4 flex-shrink-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded hover:bg-[#0d2a5e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+                >
+                  Schedule a Consultation
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 px-8 py-3 border-2 border-[var(--brand-primary)] text-[var(--brand-primary)] font-body font-semibold text-sm rounded hover:bg-[var(--brand-primary)] hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+                >
+                  Learn About Our Firm
+                </Link>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ─── PRACTICE AREAS ───────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-muted)]">
+      {/* ─── SECTION 6: CONTACT STRIP ─────────────────────────────────────── */}
+      <section className="py-16 bg-[var(--brand-background)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="text-center mb-14">
-            <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-              What We Do
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance">
-              Our Practice Areas
+          <Reveal className="text-center mb-8">
+            <h2 className="font-heading text-2xl font-bold text-[var(--brand-primary)]">
+              Get in Touch
             </h2>
-            <p className="font-body text-[var(--brand-muted-foreground)] mt-4 max-w-2xl mx-auto leading-relaxed text-pretty">
-              Comprehensive legal expertise across seven specialized disciplines, tailored to meet the
-              diverse needs of our clients.
+            <p className="font-body text-[var(--brand-muted-foreground)] mt-2 text-sm">
+              We are here to help. Reach out through any of the channels below.
             </p>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {practiceAreas.map((area, index) => {
-              const Icon = getIcon(area.icon);
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {[
+              {
+                icon: Phone,
+                label: "Call Us",
+                value: "+00",
+              },
+              {
+                icon: Mail,
+                label: "Email Us",
+                value: "xyz@xyz.com",
+              },
+              {
+                icon: MapPin,
+                label: "Visit Us",
+                value: "XYZ Address",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
               return (
-                <Reveal key={area.id} delay={index * 0.05}>
-                  <Link
-                    href={area.href}
-                    className="group flex flex-col h-full bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-8px_rgba(10,31,68,0.18)] hover:border-[var(--brand-accent)]/40 transition-all duration-300"
-                  >
-                    <div className="w-11 h-11 rounded-lg bg-[var(--brand-primary)]/8 flex items-center justify-center mb-4 group-hover:bg-[var(--brand-accent)]/10 transition-colors duration-300">
-                      <Icon size={20} className="text-[var(--brand-primary)] group-hover:text-[var(--brand-accent)] transition-colors duration-300" />
+                <Reveal key={item.label} delay={index * 0.08}>
+                  <div className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-6 text-center flex flex-col items-center gap-3 hover:shadow-[0_4px_20px_-8px_rgba(10,31,68,0.12)] hover:border-[var(--brand-accent)] transition-all duration-300">
+                    <div className="w-12 h-12 rounded-full bg-[var(--brand-muted)] flex items-center justify-center">
+                      <Icon size={20} className="text-[var(--brand-accent)]" />
                     </div>
-                    <h3 className="font-heading text-base font-semibold text-[var(--brand-primary)] mb-2 leading-snug">
-                      {area.title}
-                    </h3>
-                    <p className="font-body text-xs text-[var(--brand-muted-foreground)] leading-relaxed flex-1">
-                      {area.shortDescription}
-                    </p>
-                    <div className="mt-4 flex items-center gap-1 text-[var(--brand-accent)] text-xs font-body font-semibold group-hover:gap-2 transition-all duration-200">
-                      Learn More <ArrowRight size={12} />
+                    <div>
+                      <p className="font-body text-xs font-semibold uppercase tracking-widest text-[var(--brand-muted-foreground)] mb-1">
+                        {item.label}
+                      </p>
+                      <p className="font-body text-sm font-semibold text-[var(--brand-primary)]">
+                        {item.value}
+                      </p>
                     </div>
-                  </Link>
+                  </div>
                 </Reveal>
               );
             })}
@@ -245,225 +414,13 @@ export default function HomePage() {
 
           <Reveal className="text-center mt-10">
             <Link
-              href="/practice-areas"
-              className="inline-flex items-center gap-2 px-7 py-3 border-2 border-[var(--brand-primary)] text-[var(--brand-primary)] font-body font-semibold text-sm rounded hover:bg-[var(--brand-primary)] hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
             >
-              View All Practice Areas
-              <ArrowRight size={14} />
+              Send Us a Message
+              <ArrowRight size={16} />
             </Link>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ─── WHY CHOOSE US ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-primary)] relative overflow-hidden">
-        {/* Subtle texture */}
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #C9A84C 0%, transparent 50%), radial-gradient(circle at 80% 20%, #1E40AF 0%, transparent 50%)' }} />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal className="text-center mb-14">
-            <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-              Why MIT Legal
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight text-balance">
-              Why Clients Choose Us
-            </h2>
-            <p className="font-body text-white/60 mt-4 max-w-2xl mx-auto leading-relaxed text-pretty">
-              We combine legal excellence with a genuine commitment to our clients' success.
-            </p>
-          </Reveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <Reveal key={item.title} delay={index * 0.07}>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/8 hover:border-[var(--brand-accent)]/30 transition-all duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--brand-accent)]/15 flex items-center justify-center mb-4">
-                    <item.icon size={20} className="text-[var(--brand-accent)]" />
-                  </div>
-                  <h3 className="font-heading text-base font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="font-body text-sm text-white/60 leading-relaxed">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TEAM TEASER ──────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-background)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
-            <Reveal className="lg:col-span-2">
-              <div>
-                <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-                  Our Attorneys
-                </span>
-                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-5">
-                  Meet the Legal Minds Behind MIT
-                </h2>
-                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8 text-pretty">
-                  Our team of experienced attorneys brings specialized expertise across every practice area,
-                  ensuring you receive counsel from the right expert for your matter.
-                </p>
-                <Link
-                  href="/team"
-                  className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--brand-primary)] text-white font-body font-semibold text-sm rounded hover:bg-[#0d2a5e] transition-all duration-300 shadow-[0_4px_16px_rgba(10,31,68,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)]"
-                >
-                  Meet Our Team
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1} className="lg:col-span-3">
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  { initials: "MT", name: "M. Ibrahim Tariq", role: "Partner" },
-                  { initials: "SA", name: "Senior Associate", role: "Corporate Law" },
-                  { initials: "JD", name: "Legal Counsel", role: "Litigation" },
-                ].map((member) => (
-                  <div
-                    key={member.initials}
-                    className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-xl p-5 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_16px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(10,31,68,0.15)] transition-shadow duration-300"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-[var(--brand-primary)] flex items-center justify-center mx-auto mb-3">
-                      <span className="font-heading text-lg font-bold text-[var(--brand-accent)]">{member.initials}</span>
-                    </div>
-                    <p className="font-heading text-sm font-semibold text-[var(--brand-primary)]">{member.name}</p>
-                    <p className="font-body text-xs text-[var(--brand-muted-foreground)] mt-0.5">{member.role}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CONTACT / CTA SECTION ────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--brand-muted)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: CTA copy */}
-            <Reveal>
-              <div>
-                <span className="inline-block text-xs font-body font-semibold uppercase tracking-widest text-[var(--brand-accent)] mb-4">
-                  Get in Touch
-                </span>
-                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--brand-primary)] leading-tight tracking-tight text-balance mb-5">
-                  Ready to Discuss Your Legal Matter?
-                </h2>
-                <p className="font-body text-[var(--brand-muted-foreground)] leading-relaxed mb-8 text-pretty">
-                  Our attorneys are available to provide confidential, expert guidance tailored to your
-                  specific circumstances. Reach out today to schedule a consultation.
-                </p>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center flex-shrink-0">
-                      <Phone size={15} className="text-[var(--brand-accent)]" />
-                    </div>
-                    <div>
-                      <p className="font-body text-xs text-[var(--brand-muted-foreground)] uppercase tracking-wide">Phone</p>
-                      <a href="tel:+00" className="font-body text-sm font-semibold text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors duration-200">
-                        +00
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center flex-shrink-0">
-                      <Mail size={15} className="text-[var(--brand-accent)]" />
-                    </div>
-                    <div>
-                      <p className="font-body text-xs text-[var(--brand-muted-foreground)] uppercase tracking-wide">Email</p>
-                      <a href="mailto:xyz@xyz.com" className="font-body text-sm font-semibold text-[var(--brand-primary)] hover:text-[var(--brand-accent)] transition-colors duration-200">
-                        xyz@xyz.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[var(--brand-primary)] flex items-center justify-center flex-shrink-0">
-                      <MapPin size={15} className="text-[var(--brand-accent)]" />
-                    </div>
-                    <div>
-                      <p className="font-body text-xs text-[var(--brand-muted-foreground)] uppercase tracking-wide">Office</p>
-                      <p className="font-body text-sm font-semibold text-[var(--brand-primary)]">
-                        XYZ Address
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 mt-8 px-7 py-3 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-300 shadow-[0_4px_16px_rgba(201,168,76,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
-                >
-                  Contact Us Today
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </Reveal>
-
-            {/* Right: Quick inquiry form */}
-            <Reveal delay={0.1}>
-              <div className="bg-[var(--brand-card)] border border-[var(--brand-border)] rounded-2xl p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_32px_-8px_rgba(10,31,68,0.12)]">
-                <h3 className="font-heading text-xl font-semibold text-[var(--brand-primary)] mb-6">
-                  Send Us a Message
-                </h3>
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Your full name"
-                        className="w-full px-4 py-2.5 text-sm font-body border border-[var(--brand-border)] rounded-lg bg-[var(--brand-background)] text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
-                      />
-                    </div>
-                    <div>
-                      <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="your@email.com"
-                        className="w-full px-4 py-2.5 text-sm font-body border border-[var(--brand-border)] rounded-lg bg-[var(--brand-background)] text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="How can we help?"
-                      className="w-full px-4 py-2.5 text-sm font-body border border-[var(--brand-border)] rounded-lg bg-[var(--brand-background)] text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-body text-xs font-semibold text-[var(--brand-foreground)] uppercase tracking-wide mb-1.5">
-                      Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder="Briefly describe your legal matter..."
-                      className="w-full px-4 py-2.5 text-sm font-body border border-[var(--brand-border)] rounded-lg bg-[var(--brand-background)] text-[var(--brand-foreground)] placeholder:text-[var(--brand-muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/30 focus:border-[var(--brand-primary)] transition-all duration-200 resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-[var(--brand-primary)] text-white font-body font-bold text-sm rounded-lg hover:bg-[#0d2a5e] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-primary)] focus-visible:ring-offset-2"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </Reveal>
-          </div>
         </div>
       </section>
     </main>
