@@ -16,11 +16,11 @@ export const navLinks: NavLink[] = [
     href: "/practice-areas",
     children: [
       { label: "Corporate & Commercial Law", href: "/practice-areas/corporate-commercial-law" },
+      { label: "Legislative Drafting & Policy", href: "/practice-areas/legislative-drafting-policy" },
       { label: "Mediation & Arbitration", href: "/practice-areas/mediation-arbitration" },
       { label: "Civil & Criminal Litigation", href: "/practice-areas/civil-criminal-litigation" },
       { label: "Family Law", href: "/practice-areas/family-law" },
       { label: "Public International Law", href: "/practice-areas/public-international-law" },
-      { label: "Legislative Drafting & Policy", href: "/practice-areas/legislative-drafting-policy" },
       { label: "Employment Law", href: "/practice-areas/employment-law" },
     ],
   },
@@ -45,6 +45,15 @@ export const practiceAreas: PracticeArea[] = [
       "Comprehensive legal support for business formation, contracts, mergers, acquisitions, and commercial transactions.",
     icon: "Briefcase",
     href: "/practice-areas/corporate-commercial-law",
+  },
+  {
+    id: "legislative-drafting",
+    title: "Legislative Drafting & Policy",
+    slug: "legislative-drafting-policy",
+    shortDescription:
+      "Specialized drafting of legislation, regulations, and public policy frameworks for governments and institutions.",
+    icon: "FileText",
+    href: "/practice-areas/legislative-drafting-policy",
   },
   {
     id: "mediation-arbitration",
@@ -83,15 +92,6 @@ export const practiceAreas: PracticeArea[] = [
     href: "/practice-areas/public-international-law",
   },
   {
-    id: "legislative-drafting",
-    title: "Legislative Drafting & Policy",
-    slug: "legislative-drafting-policy",
-    shortDescription:
-      "Specialized drafting of legislation, regulations, and public policy frameworks for governments and institutions.",
-    icon: "FileText",
-    href: "/practice-areas/legislative-drafting-policy",
-  },
-  {
     id: "employment-law",
     title: "Employment Law",
     slug: "employment-law",
@@ -119,48 +119,30 @@ export const attorneys: Attorney[] = [
     title: "Partner",
     specializations: ["Corporate & Commercial Law", "Legislative Drafting & Public Policy"],
     image: "",
-    bio: "Muhammad Ibrahim Tariq is a dedicated legal professional with extensive experience in corporate law and legislative drafting. He provides strategic counsel to businesses and institutions navigating complex legal and regulatory environments.",
+    bio: "Muhammad Ibrahim Tariq is a dedicated legal professional with extensive experience in corporate law and legislative drafting. He advises businesses and government institutions on complex commercial transactions, regulatory compliance, and the preparation of legislation and policy frameworks.",
   },
   {
     id: "attorney-2",
-    name: "Safi Ullah Khan",
-    title: "Partner",
-    specializations: ["Civil & Criminal Litigation", "Employment Law"],
+    name: "Senior Associate",
+    title: "Senior Associate",
+    specializations: ["Mediation & Arbitration", "Civil & Criminal Litigation"],
     image: "",
-    bio: "Safi Ullah Khan is a seasoned litigator with a strong track record in civil and criminal matters. He is committed to vigorous client advocacy and achieving results through meticulous case preparation and courtroom expertise.",
+    bio: "A seasoned litigator and dispute resolution specialist with a strong track record in both courtroom advocacy and alternative dispute resolution. Represents clients across a broad range of civil and criminal matters.",
   },
   {
     id: "attorney-3",
-    name: "Ambreen Khalid",
-    title: "Partner",
-    specializations: ["Family Law", "Mediation & Arbitration"],
+    name: "Associate Attorney",
+    title: "Associate",
+    specializations: ["Family Law", "Employment Law"],
     image: "",
-    bio: "Ambreen Khalid brings compassion and expertise to family law and dispute resolution. She guides clients through sensitive legal matters with professionalism, ensuring their rights and interests are protected at every stage.",
+    bio: "Provides compassionate and strategic counsel in family law and employment matters. Committed to protecting client rights and achieving fair outcomes in sensitive personal and workplace disputes.",
+  },
+  {
+    id: "attorney-4",
+    name: "International Law Counsel",
+    title: "Of Counsel",
+    specializations: ["Public International Law", "Cross-Border Matters"],
+    image: "",
+    bio: "Specializes in public international law, cross-border transactions, and international dispute resolution. Advises governments, NGOs, and multinational clients on complex multi-jurisdictional legal matters.",
   },
 ];
-
-export interface ContactInfo {
-  phone: string;
-  email: string;
-  address: string;
-  hours: string;
-}
-
-export const contactInfo: ContactInfo = {
-  phone: "+1 (555) 000-0000",
-  email: "info@mitlegal.com",
-  address: "123 Legal Avenue, Suite 400, City, Country",
-  hours: "Monday to Friday, 9:00 AM – 6:00 PM",
-};
-
-export interface SocialLinks {
-  linkedin: string;
-  twitter: string;
-  facebook: string;
-}
-
-export const socialLinks: SocialLinks = {
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-  facebook: "https://facebook.com",
-};
