@@ -2,227 +2,222 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { Briefcase as Linkedin, MessageCircle as Twitter, Globe as Facebook, Mail, Phone, MapPin } from 'lucide-react';
-import { navLinks, BRAND_NAME, BRAND_TAGLINE, contactInfo, socialLinks, practiceAreas } from "@/lib/data";
-import { useTranslations } from "next-intl";
+import { Mail, Phone, MapPin, Briefcase as Linkedin, MessageCircle as Twitter, Globe as Facebook } from 'lucide-react';
+
+const practiceAreaLinks = [
+  { label: "Corporate & Commercial Law", href: "/practice-areas/corporate-commercial-law" },
+  { label: "Mediation & Arbitration", href: "/practice-areas/mediation-arbitration" },
+  { label: "Civil & Criminal Litigation", href: "/practice-areas/civil-criminal-litigation" },
+  { label: "Family Law", href: "/practice-areas/family-law" },
+  { label: "Public International Law", href: "/practice-areas/public-international-law" },
+  { label: "Legislative Drafting & Policy", href: "/practice-areas/legislative-drafting-policy" },
+  { label: "Employment Law", href: "/practice-areas/employment-law" },
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Practice Areas", href: "/practice-areas" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms" },
+];
+
+function ColumnHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mb-5">
+      <h3 className="font-heading text-[var(--brand-accent)] uppercase tracking-widest text-xs font-semibold mb-2">
+        {children}
+      </h3>
+      <div className="w-8 h-0.5 bg-[var(--brand-accent)]" />
+    </div>
+  );
+}
 
 export default function Footer() {
-  const t = useTranslations();
   const pathname = usePathname();
-
-  function handleNavClick(
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) {
-    if (href.startsWith("#")) {
-      if (pathname === "/") {
-        e.preventDefault();
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }
-
-  function getHref(href: string): string {
-    if (href.startsWith("#")) {
-      return pathname === "/" ? href : "/" + href;
-    }
-    return href;
-  }
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--brand-primary)] text-white" aria-label={t("footer.ariaLabel")}>
-      {/* Top CTA strip */}
-      <div className="border-b border-white/10">
+    <footer className="bg-[var(--brand-primary)] text-white" aria-label="Site footer">
+      {/* ── TOP CTA STRIP ─────────────────────────────────────────────── */}
+      <div className="border-b-2 border-[var(--brand-accent)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-heading text-2xl font-semibold text-white">
-              {t("footer.ctaHeading")}
+            <p className="font-heading text-2xl md:text-3xl font-semibold text-white leading-snug">
+              Ready to Discuss Your Legal Matter?
             </p>
-            <p className="text-white/60 text-sm mt-1 font-body">
-              {t("footer.ctaSubtext")}
+            <p className="text-white/60 text-sm mt-2 font-body max-w-xl">
+              Our attorneys are available to provide confidential guidance tailored to your needs.
             </p>
           </div>
           <Link
             href="/contact"
-            className="flex-shrink-0 px-7 py-3 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded-lg hover:bg-[var(--brand-accent)]/90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)]"
+            className="flex-shrink-0 px-7 py-3 bg-[var(--brand-accent)] text-[var(--brand-primary)] font-body font-bold text-sm rounded hover:bg-[#b8922e] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--brand-primary)] whitespace-nowrap"
           >
-            {t("footer.ctaButton")}
+            Schedule a Consultation
           </Link>
         </div>
       </div>
 
-      {/* Main footer grid */}
+      {/* ── MAIN FOOTER GRID ──────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand column */}
+
+          {/* BRAND COLUMN */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] rounded">
+            <Link
+              href="/"
+              className="flex items-center gap-3 mb-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] rounded"
+              aria-label="MIT Legal Consultants — Home"
+            >
               <div className="w-9 h-9 rounded bg-[var(--brand-accent)] flex items-center justify-center flex-shrink-0">
                 <span className="font-heading font-bold text-[var(--brand-primary)] text-sm leading-none">
-                  {t("nav.logoInitials")}
+                  MIT
                 </span>
               </div>
               <span className="font-heading text-white text-base font-semibold leading-tight">
-                {t("nav.brandName")}
+                MIT Legal Consultants
               </span>
             </Link>
-            <p className="text-white/60 text-sm font-body leading-relaxed mb-5">
-              {t("footer.brandDescription")}
+
+            <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-3">
+              Trusted Counsel. Proven Results.
             </p>
-            <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-4">
-              {t("footer.followUs")}
+
+            <p className="text-white/60 text-sm font-body leading-relaxed mb-6">
+              A professional legal consultancy delivering practical, strategic, and results-oriented legal solutions with the highest standards of integrity and client confidentiality.
             </p>
+
+            {/* Social Icons */}
             <div className="flex items-center gap-3">
-              <motion.a
-                href={socialLinks.linkedin}
+              <a
+                href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t("footer.linkedinAriaLabel")}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[var(--brand-accent)] flex items-center justify-center transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[var(--brand-accent)] hover:border-[var(--brand-accent)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
               >
-                <Linkedin size={16} />
-              </motion.a>
-              <motion.a
-                href={socialLinks.twitter}
+                <Linkedin size={15} />
+              </a>
+              <a
+                href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t("footer.twitterAriaLabel")}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[var(--brand-accent)] flex items-center justify-center transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+                aria-label="Twitter / X"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[var(--brand-accent)] hover:border-[var(--brand-accent)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
               >
-                <Twitter size={16} />
-              </motion.a>
-              <motion.a
-                href={socialLinks.facebook}
+                <Twitter size={15} />
+              </a>
+              <a
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t("footer.facebookAriaLabel")}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[var(--brand-accent)] flex items-center justify-center transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
+                aria-label="Facebook"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[var(--brand-accent)] hover:border-[var(--brand-accent)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)]"
               >
-                <Facebook size={16} />
-              </motion.a>
+                <Facebook size={15} />
+              </a>
             </div>
           </div>
 
-          {/* Practice Areas */}
+          {/* PRACTICE AREAS COLUMN */}
           <div>
-            <h3 className="font-heading text-base font-semibold text-white mb-5 pb-2 border-b border-white/10">
-              {t("footer.practiceAreasHeading")}
-            </h3>
+            <ColumnHeading>Practice Areas</ColumnHeading>
             <ul className="space-y-2.5">
-              {practiceAreas.map((area) => (
-                <li key={area.id}>
-                  <Link
-                    href={area.href}
-                    className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
-                  >
-                    {t(`practiceAreas.${area.id}.title`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-heading text-base font-semibold text-white mb-5 pb-2 border-b border-white/10">
-              {t("footer.quickLinksHeading")}
-            </h3>
-            <ul className="space-y-2.5">
-              {navLinks.map((link) => (
+              {practiceAreaLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={getHref(link.href)}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
+                    href={link.href}
+                    className="text-white/70 hover:text-[var(--brand-accent)] transition-colors duration-150 text-sm font-body leading-snug"
                   >
-                    {t(`nav.${link.label.toLowerCase().replace(/\s+/g, "").replace(/[^a-z]/g, "")}`)}
+                    {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
-                >
-                  {t("footer.privacyPolicy")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
-                >
-                  {t("footer.terms")}
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* QUICK LINKS COLUMN */}
           <div>
-            <h3 className="font-heading text-base font-semibold text-white mb-5 pb-2 border-b border-white/10">
-              {t("footer.contactHeading")}
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-[var(--brand-accent)] mt-0.5 flex-shrink-0" />
-                <span className="text-sm font-body text-white/60 leading-relaxed">
-                  {t("footer.address")}
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-[var(--brand-accent)] flex-shrink-0" />
-                <a
-                  href={`tel:${contactInfo.phone}`}
-                  className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
-                >
-                  {contactInfo.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-[var(--brand-accent)] flex-shrink-0" />
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="text-sm font-body text-white/60 hover:text-[var(--brand-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--brand-accent)] rounded"
-                >
-                  {contactInfo.email}
-                </a>
-              </li>
-              <li className="pt-1">
-                <p className="text-xs font-body text-[var(--brand-accent)] font-semibold uppercase tracking-widest mb-1.5">
-                  {t("footer.hoursLabel")}
-                </p>
-                <p className="text-sm font-body text-white/60 leading-relaxed">
-                  {t("footer.hoursWeekdays")}
-                </p>
-                <p className="text-sm font-body text-white/60">
-                  {t("footer.hoursSaturday")}
-                </p>
-                <p className="text-sm font-body text-white/60">
-                  {t("footer.hoursSunday")}
-                </p>
-              </li>
+            <ColumnHeading>Quick Links</ColumnHeading>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/70 hover:text-[var(--brand-accent)] transition-colors duration-150 text-sm font-body leading-snug"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* CONTACT COLUMN */}
+          <div>
+            <ColumnHeading>Contact Us</ColumnHeading>
+            <ul className="space-y-4 mb-6">
+              <li className="flex items-start gap-3">
+                <Phone className="text-[var(--brand-accent)] w-4 h-4 flex-shrink-0 mt-0.5" />
+                <a
+                  href="tel:+15550000000"
+                  className="text-white/70 hover:text-[var(--brand-accent)] transition-colors duration-150 text-sm font-body"
+                >
+                  +1 (555) 000-0000
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="text-[var(--brand-accent)] w-4 h-4 flex-shrink-0 mt-0.5" />
+                <a
+                  href="mailto:info@mitlegal.com"
+                  className="text-white/70 hover:text-[var(--brand-accent)] transition-colors duration-150 text-sm font-body break-all"
+                >
+                  info@mitlegal.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="text-[var(--brand-accent)] w-4 h-4 flex-shrink-0 mt-0.5" />
+                <address className="not-italic text-white/70 text-sm font-body leading-relaxed">
+                  123 Legal Avenue, Suite 100<br />
+                  City, State 00000
+                </address>
+              </li>
+            </ul>
+
+            <div className="border-t border-white/10 pt-4">
+              <p className="text-[var(--brand-accent)] text-xs font-body font-semibold uppercase tracking-widest mb-2">
+                Business Hours
+              </p>
+              <p className="text-white/60 text-sm font-body">Mon &ndash; Fri: 8:00 AM &ndash; 6:00 PM</p>
+              <p className="text-white/60 text-sm font-body">Sat: By Appointment Only</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* ── BOTTOM BAR ────────────────────────────────────────────────── */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs font-body text-white/40">
-            {t("footer.copyright", { year: new Date().getFullYear(), brand: BRAND_NAME })}
+          <p className="text-white/50 text-xs font-body">
+            &copy; {year} MIT Legal Consultants. All rights reserved.
           </p>
-          <p className="text-xs font-body text-white/40">
-            {t("footer.disclaimer")}
-          </p>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/privacy-policy"
+              className="text-white/50 hover:text-white transition-colors duration-150 text-xs font-body"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-white/50 hover:text-white transition-colors duration-150 text-xs font-body"
+            >
+              Terms &amp; Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
