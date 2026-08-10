@@ -24,7 +24,6 @@ export const navLinks: NavLink[] = [
       { label: "Employment Law", href: "/practice-areas/employment-law" },
     ],
   },
-  { label: "Our Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -138,28 +137,20 @@ export const attorneys: Attorney[] = [
     image: "",
     bio: "Ambreen Khalid brings compassion and expertise to family law and dispute resolution. She guides clients through sensitive legal matters with professionalism, ensuring their rights and interests are protected at every stage.",
   },
-  {
-    id: "attorney-4",
-    name: "Hassan Masood",
-    title: "IT Consultant",
-    specializations: ["Legal Technology", "Digital Infrastructure"],
-    image: "",
-    bio: "Hassan Masood supports MIT Legal Consultants with cutting-edge technology solutions, ensuring the firm operates with modern digital infrastructure, cybersecurity best practices, and efficient systems for client service delivery.",
-  },
 ];
 
 export interface ContactInfo {
-  address: string;
   phone: string;
   email: string;
+  address: string;
   hours: string;
 }
 
 export const contactInfo: ContactInfo = {
-  address: "14 Legal Avenue, Suite 300, Islamabad, Pakistan",
-  phone: "+92 (0) 51 000 0000",
-  email: "info@mitlegalconsultants.com",
-  hours: "Monday – Friday, 8:00 AM – 6:00 PM",
+  phone: "+1 (555) 000-0000",
+  email: "info@mitlegal.com",
+  address: "123 Legal Avenue, Suite 400, City, Country",
+  hours: "Monday to Friday, 9:00 AM – 6:00 PM",
 };
 
 export interface SocialLinks {
@@ -169,7 +160,7 @@ export interface SocialLinks {
 }
 
 export const socialLinks: SocialLinks = {
-  linkedin: "https://linkedin.com/company/mit-legal-consultants",
-  twitter: "https://twitter.com/mitlegalconsultants",
-  facebook: "https://facebook.com/mitlegalconsultants",
+  linkedin: "https://linkedin.com",
+  twitter: "https://twitter.com",
+  facebook: "https://facebook.com",
 };
