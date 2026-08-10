@@ -9,7 +9,10 @@
     "practiceareas": "Practice Areas",
     "ourteam": "Our Team",
     "contact": "Contact",
-    "getintouch": "Get In Touch"
+    "getintouch": "Get In Touch",
+    "closeMenu": "Close menu",
+    "cta": "Contact Us",
+    "openMenu": "Open menu"
   },
   "footer": {
     "ariaLabel": "Site footer",
@@ -27,7 +30,16 @@
     "copyright": "© {year} MIT Legal Consultants. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsConditions": "Terms & Conditions",
-    "disclaimer": "MIT Legal Consultants is a professional legal consultancy. The information on this website does not constitute legal advice and no attorney-client relationship is formed by use of this site."
+    "disclaimer": "MIT Legal Consultants is a professional legal consultancy. The information on this website does not constitute legal advice and no attorney-client relationship is formed by use of this site.",
+    "address": "123 Business Avenue, Suite 500, New York, NY 10001",
+    "contactHeading": "Contact us",
+    "hoursLabel": "Hours",
+    "hoursSaturday": "Saturday: Closed",
+    "hoursSunday": "Sunday: Closed",
+    "hoursWeekdays": "Monday–Friday: 9 AM–6 PM",
+    "practiceAreasHeading": "Practice areas",
+    "quickLinksHeading": "Quick links",
+    "terms": "Terms & privacy"
   },
   "home": {
     "heroEyebrow": "Trusted Counsel. Proven Results.",
@@ -92,5 +104,181 @@
     "ctaTitle": "Discuss Your Legal Matter",
     "ctaSubtitle": "Contact MIT Legal Consultants today to speak with a specialist attorney about your specific legal needs.",
     "ctaButton": "Contact Us"
+  },
+  "corporateCommercial": {
+    "cta": {
+      "body": "Let our experienced team guide you through complex corporate transactions and commercial agreements.",
+      "eyebrow": "Ready to move forward?",
+      "primaryButton": "Schedule a consultation",
+      "secondaryButton": "Learn more",
+      "title": "Get expert corporate counsel today"
+    },
+    "hero": {
+      "cta": "Get started",
+      "eyebrow": "Corporate & Commercial Law",
+      "secondaryCta": "View our services",
+      "subtitle": "Strategic legal solutions for your business growth and protection.",
+      "title": "Business law built for success"
+    },
+    "matters": {
+      "body": "From mergers and acquisitions to contract negotiations, we handle the legal complexities so you can focus on your business.",
+      "cta": "Explore our expertise",
+      "eyebrow": "What we handle",
+      "title": "Comprehensive corporate solutions"
+    },
+    "overview": {
+      "body1": "We provide strategic legal guidance across all aspects of corporate and commercial law.",
+      "body2": "Our team specializes in helping businesses navigate transactions, compliance, and growth opportunities.",
+      "eyebrow": "Our approach",
+      "imageAlt": "Corporate law team meeting",
+      "link": "View case studies",
+      "title": "Tailored legal strategy for your business"
+    },
+    "services": {
+      "eyebrow": "Our services",
+      "subtitle": "Comprehensive legal support for every stage of your business.",
+      "title": "What we offer"
+    },
+    "why": {
+      "eyebrow": "Why choose us",
+      "subtitle": "Proven expertise and dedicated support for your corporate goals.",
+      "title": "Partners in your success"
+    }
+  },
+  "litigation": {
+    "breadcrumbAriaLabel": "Breadcrumb navigation",
+    "breadcrumbCurrent": "Litigation",
+    "breadcrumbHome": "Home",
+    "breadcrumbPractice": "Practice areas",
+    "civilDesc": "We represent clients in complex civil disputes, including contract disputes, business litigation, and property matters.",
+    "civilTitle": "Civil litigation",
+    "criminalDesc": "Our criminal defense team provides aggressive representation for individuals facing serious charges.",
+    "criminalTitle": "Criminal defense",
+    "ctaButton1": "Schedule consultation",
+    "ctaButton2": "Contact us",
+    "ctaSubtext": "We're ready to fight for your rights.",
+    "ctaTitle": "Need litigation support?",
+    "expertiseCardTitle": "Our litigation expertise",
+    "expertiseEyebrow": "What we handle",
+    "expertiseItem1": "Contract disputes",
+    "expertiseItem2": "Discovery & Evidence Management",
+    "expertiseItem3": "Trial Preparation & Representation",
+    "expertiseItem4": "Settlement Negotiation",
+    "expertiseP1": "Our litigation team brings decades of combined experience navigating complex disputes across multiple jurisdictions.",
+    "expertiseP2": "We combine strategic thinking with meticulous attention to detail to protect your interests at every stage.",
+    "expertiseTitle": "Our Litigation Expertise",
+    "eyebrow": "Litigation Services",
+    "floatingCardLabel": "Expert Legal Strategy",
+    "heroCta1": "Schedule Consultation",
+    "heroCta2": "View Our Cases",
+    "heroSubtext": "Aggressive representation backed by proven results and deep legal knowledge.",
+    "heroTitle": "Litigation That Wins",
+    "mattersEyebrow": "What We Handle",
+    "mattersSubtext": "From commercial disputes to employment law, we manage cases across diverse practice areas.",
+    "mattersTitle": "The Matters We Fight",
+    "overviewEyebrow": "Why Choose Us",
+    "overviewImageAlt": "Litigation team in conference room",
+    "overviewLink": "Learn about our approach",
+    "overviewP1": "We don't just litigate—we strategize. Every case receives a tailored approach designed to achieve your specific goals.",
+    "overviewP2": "Our track record speaks for itself: consistent victories, favorable settlements, and clients who trust us with their most critical disputes.",
+    "overviewTitle": "Strategic Litigation Excellence",
+    "processEyebrow": "Our Process",
+    "processSubtext": "A methodical approach to building unbeatable cases.",
+    "processTitle": "How We Work",
+    "related1Desc": "Comprehensive case analysis and strategic planning from day one.",
+    "related1Title": "Case Assessment",
+    "related2Desc": "Skilled negotiators who secure favorable terms before trial.",
+    "related2Title": "Settlement Services",
+    "related3Desc": "Expert representation in court with proven trial success.",
+    "related3Title": "Trial Advocacy",
+    "relatedLearnMore": "Learn more",
+    "relatedTitle": "Related Services",
+    "relatedViewAll": "View all services",
+    "tag1": "Commercial Disputes",
+    "tag2": "Employment Law",
+    "tag3": "Contract Litigation",
+    "tag4": "Intellectual Property",
+    "tag5": "Regulatory Defense",
+    "whyEyebrow": "Why Litigation Matters",
+    "whySubtext": "Protecting your rights requires experienced counsel and unwavering commitment.",
+    "whyTitle": "The Power of Strong Representation"
+  },
+  "mediationArbitration": {
+    "cta": {
+      "badge": "Alternative Dispute Resolution",
+      "body": "Resolve disputes faster and more cost-effectively with our mediation and arbitration services.",
+      "primaryButton": "Get Started",
+      "secondaryButton": "Learn More",
+      "title": "Ready to Resolve Your Dispute?"
+    },
+    "faq": {
+      "eyebrow": "Common Questions",
+      "subtitle": "Find answers about our mediation and arbitration processes.",
+      "title": "Frequently Asked Questions"
+    },
+    "hero": {
+      "cta": "Explore Solutions",
+      "eyebrow": "Dispute Resolution",
+      "secondaryCta": "Learn Our Process",
+      "subtitle": "Expert mediation and arbitration services to resolve disputes efficiently and confidentially.",
+      "title": "Mediation & Arbitration"
+    },
+    "overview": {
+      "body1": "We provide neutral, professional mediation and arbitration services designed to resolve complex disputes outside the courtroom. Our experienced mediators and arbitrators guide parties toward fair, binding, or non-binding resolutions.",
+      "body2": "With decades of combined experience, we've successfully resolved thousands of cases across industries, saving clients time and resources while preserving business relationships.",
+      "bullet1": "Confidential and impartial proceedings",
+      "bullet2": "Faster resolution than litigation",
+      "bullet3": "Cost-effective dispute settlement",
+      "bullet4": "Experienced neutral professionals",
+      "eyebrow": "Why Choose Us",
+      "imageAlt": "Professional mediation session with neutral mediator",
+      "statLabel": "Cases Resolved",
+      "title": "Proven Results in Dispute Resolution"
+    },
+    "process": {
+      "eyebrow": "Our Approach",
+      "subtitle": "A structured, transparent process designed for fair outcomes.",
+      "title": "The Resolution Process"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "subtitle": "Tailored solutions for every dispute type.",
+      "title": "Our Services"
+    },
+    "why": {
+      "body": "Mediation and arbitration offer faster, more private alternatives to litigation. Parties maintain control over outcomes while avoiding court delays and public proceedings.",
+      "cta": "Schedule a Consultation",
+      "eyebrow": "Benefits",
+      "title": "Why Mediation & Arbitration?"
+    }
+  },
+  "practiceAreasOverview": {
+    "areasEyebrow": "Expertise",
+    "areasSubtitle": "Comprehensive legal services across multiple practice areas.",
+    "areasTitle": "Our Practice Areas",
+    "cardAriaPrefix": "Practice area:",
+    "cardLearnMore": "Learn More",
+    "ctaBannerEyebrow": "Ready to Get Started?",
+    "ctaBannerPrimary": "Schedule Consultation",
+    "ctaBannerSecondary": "View Services",
+    "ctaBannerSubtitle": "Let our experienced team help resolve your legal challenges.",
+    "ctaBannerTitle": "Partner With Us Today",
+    "eyebrow": "Legal Services",
+    "heroCta": "Explore Our Services",
+    "heroSecondary": "View Our Team",
+    "heroSubtitle": "Strategic legal solutions tailored to your unique needs.",
+    "heroTitle": "Comprehensive Legal Expertise",
+    "introEyebrow": "About Our Practice",
+    "introLink": "Learn more about our firm",
+    "introParagraph1": "We deliver specialized legal counsel across dispute resolution, corporate matters, and commercial transactions. Our team combines deep industry knowledge with proven advocacy.",
+    "introParagraph2": "From mediation to complex litigation, we're committed to achieving the best outcomes for our clients.",
+    "introStatLabel": "Years of Experience",
+    "introTitle": "Trusted Legal Advisors",
+    "testimonialsEyebrow": "Client Success",
+    "testimonialsTitle": "What Our Clients Say",
+    "whyCta": "Explore Our Practice",
+    "whyEyebrow": "Why Choose Us",
+    "whySubtitle": "Specialized expertise across key practice areas to serve your unique needs.",
+    "whyTitle": "Comprehensive Legal Solutions"
   }
 }
